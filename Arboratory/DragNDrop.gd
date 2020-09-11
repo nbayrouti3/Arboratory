@@ -43,3 +43,5 @@ func _input(event):
 		position += event.position - previous_mouse_position
 		previous_mouse_position = event.position
 
+
+
