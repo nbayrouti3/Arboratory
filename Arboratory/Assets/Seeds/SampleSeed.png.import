@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SamplePlant.png-a71fb581ccbe3d490afa10c7fb7e12c4.stex"
+path="res://.import/SampleSeed.png-02ba6a066d09b1763125fd53fcc9e989.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/SamplePlant.png"
-dest_files=[ "res://.import/SamplePlant.png-a71fb581ccbe3d490afa10c7fb7e12c4.stex" ]
+source_file="res://Assets/Seeds/SampleSeed.png"
+dest_files=[ "res://.import/SampleSeed.png-02ba6a066d09b1763125fd53fcc9e989.stex" ]
 
 [params]
 

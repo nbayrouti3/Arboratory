@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/seed-laventree.png-0617d142aa67469a83eb2982ae75cc32.stex"
+path="res://.import/laventree_owo.png-40650aac6ce89aba4847366f4873d645.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/seed-laventree.png"
-dest_files=[ "res://.import/seed-laventree.png-0617d142aa67469a83eb2982ae75cc32.stex" ]
+source_file="res://Assets/Saplings/laventree_owo.png"
+dest_files=[ "res://.import/laventree_owo.png-40650aac6ce89aba4847366f4873d645.stex" ]
 
 [params]
 
