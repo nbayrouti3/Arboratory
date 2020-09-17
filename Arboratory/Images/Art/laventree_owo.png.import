@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sample Water.png-1674d385d73519632f751d68f6ec91df.stex"
+path="res://.import/laventree_owo.png-7e0cced3700989ea6e6579da83727080.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Sample Water.png"
-dest_files=[ "res://.import/Sample Water.png-1674d385d73519632f751d68f6ec91df.stex" ]
+source_file="res://Images/Art/laventree_owo.png"
+dest_files=[ "res://.import/laventree_owo.png-7e0cced3700989ea6e6579da83727080.stex" ]
 
 [params]
 

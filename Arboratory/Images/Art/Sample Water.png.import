@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/seed-laventree.png-bf56bfd1ef664e5a8c31d371b17523da.stex"
+path="res://.import/Sample Water.png-cdc49778a41949660591165394cd4e80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Seeds/seed-laventree.png"
-dest_files=[ "res://.import/seed-laventree.png-bf56bfd1ef664e5a8c31d371b17523da.stex" ]
+source_file="res://Images/Art/Sample Water.png"
+dest_files=[ "res://.import/Sample Water.png-cdc49778a41949660591165394cd4e80.stex" ]
 
 [params]
 
