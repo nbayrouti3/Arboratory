@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laventree_owo.png-7e0cced3700989ea6e6579da83727080.stex"
+path="res://.import/arboratory_pot_color.jpg-976392e14bada8d389511875206b173b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/laventree_owo.png"
-dest_files=[ "res://.import/laventree_owo.png-7e0cced3700989ea6e6579da83727080.stex" ]
+source_file="res://Assets/Art/arboratory_pot_color.jpg"
+dest_files=[ "res://.import/arboratory_pot_color.jpg-976392e14bada8d389511875206b173b.stex" ]
 
 [params]
 
