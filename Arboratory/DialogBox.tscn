@@ -36,12 +36,13 @@ margin_right = -24.0
 margin_bottom = -24.0
 bbcode_enabled = true
 bbcode_text = "Hi there! This is placeholder text. "
-text = "Hi there! This is placeholder text. "
+text = "Hi there! This is placeholder text."
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Timer" type="Timer" parent="DialogBox"]
-wait_time = 0.6
+wait_time = 0.05
+autostart = true
 [connection signal="timeout" from="DialogBox/Timer" to="DialogBox/RichTextLabel" method="_on_Timer_timeout"]
