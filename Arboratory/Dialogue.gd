@@ -4,6 +4,7 @@ extends RichTextLabel
 var dialogue = [
 	"This is Arboratory",
 	"We're making a lot of cool trees",
+	"More filler text",
 	"End"
 ]
 
@@ -16,7 +17,8 @@ func _ready():
 	
 	
 func _input(event):
-	if event is InputEventScreenTouch && event.is_pressed():
+	if event.is_pressed() && (event is InputEventScreenTouch ||
+							  event is InputEventMouseButton):
 		if get_visible_characters() > get_total_character_count():
 			if dialogue_index < dialogue.size() - 1:
 				dialogue_index += 1
