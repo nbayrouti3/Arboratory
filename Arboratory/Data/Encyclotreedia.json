@@ -1,0 +1,31 @@
+{
+	"Template": {
+		"seedImage": "",
+		"sapplingImage": "",
+		"treeImage": "",
+		"Description": ""
+	},
+	"1": {
+		"seedImage": "res://Assets/Plants/seeds/SampleSeed.png",
+		"sapplingImage": "res://Assets/Art/SamplePlant.png",
+		"treeImage": "",
+		"Description": ""
+	},
+	"2": {
+		"seedImage": "res://Assets/Plants/seeds/seed-laventree.png",
+		"sapplingImage": "res://Assets/Plants/trees/laventree_owo.png",
+		"treeImage": ""
+	},
+	"3": {
+		"seedImage": "res://Assets/Plants/seeds/bunny_seed.png",
+		"sapplingImage": "res://Assets/Plants/trees/bunny_sapling.png",
+		"treeImage": "",
+		"Description": ""
+	},
+	"4": {
+		"seedImage": "res://Assets/Plants/seeds/Lighting_seed.png",
+		"sapplingImage": "res://Assets/Plants/trees/Lighting_sapling.png",
+		"treeImage": "",
+		"Description": ""
+	}
+}
