@@ -57,18 +57,20 @@ func _input(event):
 """
 
 """
+var which_seed
 func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
 		position = Vector2(518,220)
 		is_dragging = false
-		emit_signal("planted")
+		emit_signal("planted",self)
+		print("Its been emitted")
 
 
 func _on_aSeeds_area_shape_exited(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
-		emit_signal("planted")
+		emit_signal("planted",self)
 
 func _on_water_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
@@ -85,15 +87,16 @@ func _on_water_area_shape_entered(area_id, area, area_shape, self_shape):
 
 
 onready var pot = get_tree().get_root().find_node("Pot", true, false)
-onready var Seed = get_tree().get_root().find_node("aSeeds", true, false)
+onready var Seeds = get_tree().get_root().find_node("Seeds", true, false).get_children()
 onready var dragNode = get_parent()
 
 var seeded = false
 var planted = 0
 
 func _ready():
-	Seed.connect("planted",self,"planted")
 	pot.connect("seeded",self,"changeSeed")
+	for See in Seeds:
+		See.connect("planted",self,"planted")
 	#print(seedData[01]["seedImage"])
 	#print(seedData[02]["seedImage"])
 	#print(texture)
@@ -112,12 +115,15 @@ func planted():
 	print(seeded)
 	planted += 1
 
-func changeSeed():
+func changeSeed(which):
+	print("Change Seed Function was run")
+	print(which)
 	for key in seedData:
 		print(key)
-		if seedData[key]["seedImage"] == Seed.get_node("SeedImage").texture:
-			if seeded:
-				Seed.get_node("SeedImage").texture = load(seedData[key]["sapplingImage"])
+		if seedData[key]["seedImage"] == which.get_node("SeedImage").texture:
+			print("Texture matched")
+			which.get_node("SeedImage").texture = load(seedData[key]["sapplingImage"])
+			print("Texture Changed")
 		
 
 var seedData = {

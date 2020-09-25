@@ -28,15 +28,22 @@ texture = ExtResource( 6 )
 [node name="water" parent="." instance=ExtResource( 1 )]
 position = Vector2( 960, 62 )
 
-[node name="aSeeds" parent="." groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 135.551, 213.744 )
+[node name="Seeds" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="aSeeds2" parent="." groups=[
+[node name="aSeeds" parent="Seeds" groups=[
 "seedGroup",
 ] instance=ExtResource( 7 )]
-position = Vector2( 139.127, 411.049 )
+position = Vector2( 220.617, 154.149 )
+
+[node name="aSeeds2" parent="Seeds" groups=[
+"seedGroup",
+] instance=ExtResource( 7 )]
+position = Vector2( 242.42, 398.618 )
 
 [node name="Lab Bench" parent="." instance=ExtResource( 3 )]
 position = Vector2( 523.586, 476.921 )

@@ -1,16 +1,18 @@
 extends Area2D
 
-onready var Water = get_tree().get_root().find_node("water", true, false)
-onready var Seed = get_tree().get_root().find_node("aSeeds", true, false) #Declares variables as instances of Nodes in the Scene
-var seeded = false;
+onready var Water = get_tree().get_root().find_node("water", true, false)#Declares variables as instances of Nodes in the Scene
+onready var Seeds = get_tree().get_root().find_node("Seeds", true, false).get_children()
+var seeded = false
 var planted = 0
+var whichSeed
 signal seeded
 
 #Sets all the connected nodes up
 
 func _ready():
 	Water.connect("watered",self,"grow") #Tells Godot that these nodes will emit a certain signal and to run a function when it does
-	Seed.connect("planted",self,"planted")
+	for Seed in Seeds:
+		Seed.connect("planted",self,"planted")
 
 """
 When the seed is overlaps with the pot it will emit a planted signal activating the planted function over here.
@@ -19,7 +21,8 @@ The function itself will switch the local variable seeded to true and false base
 The print line Planted Function was run is for debugging
 """
 
-func planted():
+func planted(theSeed):
+	whichSeed = theSeed
 	print("Planted Function was Run")
 	if planted % 2 == 0:
 		seeded = true
@@ -39,7 +42,7 @@ The print line we made it this far is just for debugging.
 func grow():
 	print("Grow Function was Run")
 	if seeded:
-		emit_signal("seeded")
+		emit_signal("seeded", whichSeed)
 		print("We made it this far")
 
 
