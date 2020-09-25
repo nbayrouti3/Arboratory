@@ -23,12 +23,10 @@ The print line Planted Function was run is for debugging
 
 func planted(theSeed):
 	whichSeed = theSeed
-	print("Planted Function was Run")
 	if planted % 2 == 0:
 		seeded = true
 	else:
 		seeded = false
-	print(seeded)
 	planted += 1
 
 
@@ -40,16 +38,9 @@ The print line we made it this far is just for debugging.
 """
 
 func grow():
-	print("Grow Function was Run")
 	if seeded:
 		emit_signal("seeded", whichSeed)
-		print("We made it this far")
 
 
 
 
-func _on_Pot_area_shape_entered(area_id, area, area_shape, self_shape):
-	var areaName = area.get_name()
-	if area.is_in_group("seedGroup"):
-		print("It is in Seed Group")
-	pass # Replace with function body.
