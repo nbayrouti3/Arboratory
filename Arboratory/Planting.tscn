@@ -25,6 +25,9 @@ position = Vector2( -5.88623, -13.4384 )
 scale = Vector2( 0.333629, 0.333629 )
 texture = ExtResource( 6 )
 
+[node name="Lab Bench" parent="." instance=ExtResource( 3 )]
+position = Vector2( 523.586, 476.921 )
+
 [node name="water" parent="." instance=ExtResource( 1 )]
 position = Vector2( 960, 62 )
 
@@ -43,8 +46,30 @@ position = Vector2( 220.617, 154.149 )
 [node name="aSeeds2" parent="Seeds" groups=[
 "seedGroup",
 ] instance=ExtResource( 7 )]
-position = Vector2( 242.42, 398.618 )
+position = Vector2( 223.287, 345.031 )
 
-[node name="Lab Bench" parent="." instance=ExtResource( 3 )]
-position = Vector2( 523.586, 476.921 )
+[node name="SeedImage" parent="Seeds/aSeeds2" index="1"]
+scale = Vector2( 0.137, 0.137 )
+
+[node name="aSeeds3" parent="Seeds" groups=[
+"seedGroup",
+] instance=ExtResource( 7 )]
+position = Vector2( 77.7891, 518.56 )
+
+[node name="SeedImage" parent="Seeds/aSeeds3" index="1"]
+scale = Vector2( 0.163, 0.163 )
+
+[node name="aSeeds4" parent="Seeds" groups=[
+"seedGroup",
+] instance=ExtResource( 7 )]
+position = Vector2( 814.621, 503.877 )
+
+[node name="SeedImage" parent="Seeds/aSeeds4" index="1"]
+scale = Vector2( 0.061, 0.061 )
 [connection signal="area_shape_entered" from="Pot" to="Pot" method="_on_Pot_area_shape_entered"]
+
+[editable path="Seeds/aSeeds2"]
+
+[editable path="Seeds/aSeeds3"]
+
+[editable path="Seeds/aSeeds4"]
