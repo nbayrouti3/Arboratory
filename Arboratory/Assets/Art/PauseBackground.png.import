@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PauseBackground.png-820565c63ed1bca08105fcc1d1a4f7a4.stex"
+path="res://.import/PauseBackground.png-cd435e663bb0e77702eb948c397f9657.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/PauseBackground.png"
-dest_files=[ "res://.import/PauseBackground.png-820565c63ed1bca08105fcc1d1a4f7a4.stex" ]
+source_file="res://Assets/Art/PauseBackground.png"
+dest_files=[ "res://.import/PauseBackground.png-cd435e663bb0e77702eb948c397f9657.stex" ]
 
 [params]
 

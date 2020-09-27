@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PauseButtonBackground.png-5fad1077d0bafe20a3d8243de5a73cb7.stex"
+path="res://.import/PauseButtonBackground.png-0fd0ad198e516f7951308c8a5c9ae356.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/PauseButtonBackground.png"
-dest_files=[ "res://.import/PauseButtonBackground.png-5fad1077d0bafe20a3d8243de5a73cb7.stex" ]
+source_file="res://Assets/Art/PauseButtonBackground.png"
+dest_files=[ "res://.import/PauseButtonBackground.png-0fd0ad198e516f7951308c8a5c9ae356.stex" ]
 
 [params]
 
