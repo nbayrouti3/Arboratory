@@ -1,47 +1,46 @@
 extends Area2D
 
-var starterTree = false
-var water = false
-var lavTree = false
+onready var Water = get_tree().get_root().find_node("water", true, false)#Declares variables as instances of Nodes in the Scene
+onready var Seeds = get_tree().get_root().find_node("Seeds", true, false).get_children()
+var seeded = false
+var planted = 0
+var whichSeed
+signal seeded
+
+#Sets all the connected nodes up
+
+func _ready():
+	Water.connect("watered",self,"grow") #Tells Godot that these nodes will emit a certain signal and to run a function when it does
+	for Seed in Seeds:
+		Seed.connect("planted",self,"planted")
+
 """
-Removes any overlapping Area2Ds
-on user click up 
-
-var count = 0
-
-func _input(event):
-	
-	if event.is_action_released("ui_touch"):
-		for _a in get_overlapping_areas():
-			count += true
-			_a.queue_free()
-	if count > true:
-		$treetrue.show()
-		count = 0
+When the seed is overlaps with the pot it will emit a planted signal activating the planted function over here.
+The signal is also emitted when the seed leaves the pot.
+The function itself will switch the local variable seeded to true and false based on how many times the function has been called
+The print line Planted Function was run is for debugging
 """
 
-
-func _on_seed1_area_shape_entered(area_id, area, area_shape, self_shape):
-	if area_id == 1218:
-		for _a in get_overlapping_areas():
-			_a.queue_free()
-		starterTree = true
-	
-func _on_water1_area_shape_entered(area_id, area, area_shape, self_shape):
-	if area_id == 1218:
-		for _a in get_overlapping_areas():
-			_a.queue_free()
-		water = true
-
-func _on_seed2_area_shape_entered(area_id, area, area_shape, self_shape):
-	if area_id == 1218:
-		for _a in get_overlapping_areas():
-			_a.queue_free()
-		lavTree = true
+func planted(theSeed):
+	whichSeed = theSeed
+	if planted % 2 == 0:
+		seeded = true
+	else:
+		seeded = false
+	planted += 1
 
 
-func _input(event):
-	if starterTree == true && water == true:
-		$tree1.show()
-	elif lavTree ==true && water == true:
-		$lavenTree.show()
+
+"""
+When the water overlaps with the pot it will emit a signal "watered" which activates the grow function.
+The function itself will emit a signal "seeded" that will be used in a different script.
+The print line we made it this far is just for debugging.
+"""
+
+func grow():
+	if seeded:
+		emit_signal("seeded", whichSeed)
+
+
+
+

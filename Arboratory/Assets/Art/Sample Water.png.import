@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SampleSeed.png-fa0fab870a933bfb763bd1432c135247.stex"
+path="res://.import/Sample Water.png-1674d385d73519632f751d68f6ec91df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/SampleSeed.png"
-dest_files=[ "res://.import/SampleSeed.png-fa0fab870a933bfb763bd1432c135247.stex" ]
+source_file="res://Assets/Art/Sample Water.png"
+dest_files=[ "res://.import/Sample Water.png-1674d385d73519632f751d68f6ec91df.stex" ]
 
 [params]
 

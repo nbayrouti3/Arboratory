@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/seed-laventree.png-0617d142aa67469a83eb2982ae75cc32.stex"
+path="res://.import/SamplePlant.png-ab39c995edade41b51f3c3a85c906231.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/seed-laventree.png"
-dest_files=[ "res://.import/seed-laventree.png-0617d142aa67469a83eb2982ae75cc32.stex" ]
+source_file="res://Assets/Art/SamplePlant.png"
+dest_files=[ "res://.import/SamplePlant.png-ab39c995edade41b51f3c3a85c906231.stex" ]
 
 [params]
 
