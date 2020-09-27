@@ -1,33 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://water.tscn" type="PackedScene" id=1]
+[ext_resource path="res://water1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://seed1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://dropZone.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Art/SamplePlant.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Plants/trees/laventree_owo.png" type="Texture" id=6]
-[ext_resource path="res://aSeeds.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Images/Art/SamplePlant.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="dropZone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 517.974, 221 )
+position = Vector2( 519.163, 221 )
 
 [node name="tree1" type="Sprite" parent="dropZone"]
 visible = false
 position = Vector2( -3.74542, -3.7455 )
 texture = ExtResource( 4 )
 
-[node name="lavenTree" type="Sprite" parent="dropZone"]
-visible = false
-position = Vector2( -5.88621, -13.4384 )
-scale = Vector2( 0.333629, 0.333629 )
-texture = ExtResource( 6 )
+[node name="seed1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 163.315, 218.753 )
 
 [node name="water1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 795.16, 235.171 )
-
-[node name="draggable" parent="." instance=ExtResource( 7 )]
-position = Vector2( 169.525, 440.497 )
-
-[node name="aSeeds" parent="." instance=ExtResource( 7 )]
-position = Vector2( 136.154, 125.475 )
-[connection signal="area_shape_entered" from="water1" to="dropZone" method="_on_water1_area_shape_entered"]
+position = Vector2( 806.089, 120.614 )
