@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tree.gd" type="Script" id=1]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="healthDeduction" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="waterButton" type="Button" parent="."]
+margin_right = 111.0
+margin_bottom = 20.0
+text = "press for water!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="deduct_health" from="." to="." method="_on_deduct_health"]
+[connection signal="timeout" from="healthDeduction" to="." method="_on_healthDeduction_timeout"]
+[connection signal="pressed" from="waterButton" to="." method="_on_waterButton_pressed"]
