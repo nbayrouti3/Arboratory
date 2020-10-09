@@ -15,6 +15,5 @@ text = "press for water!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="deduct_health" from="." to="." method="_on_deduct_health"]
 [connection signal="timeout" from="healthDeduction" to="." method="_on_healthDeduction_timeout"]
 [connection signal="pressed" from="waterButton" to="." method="_on_waterButton_pressed"]
