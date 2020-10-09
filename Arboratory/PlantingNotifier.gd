@@ -11,15 +11,26 @@ signal clear_single
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var dynamic_font = DynamicFont.new()
+	dynamic_font.font_data = load("res://Fonts/Lato-Regular.ttf")
+	dynamic_font.size = 43
 	$WaterTree.set_position(Vector2(900,40))
+	$WaterTree.add_font_override("font",dynamic_font)
 	$FireTree.set_position(Vector2(900,100))
+	$FireTree.add_font_override("font",dynamic_font)
 	$EarthTree.set_position(Vector2(900,160))
+	$EarthTree.add_font_override("font",dynamic_font)
 	$AirTree.set_position(Vector2(900,220))
+	$AirTree.add_font_override("font",dynamic_font)
 	$MagmaTree.set_position(Vector2(900,280))
+	$MagmaTree.add_font_override("font",dynamic_font)
 	$ClearPlots.set_position(Vector2(900,340))
+	$ClearPlots.add_font_override("font",dynamic_font)
 	$ClearSinglePlot.set_position(Vector2(900,400))
-	show_message("New Farm")
+	$ClearSinglePlot.add_font_override("font",dynamic_font)
 	$PlantingNotifierMessage.set_position(Vector2(1100,600))
+	$PlantingNotifierMessage.add_font_override("font",dynamic_font)
+	show_message("New Farm")
 	
 #updates the planting message
 func show_message(text):
