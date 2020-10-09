@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://.import/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlantingNotifier.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+size = 43
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 43
 font_data = ExtResource( 1 )
 
@@ -24,7 +28,7 @@ __meta__ = {
 [node name="WaterTree" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Water Tree"
 __meta__ = {
 "_edit_use_anchors_": false
