@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://BaseFarmGrid.gd" type="Script" id=1]
+[ext_resource path="res://PlantingNotifier.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Farm.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
+
+[node name="BaseFarmGrid" type="Node"]
+script = ExtResource( 1 )
+Tree = ExtResource( 4 )
+
+[node name="Farm" parent="." instance=ExtResource( 3 )]
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="PlantingNotifier" parent="." instance=ExtResource( 2 )]
+[connection signal="new_farm" from="Farm" to="PlantingNotifier" method="show_message"]
+[connection signal="plant" from="Farm" to="." method="_plant_tree"]
+[connection signal="plot_clicked" from="Farm" to="PlantingNotifier" method="show_message"]
+[connection signal="tree_removed" from="Farm" to="PlantingNotifier" method="show_message"]
+[connection signal="clear" from="PlantingNotifier" to="." method="_new_farm"]
+[connection signal="clear_single" from="PlantingNotifier" to="." method="_new_plot"]
+[connection signal="plant_air" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="plant_earth" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="plant_fire" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="plant_magma" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="plant_water" from="PlantingNotifier" to="." method="_select_tree"]
