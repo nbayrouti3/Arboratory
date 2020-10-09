@@ -1,28 +1,39 @@
 {
 	"Template": {
+        "playerGot" : "false",
+        "treeName": "",
 		"seedImage": "",
 		"sapplingImage": "",
 		"treeImage": "",
 		"Description": ""
 	},
 	"1": {
+        "playerGot" : "false",
+        "treeName": "The Sample Tree",
 		"seedImage": "res://Assets/Plants/seeds/SampleSeed.png",
 		"sapplingImage": "res://Assets/Art/SamplePlant.png",
 		"treeImage": "",
-		"Description": ""
+		"Description": "This is an example Tree Description"
 	},
 	"2": {
+        "playerGot" : "false",
+        "treeName": "",
 		"seedImage": "res://Assets/Plants/seeds/seed-laventree.png",
 		"sapplingImage": "res://Assets/Plants/trees/laventree_owo.png",
-		"treeImage": ""
+		"treeImage": ""   ,
+		"Description": ""
 	},
 	"3": {
+        "playerGot" : "false",
+        "treeName": "",
 		"seedImage": "res://Assets/Plants/seeds/bunny_seed.png",
 		"sapplingImage": "res://Assets/Plants/trees/bunny_sapling.png",
 		"treeImage": "",
 		"Description": ""
 	},
 	"4": {
+        "playerGot" : "false",
+        "treeName": "",
 		"seedImage": "res://Assets/Plants/seeds/Lighting_seed.png",
 		"sapplingImage": "res://Assets/Plants/trees/Lighting_sapling.png",
 		"treeImage": "",
