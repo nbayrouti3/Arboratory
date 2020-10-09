@@ -23,7 +23,7 @@ scale = Vector2( 0.333629, 0.333629 )
 texture = ExtResource( 6 )
 
 [node name="water1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 795.16, 235.171 )
+position = Vector2( 557.16, 231.171 )
 
 [node name="draggable" parent="." instance=ExtResource( 7 )]
 position = Vector2( 169.525, 440.497 )
