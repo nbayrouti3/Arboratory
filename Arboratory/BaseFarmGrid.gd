@@ -7,6 +7,7 @@ var free_tree
 var trees = []
 var trees_size = Vector2(7,7)
 var ready_to_clear_plot
+var watering_time
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +21,7 @@ func _ready():
 		for y in range(trees_size.y):
 			trees[x].append(null)
 	ready_to_clear_plot = false
+	watering_time = false
 
 #handles removing and planting of trees
 func _plant_tree(pos_x,pos_y,plot_x,plot_y):
@@ -70,6 +72,10 @@ func _new_plot():
 	else:
 		free_tree = true
 		$Farm.clearing_time = true
+		
+func _water_tree():
+	watering_time = true
+	print("watering time")
 	
 	
 	

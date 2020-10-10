@@ -16,6 +16,7 @@ scale = Vector2( 1e-05, 1e-05 )
 [connection signal="new_farm" from="Farm" to="PlantingNotifier" method="show_message"]
 [connection signal="plant" from="Farm" to="." method="_plant_tree"]
 [connection signal="plot_clicked" from="Farm" to="PlantingNotifier" method="show_message"]
+[connection signal="tree_control" from="Farm" to="PlantingNotifier" method="_open_tree_control_menu"]
 [connection signal="tree_removed" from="Farm" to="PlantingNotifier" method="show_message"]
 [connection signal="clear" from="PlantingNotifier" to="." method="_new_farm"]
 [connection signal="clear_single" from="PlantingNotifier" to="." method="_new_plot"]
@@ -24,3 +25,4 @@ scale = Vector2( 1e-05, 1e-05 )
 [connection signal="plant_fire" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_magma" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_water" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="water_tree" from="PlantingNotifier" to="." method="_water_tree"]
