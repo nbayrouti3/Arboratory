@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://water1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://seed1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://dropZone.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Images/Art/SamplePlant.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,7 +12,6 @@ position = Vector2( 519.163, 221 )
 [node name="tree1" type="Sprite" parent="dropZone"]
 visible = false
 position = Vector2( -3.74542, -3.7455 )
-texture = ExtResource( 4 )
 
 [node name="seed1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 163.315, 218.753 )

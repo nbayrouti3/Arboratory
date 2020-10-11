@@ -8,6 +8,8 @@ var dialogue = [
 
 var dialogue_index = 0
 signal endSequence
+signal byeButtons
+signal goodChoice
 
 func _ready():
 	set_bbcode(dialogue[dialogue_index])
@@ -48,6 +50,8 @@ func _input(event):
 
 func _on_Button_pressed():
 	show() # Replace with function body.
+	emit_signal("goodChoice")
+	emit_signal("byeButtons")
 
 
 func _on_Timer2_timeout():

@@ -14,6 +14,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _on_Button_pressed():
+	show() # Replace with function body.
+
 
 
 func _on_RichTextLabel_releaseTheButtons():
@@ -24,4 +27,10 @@ func _toggled(_button_pressed):
 
 
 func _on_angry_byeButtons():
-	hide() # Replace with function body.
+	queue_free() # Replace with function body.
+	
+
+
+
+func _on_Happy_byeButtons():
+	queue_free() # Replace with function body.

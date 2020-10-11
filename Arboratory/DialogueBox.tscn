@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Timer3.gd" type="Script" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Sprite.gd" type="Script" id=9]
+[ext_resource path="res://RichTextLabel2.gd" type="Script" id=11]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 3, 136 )
@@ -101,20 +102,33 @@ script = ExtResource( 7 )
 position = Vector2( 130, -66 )
 texture = ExtResource( 8 )
 script = ExtResource( 9 )
-[connection signal="releaseTheButtons" from="RichTextLabel" to="Button2" method="_on_RichTextLabel_releaseTheButtons"]
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 238.0
+margin_top = -108.0
+margin_right = 313.0
+margin_bottom = -52.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="releaseTheButtons" from="RichTextLabel" to="Button" method="_on_RichTextLabel_releaseTheButtons"]
+[connection signal="releaseTheButtons" from="RichTextLabel" to="Button2" method="_on_RichTextLabel_releaseTheButtons"]
 [connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Button" to="RichTextLabel" method="_on_Button_pressed"]
-[connection signal="pressed" from="Button" to="Timer2" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="Happy" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="Timer2" method="_on_Button_pressed"]
 [connection signal="button_up" from="Button2" to="Button2" method="_on_Button2_button_up"]
-[connection signal="pressed" from="Button2" to="angry" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="angry" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button2" to="Timer3" method="_on_Button2_pressed"]
+[connection signal="byeButtons" from="Happy" to="Button" method="_on_Happy_byeButtons"]
+[connection signal="byeButtons" from="Happy" to="Button2" method="_on_Happy_byeButtons"]
 [connection signal="endSequence" from="Happy" to="Sprite" method="_on_Happy_endSequence"]
-[connection signal="byeButtons" from="angry" to="Button2" method="_on_angry_byeButtons"]
+[connection signal="goodChoice" from="Happy" to="RichTextLabel2" method="_on_Happy_goodChoice"]
 [connection signal="byeButtons" from="angry" to="Button" method="_on_angry_byeButtons"]
+[connection signal="byeButtons" from="angry" to="Button2" method="_on_angry_byeButtons"]
 [connection signal="endSequence" from="angry" to="Sprite" method="_on_angry_endSequence"]
 [connection signal="timeout" from="Timer2" to="Happy" method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="angry" method="_on_Timer3_timeout"]

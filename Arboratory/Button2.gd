@@ -24,12 +24,12 @@ func _on_RichTextLabel_releaseTheButtons():
 #	else:
 #		hide()
 
-func _pressed():
-	hide()
 
 
-func _on_Button2_button_up():
-	hide() # Replace with function body.
+
 
 func _on_angry_byeButtons():
-	hide()
+	queue_free()
+	
+func _on_Happy_byeButtons():
+	queue_free()
