@@ -6,6 +6,7 @@ signal plot_clicked
 signal plant
 signal new_farm
 signal tree_removed
+signal tree_control
 
 var tile_size = get_cell_size()
 var farm_size = Vector2(7,7)
@@ -67,8 +68,9 @@ func _input(event):
 				
 					if remove_tree == true:
 						#remove single tree
+						if farm[plot_x][plot_y] != false:
+							emit_signal("tree_removed","Tree Removed")
 						farm[plot_x][plot_y] = false
-						emit_signal("tree_removed","Tree Removed")
 						remove_tree = false
 						
 				elif farm[plot_x][plot_y] == false:
@@ -80,7 +82,8 @@ func _input(event):
 			
 				else:
 				#a tree is already in this plot
-					spot = "A tree is already here"
+					spot = "A tree is already here. Menu Open"
 					emit_signal("plot_clicked",spot)
+					emit_signal("tree_control")
 		
 		

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water_tree.png-e65a2dae52e1d9a5eccbfa08fa18ea0c.stex"
+path="res://.import/snoop_dogg_tree.png-828833272ae2e905aede3e874d8d61cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://water_tree.png"
-dest_files=[ "res://.import/water_tree.png-e65a2dae52e1d9a5eccbfa08fa18ea0c.stex" ]
+source_file="res://Assets/Plants/trees/snoop_dogg_tree.png"
+dest_files=[ "res://.import/snoop_dogg_tree.png-828833272ae2e905aede3e874d8d61cd.stex" ]
 
 [params]
 

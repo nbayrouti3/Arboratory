@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/magma_tree.png-d5b7d2913b91dbd85d895231a4743980.stex"
+path="res://.import/earth_tree.png-46fc054b4431f0f39ba404f2b7ea0b75.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://magma_tree.png"
-dest_files=[ "res://.import/magma_tree.png-d5b7d2913b91dbd85d895231a4743980.stex" ]
+source_file="res://Assets/Plants/trees/earth_tree.png"
+dest_files=[ "res://.import/earth_tree.png-46fc054b4431f0f39ba404f2b7ea0b75.stex" ]
 
 [params]
 
