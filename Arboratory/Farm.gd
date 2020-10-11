@@ -68,8 +68,9 @@ func _input(event):
 				
 					if remove_tree == true:
 						#remove single tree
+						if farm[plot_x][plot_y] != false:
+							emit_signal("tree_removed","Tree Removed")
 						farm[plot_x][plot_y] = false
-						emit_signal("tree_removed","Tree Removed")
 						remove_tree = false
 						
 				elif farm[plot_x][plot_y] == false:

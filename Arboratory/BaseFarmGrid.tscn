@@ -24,5 +24,6 @@ scale = Vector2( 1e-05, 1e-05 )
 [connection signal="plant_earth" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_fire" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_magma" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="plant_snoop" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_water" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="water_tree" from="PlantingNotifier" to="." method="_water_tree"]

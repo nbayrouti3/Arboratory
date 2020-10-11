@@ -56,6 +56,8 @@ func _select_tree(type):
 		anim = "air_tree"
 	if type == "magma_tree":
 		anim = "magma_tree"
+	if type == "snoop_tree":
+		anim = "snoop_tree"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false
