@@ -16,13 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Arboratory"
-run/main_scene="res://Planting.tscn"
+run/main_scene="res://Sample.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 ImportData="*res://importData.gd"
-PauseMenu="*res://PauseMenu.tscn"
 
 [input]
 
