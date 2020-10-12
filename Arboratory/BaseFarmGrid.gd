@@ -25,6 +25,7 @@ func _ready():
 
 #handles removing and planting of trees
 func _plant_tree(pos_x,pos_y,plot_x,plot_y):
+	print("_plant_tree")
 	if free_tree == true:
 		if trees[plot_x][plot_y]!= null:
 			ready_to_clear_plot = true
@@ -34,6 +35,13 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			free_tree = false
 			$Farm.clearing_time = false
 			ready_to_clear_plot = false
+	
+	if watering_time:
+		if trees[plot_x][plot_y]!= null:
+			trees[plot_x][plot_y]._water_tree()
+			watering_time = false
+			$Farm.watering_time = false
+			print("water_tree")
 	
 	else:
 		var tree = Tree.instance()
@@ -76,19 +84,10 @@ func _new_plot():
 		$Farm.clearing_time = true
 		
 func _water_tree():
+	$Farm.watering_time = true
 	watering_time = true
 	print("watering time")
-	
-	
-	
-	
-	
-	
-	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
 
 
 
