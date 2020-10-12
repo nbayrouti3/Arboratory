@@ -36,6 +36,7 @@ the health deduction timer.
 func _water_tree():
 	print("I was watered!")
 	last_watering_time = OS.get_unix_time()
+	health = 100;
 	$healthDeduction.stop()
 
 """
