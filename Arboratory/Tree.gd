@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 extends Area2D
-=======
-extends Node
+
 """
 Variables relating to water functionality.
 """
@@ -10,28 +8,12 @@ const TIME_UNTIL_DRY = 10
 var last_watering_time = OS.get_unix_time()
 var health = 100
 var healthDeduction = 1
->>>>>>> 7e0b6f3fe790eaa6338a355cf405ce23c93ccc36
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-<<<<<<< HEAD
-#choose tree you want to plant
-func _choose_tree(type):
-	$AnimatedSprite.animation = type
 
-#removes selected tree	
-func _remove_tree():
-	queue_free()
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-=======
 func _process(delta):
 	"""
 	Checks to see whether enough time has passed in real life for plants to 
@@ -51,7 +33,7 @@ func deduct_health(healthDeduction):
 When the water button is pressed, resets countdown clock for water and stops
 the health deduction timer.
 """
-func _on_waterButton_pressed():
+func _water_tree():
 	print("I was watered!")
 	last_watering_time = OS.get_unix_time()
 	$healthDeduction.stop()
@@ -63,4 +45,12 @@ func _on_healthDeduction_timeout():
 	health -= 1
 	print("I need water!")
 	print("health: ", health)
->>>>>>> 7e0b6f3fe790eaa6338a355cf405ce23c93ccc36
+
+#choose tree you want to plant
+func _choose_tree(type):
+	$AnimatedSprite.animation = type
+
+#removes selected tree	
+func _remove_tree():
+	queue_free()
+	

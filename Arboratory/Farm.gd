@@ -15,6 +15,7 @@ var spot
 var remove_tree
 var planting_ready
 var clearing_time
+var watering_time
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +42,8 @@ func _clear_plots():
 #clears single plot
 func _clear_single_plot():
 	remove_tree = true
+	
+
 
 	
 
@@ -73,6 +76,9 @@ func _input(event):
 						farm[plot_x][plot_y] = false
 						remove_tree = false
 						
+				elif watering_time:
+					emit_signal("plant", tree_placement_x,tree_placement_y,plot_x,plot_y)
+					
 				elif farm[plot_x][plot_y] == false:
 					#plant a new tree
 					spot = "Tree planted in plot: " + str(plot_x) + "," + str(plot_y)
