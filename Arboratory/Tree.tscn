@@ -20,6 +20,11 @@ animations = [ {
 "name": "air_tree",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "earth_tree",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "snoop_tree",
@@ -34,14 +39,11 @@ animations = [ {
 "loop": true,
 "name": "magma_tree",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "earth_tree",
-"speed": 5.0
 } ]
 
-[node name="Tree" type="Area2D"]
+[node name="Tree" type="Area2D" groups=[
+"trees",
+]]
 script = ExtResource( 1 )
 
 [node name="healthDeduction" type="Timer" parent="."]

@@ -36,12 +36,15 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			$Farm.clearing_time = false
 			ready_to_clear_plot = false
 	
-	if watering_time:
+	elif watering_time:
 		if trees[plot_x][plot_y]!= null:
 			trees[plot_x][plot_y]._water_tree()
 			watering_time = false
 			$Farm.watering_time = false
 			print("water_tree")
+		else:
+			watering_time = false
+			$Farm.watering_time = false
 	
 	else:
 		var tree = Tree.instance()
