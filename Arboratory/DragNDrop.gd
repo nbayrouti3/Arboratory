@@ -11,6 +11,7 @@ onready var dragNode = get_parent()
 signal clicked
 signal planted
 signal watered
+signal unlocked
 var previous_mouse_position = Vector2()
 var is_dragging = false
 var seeded = false
@@ -70,8 +71,10 @@ It then will find the seed location in the dictionary and change the art.
 func changeSeed(which):
 	var seedData = ImportData.seed_data
 	for key in seedData:
-		if seedData[str(key)]["seedImage"] == which.get_node("SeedImage").texture:
+		if seedData[key]["seedImage"] == which.get_node("SeedImage").texture:
 			which.get_node("SeedImage").texture = load(seedData[key]["sapplingImage"])
+			print(self)
+			emit_signal("unlocked", key)
 		
 """
 When clicked on,
@@ -112,32 +115,3 @@ func _input(event):
 	if is_dragging and event is InputEventMouseMotion:
 		position += event.position - previous_mouse_position
 		previous_mouse_position = event.position
-
-
-
-"""
-Here is the Godot Dictionary for all the seed image and locations. (Temporary Location)
-"""
-
-"""
-var seedData = {
-	"1" : {
-		"seedImage" : preload("res://Assets/Plants/seeds/SampleSeed.png"),
-		"sapplingImage" : "res://Assets/Art/SamplePlant.png",
-		"treeImage" : "",
-		"Description": ""
-	},
-	"2" : {
-		"seedImage" : preload("res://Assets/Plants/seeds/seed-laventree.png"),
-		"sapplingImage" : "res://Assets/Plants/trees/laventree_owo.png",
-		"treeImage" : ""
-		},
-	"3": {
-		"seedImage" : preload("res://Assets/Art/Sample Water.png"),
-		"sapplingImage" : "",
-		"treeImage" : ""
-		}
-}
-
-"""
-

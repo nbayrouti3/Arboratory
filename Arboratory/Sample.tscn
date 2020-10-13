@@ -17,4 +17,13 @@ position = Vector2( -3.74542, -3.7455 )
 position = Vector2( 163.315, 218.753 )
 
 [node name="water1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 806.089, 120.614 )
+
+position = Vector2( 557.16, 231.171 )
+
+[node name="draggable" parent="." instance=ExtResource( 7 )]
+position = Vector2( 169.525, 440.497 )
+
+[node name="aSeeds" parent="." instance=ExtResource( 7 )]
+position = Vector2( 136.154, 125.475 )
+[connection signal="area_shape_entered" from="water1" to="dropZone" method="_on_water1_area_shape_entered"]
+

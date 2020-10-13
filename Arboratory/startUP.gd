@@ -8,3 +8,8 @@ func _ready():
 	$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/Lighting_seed.png")
 	pass 
 
+
+
+func _on_treeDex_button_pressed():
+	$treeDex.show()
+	get_tree().paused = true
