@@ -8,7 +8,7 @@ var diaStat = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_bbcode("Love feelings uwu: " + str(diaStat)) # Replace with function body.
+	set_bbcode("Love feelings: " + str(diaStat)) # Replace with function body.
 
 
 
@@ -19,5 +19,5 @@ func _ready():
 
 func _on_Happy_goodChoice():
 	diaStat = diaStat + 1
-	set_bbcode("Love feelings uwu: " + str(diaStat))
+	set_bbcode("Love feelings: " + str(diaStat))
 	
