@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://PlantingNotifier.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 43
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 43
+font_data = ExtResource( 1 )
+
+[node name="PlantingNotifier" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="PlantingNotifierMessage" type="Label" parent="."]
+margin_right = 186.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 1 )
+text = "
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaterTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+text = "Water Tree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Fire Tree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EarthTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Earth Tree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AirTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "AirTree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagmaTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Magma Tree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SnoopTree" type="Button" parent="."]
+margin_right = 83.0
+margin_bottom = 20.0
+text = "Snoop Tree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearPlots" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Clear Plots"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearSinglePlot" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Clear Single Plot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Water" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Water"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="WaterTree" to="." method="_on_WaterTree_pressed"]
+[connection signal="pressed" from="FireTree" to="." method="_on_FireTree_pressed"]
+[connection signal="pressed" from="EarthTree" to="." method="_on_EarthTree_pressed"]
+[connection signal="pressed" from="AirTree" to="." method="_on_AirTree_pressed"]
+[connection signal="pressed" from="MagmaTree" to="." method="_on_MagmaTree_pressed"]
+[connection signal="pressed" from="SnoopTree" to="." method="_on_SnoopTree_pressed"]
+[connection signal="pressed" from="ClearPlots" to="." method="_on_ClearPlots_pressed"]
+[connection signal="pressed" from="ClearSinglePlot" to="." method="_on_ClearSinglePlot_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]
+[connection signal="pressed" from="Water" to="." method="_on_Water_pressed"]

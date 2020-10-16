@@ -19,10 +19,6 @@ config/name="Arboratory"
 run/main_scene="res://Sample.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-ImportData="*res://importData.gd"
-
 [input]
 
 ui_accept={
