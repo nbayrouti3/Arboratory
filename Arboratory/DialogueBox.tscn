@@ -1,0 +1,134 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=1]
+[ext_resource path="res://Button.gd" type="Script" id=2]
+[ext_resource path="res://Button2.gd" type="Script" id=3]
+[ext_resource path="res://angry [.gd" type="Script" id=4]
+[ext_resource path="res://Happy.gd" type="Script" id=5]
+[ext_resource path="res://Timer2.gd" type="Script" id=6]
+[ext_resource path="res://Timer3.gd" type="Script" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Sprite.gd" type="Script" id=9]
+[ext_resource path="res://RichTextLabel2.gd" type="Script" id=11]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 3, 136 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 0.00392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 331.0
+margin_bottom = 84.0
+bbcode_enabled = true
+bbcode_text = "Hi there! This is placeholder text."
+text = "Hi there! This is placeholder text."
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 41.0
+margin_top = 58.0
+margin_right = 91.0
+margin_bottom = 78.0
+text = "Hi"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 167.0
+margin_top = 58.0
+margin_right = 217.0
+margin_bottom = 78.0
+text = ">:("
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Happy" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 331.0
+margin_bottom = 84.0
+bbcode_enabled = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="angry" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 27.0
+margin_right = 331.0
+margin_bottom = 84.0
+bbcode_enabled = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.05
+script = ExtResource( 6 )
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.05
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 130, -66 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 238.0
+margin_top = -108.0
+margin_right = 313.0
+margin_bottom = -52.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="releaseTheButtons" from="RichTextLabel" to="Button" method="_on_RichTextLabel_releaseTheButtons"]
+[connection signal="releaseTheButtons" from="RichTextLabel" to="Button2" method="_on_RichTextLabel_releaseTheButtons"]
+[connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="Timer2" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="RichTextLabel" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="Happy" method="_on_Button_pressed"]
+[connection signal="button_up" from="Button2" to="Button2" method="_on_Button2_button_up"]
+[connection signal="pressed" from="Button2" to="Timer3" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="angry" method="_on_Button2_pressed"]
+[connection signal="byeButtons" from="Happy" to="Button" method="_on_Happy_byeButtons"]
+[connection signal="byeButtons" from="Happy" to="Button2" method="_on_Happy_byeButtons"]
+[connection signal="endSequence" from="Happy" to="Sprite" method="_on_Happy_endSequence"]
+[connection signal="goodChoice" from="Happy" to="RichTextLabel2" method="_on_Happy_goodChoice"]
+[connection signal="byeButtons" from="angry" to="Button" method="_on_angry_byeButtons"]
+[connection signal="byeButtons" from="angry" to="Button2" method="_on_angry_byeButtons"]
+[connection signal="endSequence" from="angry" to="Sprite" method="_on_angry_endSequence"]
+[connection signal="timeout" from="Timer2" to="Happy" method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="angry" method="_on_Timer3_timeout"]
