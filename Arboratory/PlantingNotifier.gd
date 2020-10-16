@@ -9,6 +9,7 @@ signal plant_snoop
 signal clear
 signal clear_single
 signal water_tree
+signal close_menu
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,6 +47,7 @@ func _ready():
 #updates the planting message
 func show_message(text):
 	$PlantingNotifierMessage.text = text
+	
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -126,6 +128,7 @@ func _open_tree_control_menu():
 	$ClearSinglePlot.show()
 	$Return.show()
 	$Water.show()
+	
 
 
 func _on_Return_pressed():
@@ -139,6 +142,7 @@ func _on_Return_pressed():
 	$ClearSinglePlot.hide()
 	$Return.hide()
 	$Water.hide()
+	emit_signal("close_menu")
 
 
 func _on_Water_pressed():
