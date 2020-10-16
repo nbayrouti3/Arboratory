@@ -2,9 +2,13 @@
 
 [ext_resource path="res://water.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dropZone.tscn" type="PackedScene" id=3]
+
+
 [ext_resource path="res://Assets/Art/SamplePlant.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Plants/trees/laventree_owo.png" type="Texture" id=6]
 [ext_resource path="res://aSeeds.tscn" type="PackedScene" id=7]
+
+
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,11 +20,18 @@ visible = false
 position = Vector2( -3.74542, -3.7455 )
 texture = ExtResource( 4 )
 
+
+
+[node name="seed1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 163.315, 218.753 )
+
 [node name="lavenTree" type="Sprite" parent="dropZone"]
 visible = false
 position = Vector2( -5.88621, -13.4384 )
 scale = Vector2( 0.333629, 0.333629 )
 texture = ExtResource( 6 )
+
+
 
 [node name="water1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 557.16, 231.171 )
