@@ -3,10 +3,12 @@
 [ext_resource path="res://water1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://seed1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://dropZone.tscn" type="PackedScene" id=3]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/laventree_owo.png-bf1b5c3b8db4ce2e3295dabf85705797.stex"
+<<<<<<< HEAD
+=======
+[ext_resource path="res://Assets/Art/SamplePlant.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Plants/trees/laventree_owo.png" type="Texture" id=6]
+[ext_resource path="res://aSeeds.tscn" type="PackedScene" id=7]
+>>>>>>> parent of 111ede0... TreeDex v0.9.2
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,8 +19,16 @@ position = Vector2( 519.163, 221 )
 visible = false
 position = Vector2( -3.74542, -3.7455 )
 
+<<<<<<< HEAD
 [node name="seed1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 163.315, 218.753 )
+=======
+[node name="lavenTree" type="Sprite" parent="dropZone"]
+visible = false
+position = Vector2( -5.88621, -13.4384 )
+scale = Vector2( 0.333629, 0.333629 )
+texture = ExtResource( 6 )
+>>>>>>> parent of 111ede0... TreeDex v0.9.2
 
 [node name="water1" parent="." instance=ExtResource( 1 )]
 

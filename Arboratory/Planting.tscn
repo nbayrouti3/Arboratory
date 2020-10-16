@@ -29,52 +29,12 @@ __meta__ = {
 [node name="aSeeds" parent="Seeds" groups=[
 "seedGroup",
 ] instance=ExtResource( 7 )]
-position = Vector2( 965.961, 515.282 )
-
-[node name="aSeeds5" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 868.38, 516.696 )
-
-[node name="aSeeds6" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 775.042, 518.11 )
-
-[node name="aSeeds7" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 967.375, 376.689 )
-
-[node name="aSeeds8" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 868.38, 373.861 )
-
-[node name="aSeeds9" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 777.87, 371.032 )
-
-[node name="aSeeds10" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 280.067, 371.032 )
-
-[node name="aSeeds11" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 181.072, 373.861 )
-
-[node name="aSeeds12" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 82.0769, 369.618 )
+position = Vector2( 220.617, 154.149 )
 
 [node name="aSeeds2" parent="Seeds" groups=[
 "seedGroup",
 ] instance=ExtResource( 7 )]
-position = Vector2( 180.45, 518.9 )
+position = Vector2( 223.287, 345.031 )
 
 [node name="SeedImage" parent="Seeds/aSeeds2" index="1"]
 scale = Vector2( 0.137, 0.137 )
@@ -90,7 +50,7 @@ scale = Vector2( 0.163, 0.163 )
 [node name="aSeeds4" parent="Seeds" groups=[
 "seedGroup",
 ] instance=ExtResource( 7 )]
-position = Vector2( 280.414, 518.996 )
+position = Vector2( 814.621, 503.877 )
 
 [node name="SeedImage" parent="Seeds/aSeeds4" index="1"]
 scale = Vector2( 0.061, 0.061 )
