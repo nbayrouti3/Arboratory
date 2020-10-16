@@ -7,6 +7,7 @@ var planted = 0
 var whichSeed
 signal seeded
 
+
 #Sets all the connected nodes up
 
 func _ready():

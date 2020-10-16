@@ -7,6 +7,7 @@ var free_tree
 var trees = []
 var trees_size = Vector2(7,7)
 var ready_to_clear_plot
+var watering_time
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,9 +21,11 @@ func _ready():
 		for y in range(trees_size.y):
 			trees[x].append(null)
 	ready_to_clear_plot = false
+	watering_time = false
 
 #handles removing and planting of trees
 func _plant_tree(pos_x,pos_y,plot_x,plot_y):
+	print("_plant_tree")
 	if free_tree == true:
 		if trees[plot_x][plot_y]!= null:
 			ready_to_clear_plot = true
@@ -32,6 +35,16 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			free_tree = false
 			$Farm.clearing_time = false
 			ready_to_clear_plot = false
+	
+	elif watering_time:
+		if trees[plot_x][plot_y]!= null:
+			trees[plot_x][plot_y]._water_tree()
+			watering_time = false
+			$Farm.watering_time = false
+			print("water_tree")
+		else:
+			watering_time = false
+			$Farm.watering_time = false
 	
 	else:
 		var tree = Tree.instance()
@@ -54,6 +67,8 @@ func _select_tree(type):
 		anim = "air_tree"
 	if type == "magma_tree":
 		anim = "magma_tree"
+	if type == "snoop_tree":
+		anim = "snoop_tree"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false
@@ -70,17 +85,12 @@ func _new_plot():
 	else:
 		free_tree = true
 		$Farm.clearing_time = true
-	
-	
-	
-	
-	
-	
-	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		
+func _water_tree():
+	$Farm.watering_time = true
+	watering_time = true
+	print("watering time")
+
 
 
 

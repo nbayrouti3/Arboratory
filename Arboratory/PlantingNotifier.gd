@@ -5,8 +5,10 @@ signal plant_water
 signal plant_air
 signal plant_magma
 signal plant_earth
+signal plant_snoop
 signal clear
 signal clear_single
+signal water_tree
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,12 +26,21 @@ func _ready():
 	$AirTree.add_font_override("font",dynamic_font)
 	$MagmaTree.set_position(Vector2(900,280))
 	$MagmaTree.add_font_override("font",dynamic_font)
-	$ClearPlots.set_position(Vector2(900,340))
+	$SnoopTree.set_position(Vector2(900,340))
+	$SnoopTree.add_font_override("font",dynamic_font)
+	$ClearPlots.set_position(Vector2(900,400))
 	$ClearPlots.add_font_override("font",dynamic_font)
-	$ClearSinglePlot.set_position(Vector2(900,400))
+	$ClearSinglePlot.set_position(Vector2(900,460))
 	$ClearSinglePlot.add_font_override("font",dynamic_font)
+	$ClearSinglePlot.hide()
 	$PlantingNotifierMessage.set_position(Vector2(1100,600))
 	$PlantingNotifierMessage.add_font_override("font",dynamic_font)
+	$Return.set_position(Vector2(900,520))
+	$Return.add_font_override("font",dynamic_font)
+	$Return.hide()
+	$Water.set_position(Vector2(900,280))
+	$Water.add_font_override("font",dynamic_font)
+	$Water.hide()
 	show_message("New Farm")
 	
 #updates the planting message
@@ -86,6 +97,14 @@ func _on_MagmaTree_pressed():
 	$WaterTree.show()
 	$FireTree.show()
 	emit_signal("plant_magma","magma_tree")
+	
+func _on_SnoopTree_pressed():
+	$AirTree.show()
+	$MagmaTree.show()
+	$EarthTree.show()
+	$WaterTree.show()
+	$FireTree.show()
+	emit_signal("plant_snoop","snoop_tree")
 
 #clear all plots
 func _on_ClearPlots_pressed():
@@ -94,3 +113,36 @@ func _on_ClearPlots_pressed():
 #clear single plot
 func _on_ClearSinglePlot_pressed():
 	emit_signal("clear_single")
+
+func _open_tree_control_menu():
+	print("menu opened")
+	$AirTree.hide()
+	$WaterTree.hide()
+	$EarthTree.hide()
+	$FireTree.hide()
+	$MagmaTree.hide()
+	$SnoopTree.hide()
+	$ClearPlots.hide()
+	$ClearSinglePlot.show()
+	$Return.show()
+	$Water.show()
+
+
+func _on_Return_pressed():
+	$AirTree.show()
+	$EarthTree.show()
+	$WaterTree.show()
+	$FireTree.show()
+	$MagmaTree.show()
+	$SnoopTree.show()
+	$ClearPlots.show()
+	$ClearSinglePlot.hide()
+	$Return.hide()
+	$Water.hide()
+
+
+func _on_Water_pressed():
+	emit_signal("water_tree")
+
+
+
