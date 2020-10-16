@@ -46,6 +46,16 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			watering_time = false
 			$Farm.watering_time = false
 	
+	elif trees[plot_x][plot_y] != null:
+		if $Farm.open_menu == true:
+			for x in range(trees_size.x):
+				for y in range(trees_size.y):
+					if trees[x][y] != null:
+						trees[x][y]._hide_stats()
+						print("tree here")
+			trees[plot_x][plot_y]._show_stats()
+		else:
+			trees[plot_x][plot_y]._hide_stats()
 	else:
 		var tree = Tree.instance()
 		add_child(tree)
@@ -53,6 +63,8 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 		tree.position.x = pos_x
 		tree.position.y = pos_y
 		tree._choose_tree(anim)
+	
+
 		
 		
 #handles choosing the tree you want to plant
