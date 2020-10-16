@@ -19,10 +19,6 @@ config/name="Arboratory"
 run/main_scene="res://Sample.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-ImportData="*res://importData.gd"
-
 [input]
 
 ui_accept={
@@ -52,6 +48,7 @@ ui_click={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
