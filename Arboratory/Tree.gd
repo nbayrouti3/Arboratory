@@ -12,6 +12,10 @@ var treeName
 var wetness = "Wet"
 var time_passed_since_watering = OS.get_unix_time() - last_watering_time
 
+var tree_x_index
+var tree_y_index
+signal _water_tree_from_tree
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var dynamic_font = DynamicFont.new()
@@ -32,6 +36,7 @@ func _ready():
 	$TreeStats/TreeSpecialProperties.set_position(Vector2(1160,110))
 	$TreeStats/TreeSpecialProperties.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSpecialProperties.hide()
+	
 
 
 func _process(delta):
@@ -112,4 +117,14 @@ func _choose_tree(type):
 #removes selected tree	
 func _remove_tree():
 	queue_free()
+	
+func _special_power():
+	if treeName == "water_tree":
+		"""
+		Water all the trees in the surrounding 3x3 grid.
+		"""
+		for x in range(0, tree_x_index + 2):
+			for y in range(0, tree_y_index + 2):
+				emit_signal("_water_tree_from_tree", x, y)
+	pass
 	

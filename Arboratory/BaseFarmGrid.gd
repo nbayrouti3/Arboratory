@@ -16,16 +16,28 @@ func _ready():
 	$Farm.position.y = 0
 	$Farm.scale.x = 2
 	$Farm.scale.y = 2
+	
 	for x in range(trees_size.x):
 		trees.append([])
 		for y in range(trees_size.y):
 			trees[x].append(null)
 	ready_to_clear_plot = false
 	watering_time = false
+	
+func _process(delta):
+	"""
+	Loop through tree array and have every tree execute their special power.
+	For now, just the rain tree (can water other trees).
+	"""
+	for x in trees_size.x:
+		for y in trees_size.y:
+			#For each tree, call special power
+			if trees[x][y] != null:
+				trees[x][y]._special_power()
+	pass
 
 #handles removing and planting of trees
 func _plant_tree(pos_x,pos_y,plot_x,plot_y):
-	print("_plant_tree")
 	if free_tree == true:
 		if trees[plot_x][plot_y]!= null:
 			ready_to_clear_plot = true
@@ -60,9 +72,12 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 		var tree = Tree.instance()
 		add_child(tree)
 		trees[plot_x][plot_y] = tree
+		tree.tree_x_index = plot_x
+		tree.tree_y_index = plot_y
 		tree.position.x = pos_x
 		tree.position.y = pos_y
 		tree._choose_tree(anim)
+		tree.connect("_water_tree_from_tree", self, "_water_tree_from_tree")
 	
 
 		
@@ -102,6 +117,18 @@ func _water_tree():
 	$Farm.watering_time = true
 	watering_time = true
 	print("watering time")
+	
+"""
+When a tree emits this signal, waters the tree in the specific plot.
+"""	
+func _water_tree_from_tree(plot_x, plot_y):
+	if (plot_x < trees_size.x and plot_y < trees_size.y \
+		and trees[plot_x][plot_y] != null):
+			trees[plot_x][plot_y]._water_tree()
+			watering_time = false
+			$Farm.watering_time = false
+	
+	
 
 
 
