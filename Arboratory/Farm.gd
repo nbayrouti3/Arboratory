@@ -16,6 +16,8 @@ var remove_tree
 var planting_ready
 var clearing_time
 var watering_time
+var open_menu
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +28,7 @@ func _ready():
 	planting_ready = false
 	remove_tree = false
 	clearing_time = false
+	open_menu = false
 
 #user is ready to plant a tree
 func _ready_to_plant():
@@ -43,7 +46,8 @@ func _clear_plots():
 func _clear_single_plot():
 	remove_tree = true
 	
-
+func _close_menu():
+	open_menu = false
 
 	
 
@@ -85,11 +89,15 @@ func _input(event):
 					farm[plot_x][plot_y] = true
 					emit_signal("plot_clicked",spot)
 					emit_signal("plant",tree_placement_x,tree_placement_y,plot_x,plot_y)
+					
 			
 				else:
 				#a tree is already in this plot
 					spot = "A tree is already here. Menu Open"
 					emit_signal("plot_clicked",spot)
 					emit_signal("tree_control")
+					open_menu = true
+					emit_signal("plant", tree_placement_x,tree_placement_y,plot_x,plot_y)
+					
 		
 		

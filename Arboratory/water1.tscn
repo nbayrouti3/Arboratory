@@ -2,11 +2,11 @@
 
 [ext_resource path="res://DragNDrop.gd" type="Script" id=1]
 
-[ext_resource path="res://Assets/Plants/seeds/SampleSeed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Sample Water.png" type="Texture" id=2]
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 36.0809, 61.675 )
+extents = Vector2( 62.849, 60.7133 )
 
 [node name="draggable" type="Area2D" groups=[
 "draggable",
@@ -17,5 +17,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.80194, -7.78696 )
 texture = ExtResource( 2 )
 [connection signal="input_event" from="." to="." method="_on_draggable_input_event"]

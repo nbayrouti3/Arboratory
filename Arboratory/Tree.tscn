@@ -20,28 +20,30 @@ animations = [ {
 "name": "air_tree",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "snoop_tree",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "fire_tree",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "magma_tree",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "earth_tree",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "snoop_tree",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "magma_tree",
+"speed": 5.0
 } ]
 
-[node name="Tree" type="Area2D"]
+[node name="Tree" type="Area2D" groups=[
+"trees",
+]]
 script = ExtResource( 1 )
 
 [node name="healthDeduction" type="Timer" parent="."]
@@ -50,4 +52,41 @@ wait_time = 5.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "snoop_tree"
+
+[node name="TreeStats" type="CanvasLayer" parent="."]
+
+[node name="TreeStatPanel" type="Panel" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeHealth" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeName" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeWaterStatus" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeSpecialProperties" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="healthDeduction" to="." method="_on_healthDeduction_timeout"]

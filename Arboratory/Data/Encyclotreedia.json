@@ -17,7 +17,7 @@
 	},
 	"2": {
         "playerGot" : "false",
-        "treeName": "",
+        "treeName": "Lavender Tree",
 		"seedImage": "res://Assets/Plants/seeds/seed-laventree.png",
 		"sapplingImage": "res://Assets/Plants/trees/laventree_owo.png",
 		"treeImage": ""   ,
@@ -25,7 +25,7 @@
 	},
 	"3": {
         "playerGot" : "false",
-        "treeName": "",
+        "treeName": "Bunny Tree",
 		"seedImage": "res://Assets/Plants/seeds/bunny_seed.png",
 		"sapplingImage": "res://Assets/Plants/trees/bunny_sapling.png",
 		"treeImage": "",
@@ -33,7 +33,7 @@
 	},
 	"4": {
         "playerGot" : "false",
-        "treeName": "",
+        "treeName": "Lighting Tree",
 		"seedImage": "res://Assets/Plants/seeds/Lighting_seed.png",
 		"sapplingImage": "res://Assets/Plants/trees/Lighting_sapling.png",
 		"treeImage": "",
