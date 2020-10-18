@@ -116,13 +116,16 @@ __meta__ = {
 [connection signal="releaseTheButtons" from="RichTextLabel" to="Button2" method="_on_RichTextLabel_releaseTheButtons"]
 [connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]
 
+[connection signal="pressed" from="Button" to="Timer2" method="_on_Button_pressed"]
+
 [connection signal="pressed" from="Button" to="RichTextLabel" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="Happy" method="_on_Button_pressed"]
-[connection signal="pressed" from="Button" to="Timer2" method="_on_Button_pressed"]
 [connection signal="button_up" from="Button2" to="Button2" method="_on_Button2_button_up"]
-[connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="Timer3" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button2" to="angry" method="_on_Button2_pressed"]
+
 [connection signal="pressed" from="Button2" to="Timer3" method="_on_Button2_pressed"]
 
 [connection signal="byeButtons" from="Happy" to="Button" method="_on_Happy_byeButtons"]
