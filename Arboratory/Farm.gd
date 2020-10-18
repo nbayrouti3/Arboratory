@@ -13,10 +13,15 @@ var farm_size = Vector2(7,7)
 var farm = []
 var spot
 var remove_tree
+var planting_control
 var planting_ready
 var clearing_time
 var watering_time
 var open_menu
+var plot_x
+var plot_y
+var tree_placement_x
+var tree_placement_y
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +30,7 @@ func _ready():
 		farm.append([])
 		for y in range(farm_size.y):
 			farm[x].append(false)
+	planting_control = false
 	planting_ready = false
 	remove_tree = false
 	clearing_time = false
@@ -32,6 +38,7 @@ func _ready():
 
 #user is ready to plant a tree
 func _ready_to_plant():
+	planting_control = true
 	planting_ready = true
 	
 #clears all farm plots
@@ -48,7 +55,7 @@ func _clear_single_plot():
 	
 func _close_menu():
 	open_menu = false
-
+	emit_signal("plant", tree_placement_x, tree_placement_y, plot_x, plot_y)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,11 +70,11 @@ func _input(event):
 		if event.position.x <896:
 				
 			#checks your ready to alter the farm
-			if planting_ready == true:
-				var plot_x = int((event.position.x)/(64*2))
-				var plot_y = int((event.position.y)/(64*2))
-				var tree_placement_x = ((plot_x+1)*64)+plot_x*64
-				var tree_placement_y = (plot_y-32)+plot_y*128
+			if planting_control == true:
+				plot_x = int((event.position.x)/(64*2))
+				plot_y = int((event.position.y)/(64*2))
+				tree_placement_x = ((plot_x+1)*64)+plot_x*64
+				tree_placement_y = (plot_y-32)+plot_y*128
 				
 				#checks if you want to clear
 				if clearing_time == true:
@@ -83,13 +90,16 @@ func _input(event):
 				elif watering_time:
 					emit_signal("plant", tree_placement_x,tree_placement_y,plot_x,plot_y)
 					
-				elif farm[plot_x][plot_y] == false:
+				elif farm[plot_x][plot_y] == false && planting_ready == true:
 					#plant a new tree
 					spot = "Tree planted in plot: " + str(plot_x) + "," + str(plot_y)
 					farm[plot_x][plot_y] = true
 					emit_signal("plot_clicked",spot)
 					emit_signal("plant",tree_placement_x,tree_placement_y,plot_x,plot_y)
-					
+					planting_ready = false
+				
+				elif farm[plot_x][plot_y] == false && planting_ready == false:
+					print("not ready")
 			
 				else:
 				#a tree is already in this plot
@@ -98,6 +108,6 @@ func _input(event):
 					emit_signal("tree_control")
 					open_menu = true
 					emit_signal("plant", tree_placement_x,tree_placement_y,plot_x,plot_y)
-					
+			
 		
 		

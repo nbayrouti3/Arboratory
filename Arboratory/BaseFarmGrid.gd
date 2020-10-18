@@ -48,6 +48,8 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	
 	elif trees[plot_x][plot_y] != null:
 		if $Farm.open_menu == true:
+			$Inventory/ColorRect.hide()
+			$Inventory/GridContainer.hide()
 			for x in range(trees_size.x):
 				for y in range(trees_size.y):
 					if trees[x][y] != null:
@@ -56,13 +58,17 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			trees[plot_x][plot_y]._show_stats()
 		else:
 			trees[plot_x][plot_y]._hide_stats()
-	else:
+			print("stats hidden")
+	elif $Farm.planting_ready == true:
+		print("new tree incoming")
 		var tree = Tree.instance()
 		add_child(tree)
 		trees[plot_x][plot_y] = tree
 		tree.position.x = pos_x
 		tree.position.y = pos_y
 		tree._choose_tree(anim)
+	else:
+		print("not ready")
 	
 
 		
@@ -102,6 +108,12 @@ func _water_tree():
 	$Farm.watering_time = true
 	watering_time = true
 	print("watering time")
+
+func _open_inventory():
+	$Inventory/ColorRect.show()
+	$Inventory/GridContainer.show()
+	
+
 
 
 
