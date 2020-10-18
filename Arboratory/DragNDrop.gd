@@ -87,7 +87,6 @@ func _on_draggable_input_event(viewport, event, shape_idx):
 	Allows dragging if the user clicks inside
 	the collision shape
 	"""
-	
 	if event.is_action_pressed("ui_touch"):
 		print(event)
 		get_tree().set_input_as_handled()
