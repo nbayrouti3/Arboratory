@@ -92,9 +92,6 @@ scale = Vector2( 0.163, 0.163 )
 ] instance=ExtResource( 7 )]
 position = Vector2( 280.414, 518.996 )
 
-[node name="SeedImage" parent="Seeds/aSeeds4" index="1"]
-scale = Vector2( 0.061, 0.061 )
-
 [node name="treeDex" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
 visible = false
