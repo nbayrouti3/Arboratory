@@ -1,7 +1,5 @@
 extends Area2D
 
-
-
 """
 Variables relating to water functionality.
 """
@@ -12,6 +10,11 @@ var health = 100
 var healthDeduction = 1
 var treeName
 var wetness = "Wet"
+var time_passed_since_watering = OS.get_unix_time() - last_watering_time
+
+var tree_x_index
+var tree_y_index
+signal _water_tree_from_tree
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,22 +36,30 @@ func _ready():
 	$TreeStats/TreeSpecialProperties.set_position(Vector2(1160,110))
 	$TreeStats/TreeSpecialProperties.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSpecialProperties.hide()
+	
 
 
 func _process(delta):
 	"""
 	Checks to see whether enough time has passed in real life for plants to 
 	need water. If enough time has passed, deduct health.
+	The water tree doesn't need water, so it doesn't check for this condition.
 	"""
-	if 13 - (OS.get_unix_time()-last_watering_time) > 10:
+	if treeName == "water_tree": 
+		time_passed_since_watering = 0
+	else:
+		time_passed_since_watering = OS.get_unix_time()-last_watering_time
+		
+	if 13 - (time_passed_since_watering) > 10:
 		wetness = "Wet"
 		_update_stats()
-	elif 13 - (OS.get_unix_time() - last_watering_time) <=10 and 13-(OS.get_unix_time()-last_watering_time)>= 0:
-		wetness = "Will Dry In " + str(13 - (OS.get_unix_time() - last_watering_time))
+	elif 13 - (time_passed_since_watering) <= 10 \
+		and 13 - (time_passed_since_watering) >= 0:
+		wetness = "Will Dry In " + str(13 - (time_passed_since_watering))
 		_update_stats()
 	else:
 		wetness = "Dry"
-	if (OS.get_unix_time() - last_watering_time >= TIME_UNTIL_DRY) :
+	if (time_passed_since_watering >= TIME_UNTIL_DRY) :
 		deduct_health(healthDeduction)
 
 """
@@ -63,7 +74,6 @@ When the water button is pressed, resets countdown clock for water and stops
 the health deduction timer.
 """
 func _water_tree():
-	print("I was watered!")
 	last_watering_time = OS.get_unix_time()
 	health = 100;
 	wetness = "Wet"
@@ -75,8 +85,6 @@ A timer to deduct health every 5 seconds.
 """
 func _on_healthDeduction_timeout():
 	health -= 1
-	print("I need water!")
-	print("health: ", health)
 	_update_stats()
 	
 func _show_stats():
@@ -109,4 +117,14 @@ func _choose_tree(type):
 #removes selected tree	
 func _remove_tree():
 	queue_free()
+	
+func _special_power():
+	if treeName == "water_tree":
+		"""
+		Water all the trees in the surrounding 3x3 grid.
+		"""
+		for x in range(0, tree_x_index + 2):
+			for y in range(0, tree_y_index + 2):
+				emit_signal("_water_tree_from_tree", x, y)
+	pass
 	
