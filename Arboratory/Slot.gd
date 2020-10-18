@@ -14,10 +14,18 @@ onready var tree_counter
 func _ready():
 	rect_min_size = Vector2(60,60)
 	
-func _add_inventory_item():
-	inventory_item = InventoryItemClass.instance()
-	inventory_item.tree_number = tree_counter
-	add_child(inventory_item)
+func _add_inventory_item(type, inventory_item_name):
+	if type == "tree":
+		inventory_item = InventoryItemClass.instance()
+		inventory_item.tree_number = tree_counter
+		inventory_item.item_name = inventory_item_name
+		add_child(inventory_item)
+	elif type == "seed":
+		inventory_item = InventoryItemClass.instance()
+		inventory_item.item_name = inventory_item_name
+		add_child(inventory_item)
+	else:
+		print("cannot be added")
 	
 	print("treecounter: " + str(tree_counter))
 	tree_appearance = inventory_item.tree_appearance

@@ -7,6 +7,7 @@ extends Control
 var TreeItemClass = preload("res://Tree.tscn")
 const SlotClass = preload("res://Slot.gd")
 onready var inventory_slots = $GridContainer
+var last_slot_clicked
 #var tree_type = null
 
 signal air_tree_pressed
@@ -31,7 +32,7 @@ func _ready():
 		inv_slot.color = Color(.478431,.505882,.501961,1)
 		inv_slot.tree_counter = tree_adder
 		if !inv_slot.inventory_item:
-			inv_slot._add_inventory_item()
+			inv_slot._add_inventory_item("tree", "tree")
 		inv_slot.connect("gui_input",self,"slot_gui_input",[inv_slot])
 		tree_adder+=1
 func slot_gui_input(event: InputEvent, slot: SlotClass):
@@ -41,26 +42,30 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				#slot._add_inventory_item()
 			
 			#else:
-				if slot.tree_appearance == "air_tree" && slot.inventory_item:
-					emit_signal("air_tree_pressed")
-					slot._remove_inventory_item()
-				elif slot.tree_appearance == "earth_tree" && slot.inventory_item:
-					emit_signal("earth_tree_pressed")
-					slot._remove_inventory_item()
-				elif slot.tree_appearance == "fire_tree"&& slot.inventory_item:
-					emit_signal("fire_tree_pressed")
-					slot._remove_inventory_item()
-				elif slot.tree_appearance == "magma_tree"&& slot.inventory_item:
-					emit_signal("magma_tree_pressed")
-					slot._remove_inventory_item()
-				elif slot.tree_appearance == "snoop_tree"&& slot.inventory_item:
-					emit_signal("snoop_tree_pressed")
-					slot._remove_inventory_item()
-				elif slot.tree_appearance == "water_tree"&& slot.inventory_item:
-					emit_signal("water_tree_pressed")
-					slot._remove_inventory_item()
-				else:
-					print("not ready")
+			if slot.tree_appearance == "air_tree" && slot.inventory_item:
+				emit_signal("air_tree_pressed")
+				slot._remove_inventory_item()
+			elif slot.tree_appearance == "earth_tree" && slot.inventory_item:
+				emit_signal("earth_tree_pressed")
+				slot._remove_inventory_item()
+			elif slot.tree_appearance == "fire_tree"&& slot.inventory_item:
+				emit_signal("fire_tree_pressed")
+				slot._remove_inventory_item()
+			elif slot.tree_appearance == "magma_tree"&& slot.inventory_item:
+				emit_signal("magma_tree_pressed")
+				slot._remove_inventory_item()
+			elif slot.tree_appearance == "snoop_tree"&& slot.inventory_item:
+				emit_signal("snoop_tree_pressed")
+				slot._remove_inventory_item()
+			elif slot.tree_appearance == "water_tree"&& slot.inventory_item:
+				emit_signal("water_tree_pressed")
+				slot._remove_inventory_item()
+			else:
+				print("not ready")
+			last_slot_clicked = slot
+			#print(last_slot_clicked)
+func _add_to_inventory(inventory_item_name):
+	last_slot_clicked._add_inventory_item("seed", inventory_item_name)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

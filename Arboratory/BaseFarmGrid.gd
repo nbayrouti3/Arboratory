@@ -28,13 +28,17 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	print("_plant_tree")
 	if free_tree == true:
 		if trees[plot_x][plot_y]!= null:
+			#print(str(trees[plot_x][plot_y].treeName))
 			ready_to_clear_plot = true
 			_new_plot()
+			$Inventory._add_to_inventory(trees[plot_x][plot_y].treeName)
 			trees[plot_x][plot_y]._remove_tree()
 			trees[plot_x][plot_y] = null
 			free_tree = false
 			$Farm.clearing_time = false
 			ready_to_clear_plot = false
+			#print($Inventory.last_slot_clicked)
+			
 	
 	elif watering_time:
 		if trees[plot_x][plot_y]!= null:
