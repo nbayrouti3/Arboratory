@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PauseButtonBackground.png-0fd0ad198e516f7951308c8a5c9ae356.stex"
+path="res://.import/earth_sapling.png-e5cc113864de333992afa1fd5a2e24e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/PauseButtonBackground.png"
-dest_files=[ "res://.import/PauseButtonBackground.png-0fd0ad198e516f7951308c8a5c9ae356.stex" ]
+source_file="res://Assets/Plants/trees/earth_sapling.png"
+dest_files=[ "res://.import/earth_sapling.png-e5cc113864de333992afa1fd5a2e24e6.stex" ]
 
 [params]
 

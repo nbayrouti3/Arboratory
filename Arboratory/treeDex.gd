@@ -50,7 +50,7 @@ func _on_back_button_pressed():
 	else:
 		tempKey -= 1
 	#Tells the back button if the next id is disabled or not and to skip if is
-	for n in range(tempKey,seedData.size()-1):
+	for n in range(0,tempKey):
 		print(n)
 		if !(tempKey <= 0): 
 			if dropdown.is_item_disabled(tempKey):
