@@ -23,7 +23,7 @@ func _ready():
 			trees[x].append(null)
 	ready_to_clear_plot = false
 	watering_time = false
-	
+
 func _process(delta):
 	"""
 	Loop through tree array and have every tree execute their special power.
@@ -34,19 +34,23 @@ func _process(delta):
 			#For each tree, call special power
 			if trees[x][y] != null:
 				trees[x][y]._special_power()
-	pass
+
 
 #handles removing and planting of trees
 func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	if free_tree == true:
 		if trees[plot_x][plot_y]!= null:
+			#print(str(trees[plot_x][plot_y].treeName))
 			ready_to_clear_plot = true
 			_new_plot()
+			$Inventory._add_to_inventory(trees[plot_x][plot_y].treeName)
 			trees[plot_x][plot_y]._remove_tree()
 			trees[plot_x][plot_y] = null
 			free_tree = false
 			$Farm.clearing_time = false
 			ready_to_clear_plot = false
+			#print($Inventory.last_slot_clicked)
+			
 	
 	elif watering_time:
 		if trees[plot_x][plot_y]!= null:
@@ -60,6 +64,8 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	
 	elif trees[plot_x][plot_y] != null:
 		if $Farm.open_menu == true:
+			$Inventory/ColorRect.hide()
+			$Inventory/GridContainer.hide()
 			for x in range(trees_size.x):
 				for y in range(trees_size.y):
 					if trees[x][y] != null:
@@ -68,7 +74,9 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			trees[plot_x][plot_y]._show_stats()
 		else:
 			trees[plot_x][plot_y]._hide_stats()
-	else:
+			print("stats hidden")
+	elif $Farm.planting_ready == true:
+		print("new tree incoming")
 		var tree = Tree.instance()
 		add_child(tree)
 		trees[plot_x][plot_y] = tree
@@ -78,6 +86,8 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 		tree.position.y = pos_y
 		tree._choose_tree(anim)
 		tree.connect("_water_tree_from_tree", self, "_water_tree_from_tree")
+	else:
+		print("not ready")
 	
 
 		
@@ -123,12 +133,18 @@ When a tree emits this signal, waters the tree in the specific plot.
 """	
 func _water_tree_from_tree(plot_x, plot_y):
 	if (plot_x < trees_size.x and plot_y < trees_size.y \
-		and trees[plot_x][plot_y] != null):
+		and plot_x >= 0 and plot_y >=0 and trees[plot_x][plot_y] != null):
 			trees[plot_x][plot_y]._water_tree()
-			watering_time = false
-			$Farm.watering_time = false
+			#watering_time = false
+			#$Farm.watering_time = false
+
+
+
+func _open_inventory():
+	$Inventory/ColorRect.show()
+	$Inventory/GridContainer.show()
 	
-	
+
 
 
 
