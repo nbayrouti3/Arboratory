@@ -36,25 +36,23 @@ func _ready():
 	$TreeStats/TreeSpecialProperties.set_position(Vector2(1160,110))
 	$TreeStats/TreeSpecialProperties.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSpecialProperties.hide()
-	
 
 
 func _process(delta):
 	"""
 	Checks to see whether enough time has passed in real life for plants to 
 	need water. If enough time has passed, deduct health.
-	The water tree doesn't need water, so it doesn't check for this condition.
 	"""
-	if treeName == "water_tree": 
+	if treeName == "water_tree":
 		time_passed_since_watering = 0
-	else:
-		time_passed_since_watering = OS.get_unix_time()-last_watering_time
 		
+	else:
+		time_passed_since_watering = OS.get_unix_time() - last_watering_time
+	
 	if 13 - (time_passed_since_watering) > 10:
 		wetness = "Wet"
 		_update_stats()
-	elif 13 - (time_passed_since_watering) <= 10 \
-		and 13 - (time_passed_since_watering) >= 0:
+	elif 13 - (time_passed_since_watering) <=10 and 13-(time_passed_since_watering)>= 0:
 		wetness = "Will Dry In " + str(13 - (time_passed_since_watering))
 		_update_stats()
 	else:
@@ -123,8 +121,6 @@ func _special_power():
 		"""
 		Water all the trees in the surrounding 3x3 grid.
 		"""
-		for x in range(0, tree_x_index + 2):
-			for y in range(0, tree_y_index + 2):
+		for x in range(tree_x_index-1, tree_x_index + 2):
+			for y in range(tree_x_index-1, tree_y_index + 2):
 				emit_signal("_water_tree_from_tree", x, y)
-	pass
-	

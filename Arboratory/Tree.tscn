@@ -15,11 +15,6 @@ animations = [ {
 "name": "water_tree",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "air_tree",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "fire_tree",
@@ -30,14 +25,19 @@ animations = [ {
 "name": "snoop_tree",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "earth_tree",
+"name": "air_tree",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "magma_tree",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "earth_tree",
 "speed": 5.0
 } ]
 
