@@ -86,6 +86,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 		tree.position.y = pos_y
 		tree._choose_tree(anim)
 		tree.connect("_water_tree_from_tree", self, "_water_tree_from_tree")
+		$Inventory._remove_from_inventory()
 	else:
 		print("not ready")
 	
@@ -113,6 +114,10 @@ func _select_tree(type):
 
 #clears all plots		
 func _new_farm():
+	for x in trees_size.x:
+		for y in trees_size.y:
+			if trees[x][y]!= null:
+				$Inventory._add_to_inventory(trees[x][y].treeName)
 	$Farm._clear_plots()
 	
 #clears a single plot
