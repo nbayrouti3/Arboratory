@@ -40,7 +40,7 @@ func _ready():
 		$TextureRect.texture = load("res://Assets/Plants/seeds/fire_seed.png")
 	elif item_name == "magma_tree":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/magma_seed.png")
-	else:
+	elif item_name == "snoop_tree":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 	
 

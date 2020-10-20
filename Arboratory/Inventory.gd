@@ -42,6 +42,9 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				#slot._add_inventory_item()
 			
 			#else:
+			for inv_slot in inventory_slots.get_children():
+				inv_slot.color = Color(.478431,.505882,.501961,1)
+			slot.color = Color(0,1,0,1)
 			if slot.tree_appearance == "air_tree" && slot.inventory_item:
 				emit_signal("air_tree_pressed")
 				#slot._remove_inventory_item()
