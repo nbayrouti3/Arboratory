@@ -166,5 +166,6 @@ func _special_power():
 		Water all the trees in the surrounding 3x3 grid.
 		"""
 		for x in range(tree_x_index-1, tree_x_index + 2):
-			for y in range(tree_x_index-1, tree_y_index + 2):
+			for y in range(tree_y_index-1, tree_y_index + 2):
+				print("x: " + str(x) + "y: " + str(y))
 				emit_signal("_water_tree_from_tree", x, y)
