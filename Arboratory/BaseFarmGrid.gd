@@ -57,7 +57,6 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			trees[plot_x][plot_y]._water_tree()
 			watering_time = false
 			$Farm.watering_time = false
-			print("water_tree")
 		else:
 			watering_time = false
 			$Farm.watering_time = false
@@ -96,17 +95,17 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 #handles choosing the tree you want to plant
 func _select_tree(type):
 	if type == "water_tree":
-		anim = "water_tree"
+		anim = "water_sapling"
 	if type == "fire_tree":
-		anim = "fire_tree"
+		anim = "fire_sapling"
 	if type == "earth_tree":
-		anim = "earth_tree"
+		anim = "earth_sapling"
 	if type == "air_tree":
-		anim = "air_tree"
+		anim = "air_sapling"
 	if type == "magma_tree":
-		anim = "magma_tree"
+		anim = "magma_sapling"
 	if type == "snoop_tree":
-		anim = "snoop_tree"
+		anim = "snoop_sapling"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false

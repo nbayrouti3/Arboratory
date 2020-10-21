@@ -3,7 +3,6 @@ extends Area2D
 """
 Variables relating to water functionality.
 """
-# 86400 seconds = 1 day, so the plants can go 1 day before needing water
 const TIME_UNTIL_DRY = 10
 var last_watering_time = OS.get_unix_time()
 var health = 100
@@ -15,6 +14,15 @@ var time_passed_since_watering = OS.get_unix_time() - last_watering_time
 var tree_x_index
 var tree_y_index
 signal _water_tree_from_tree
+
+"""
+Variables relating to growth
+"""
+#15 min of in-game time must pass before tree is grown
+const TIME_UNTIL_GROWN = 10
+var time_planted
+var tree_maturity = "Sapling"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,14 +44,21 @@ func _ready():
 	$TreeStats/TreeSpecialProperties.set_position(Vector2(1160,110))
 	$TreeStats/TreeSpecialProperties.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSpecialProperties.hide()
+	#sets the time that the tree was planted to be the current time
+	time_planted = OS.get_unix_time()
 
 
 func _process(delta):
-	"""
-	Checks to see whether enough time has passed in real life for plants to 
-	need water. If enough time has passed, deduct health.
-	"""
-	if treeName == "water_tree":
+	check_water_status()
+	check_growth_status()
+	
+		
+"""
+Checks to see whether enough time has passed in real life for plants to 
+need water. If enough time has passed, deduct health.
+"""
+func check_water_status():
+	if treeName == "water_tree" or treeName == "water_sapling":
 		time_passed_since_watering = 0
 		
 	else:
@@ -59,6 +74,27 @@ func _process(delta):
 		wetness = "Dry"
 	if (time_passed_since_watering >= TIME_UNTIL_DRY) :
 		deduct_health(healthDeduction)
+
+"""
+Checks to see if enough time has passed for the tree to grow.
+If enough time has passed, changes the texture of the tree.
+"""
+func check_growth_status():
+	if (OS.get_unix_time() - time_planted >= TIME_UNTIL_GROWN):
+		tree_maturity = "Mature"
+		match ($AnimatedSprite.animation):
+			"air_sapling":
+				_choose_tree("air_tree")
+			"water_sapling":
+				_choose_tree("water_tree")
+			"earth_sapling":
+				_choose_tree("earth_tree")
+			"fire_sapling":
+				_choose_tree("fire_tree")
+			"magma_sapling":
+				_choose_tree("magma_tree")
+			"snoop_sapling":
+				_choose_tree("snoop_tree")
 
 """
 Starts the health deduction timer if it's not already started
@@ -107,6 +143,7 @@ func _hide_stats():
 func _update_stats():
 	$TreeStats/TreeHealth.set_text("Health: " + str(health))
 	$TreeStats/TreeWaterStatus.set_text("Water Status: " + wetness)
+
 #choose tree you want to plant
 func _choose_tree(type):
 	$AnimatedSprite.animation = type
@@ -117,7 +154,7 @@ func _remove_tree():
 	queue_free()
 	
 func _special_power():
-	if treeName == "water_tree":
+	if treeName == "water_tree" or treeName == "water_sapling":
 		"""
 		Water all the trees in the surrounding 3x3 grid.
 		"""

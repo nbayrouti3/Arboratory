@@ -42,22 +42,22 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				#slot._add_inventory_item()
 			
 			#else:
-			if slot.tree_appearance == "air_tree" && slot.inventory_item:
+			if slot.tree_appearance == "air_sapling" && slot.inventory_item:
 				emit_signal("air_tree_pressed")
 				#slot._remove_inventory_item()
-			elif slot.tree_appearance == "earth_tree" && slot.inventory_item:
+			elif slot.tree_appearance == "earth_sapling" && slot.inventory_item:
 				emit_signal("earth_tree_pressed")
 				#slot._remove_inventory_item()
-			elif slot.tree_appearance == "fire_tree"&& slot.inventory_item:
+			elif slot.tree_appearance == "fire_sapling"&& slot.inventory_item:
 				emit_signal("fire_tree_pressed")
 				#slot._remove_inventory_item()
-			elif slot.tree_appearance == "magma_tree"&& slot.inventory_item:
+			elif slot.tree_appearance == "magma_sapling"&& slot.inventory_item:
 				emit_signal("magma_tree_pressed")
 				#slot._remove_inventory_item()
-			elif slot.tree_appearance == "snoop_tree"&& slot.inventory_item:
+			elif slot.tree_appearance == "snoop_sapling"&& slot.inventory_item:
 				emit_signal("snoop_tree_pressed")
 				#slot._remove_inventory_item()
-			elif slot.tree_appearance == "water_tree"&& slot.inventory_item:
+			elif slot.tree_appearance == "water_sapling"&& slot.inventory_item:
 				emit_signal("water_tree_pressed")
 				#slot._remove_inventory_item()
 			else:
