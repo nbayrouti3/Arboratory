@@ -42,6 +42,10 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				#slot._add_inventory_item()
 			
 			#else:
+			for inv_slot in inventory_slots.get_children():
+				inv_slot.color = Color(.478431,.505882,.501961,1)
+			slot.color = Color(0,1,0,1)
+			
 			if slot.tree_appearance == "air_sapling" && slot.inventory_item:
 				emit_signal("air_tree_pressed")
 				#slot._remove_inventory_item()
@@ -64,11 +68,13 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				print("not ready")
 			last_slot_clicked = slot
 			#print(last_slot_clicked)
+
 func _add_to_inventory(inventory_item_name):
 	for inv_slot in inventory_slots.get_children():
 		if !inv_slot.inventory_item:
 			inv_slot._add_inventory_item("seed", inventory_item_name)
 			break
+			
 func _remove_from_inventory():
 	last_slot_clicked._remove_inventory_item()
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -30,17 +30,17 @@ func _ready():
 	elif tree_number == 5:
 		$TextureRect.texture = load("res://Assets/Plants/saplings/water_sapling.png")
 		tree_appearance = "water_sapling"
-	elif item_name == "water_sapling":
+	elif item_name == "water_tree":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/water_seed.png")
-	elif item_name == "air_sapling":
+	elif item_name == "air":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/air_seed.png")
-	elif item_name == "earth_sapling":
+	elif item_name == "earth":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/earth_seed.png")
-	elif item_name == "fire_sapling":
+	elif item_name == "fire":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/fire_seed.png")
-	elif item_name == "magma_sapling":
+	elif item_name == "magma":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/magma_seed.png")
-	else:
+	elif item_name == "snoop":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 	
 

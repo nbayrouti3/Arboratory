@@ -61,7 +61,7 @@ Checks to see whether enough time has passed in real life for plants to
 need water. If enough time has passed, deduct health.
 """
 func check_water_status():
-	if treeName == "water_tree" or treeName == "water_sapling":
+	if treeName == "water":
 		time_passed_since_watering = 0
 		
 	else:
@@ -85,19 +85,7 @@ If enough time has passed, changes the texture of the tree.
 func check_growth_status():
 	if (OS.get_unix_time() - time_planted >= TIME_UNTIL_GROWN):
 		tree_maturity = "Mature"
-		match ($AnimatedSprite.animation):
-			"air_sapling":
-				_choose_tree("air_tree")
-			"water_sapling":
-				_choose_tree("water_tree")
-			"earth_sapling":
-				_choose_tree("earth_tree")
-			"fire_sapling":
-				_choose_tree("fire_tree")
-			"magma_sapling":
-				_choose_tree("magma_tree")
-			"snoop_sapling":
-				_choose_tree("snoop_tree")
+		$AnimatedSprite.set_frame(1)
 
 """
 Starts the health deduction timer if it's not already started
@@ -153,15 +141,28 @@ func _update_stats():
 
 #choose tree you want to plant
 func _choose_tree(type):
-	$AnimatedSprite.animation = type
-	treeName = type
+	match (type):
+		"air_sapling":
+			treeName = "air"
+		"water_sapling":
+			treeName = "water"
+		"earth_sapling":
+			treeName = "earth"
+		"fire_sapling":
+			treeName = "fire"
+		"magma_sapling":
+			treeName = "magma"
+		"snoop_sapling":
+			treeName = "snoop"
+	$AnimatedSprite.animation = treeName
+	$AnimatedSprite.set_frame(0)
 
 #removes selected tree	
 func _remove_tree():
 	queue_free()
 	
 func _special_power():
-	if treeName == "water_tree" or treeName == "water_sapling":
+	if treeName == "water":
 		"""
 		Water all the trees in the surrounding 3x3 grid.
 		"""
