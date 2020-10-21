@@ -44,6 +44,9 @@ func _ready():
 	$TreeStats/TreeSpecialProperties.set_position(Vector2(1160,110))
 	$TreeStats/TreeSpecialProperties.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSpecialProperties.hide()
+	$TreeStats/TreeMaturityStatus.set_position(Vector2(1160,130))
+	$TreeStats/TreeMaturityStatus.add_font_override("font",dynamic_font)
+	$TreeStats/TreeMaturityStatus.hide()
 	#sets the time that the tree was planted to be the current time
 	time_planted = OS.get_unix_time()
 
@@ -131,6 +134,8 @@ func _show_stats():
 	#$TreeStats/TreeWaterStatus.set_text("Water Status: Wet")
 	$TreeStats/TreeSpecialProperties.show()
 	$TreeStats/TreeSpecialProperties.set_text("Special Properties: Not ready")
+	$TreeStats/TreeMaturityStatus.show()
+	#$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	
 	
 func _hide_stats():
@@ -139,10 +144,12 @@ func _hide_stats():
 	$TreeStats/TreeName.hide()
 	$TreeStats/TreeWaterStatus.hide()
 	$TreeStats/TreeSpecialProperties.hide()
+	$TreeStats/TreeMaturityStatus.hide()
 
 func _update_stats():
 	$TreeStats/TreeHealth.set_text("Health: " + str(health))
 	$TreeStats/TreeWaterStatus.set_text("Water Status: " + wetness)
+	$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 
 #choose tree you want to plant
 func _choose_tree(type):
