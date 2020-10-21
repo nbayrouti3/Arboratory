@@ -13,34 +13,34 @@ func _ready():
 	$TextureRect.set_scale(Vector2(.25,.25))
 	print("treenumber: "+ str(tree_number))
 	if tree_number == 0:
-		$TextureRect.texture = load("res://Assets/Plants/trees/air_tree.png")
-		tree_appearance = "air_tree"
+		$TextureRect.texture = load("res://Assets/Plants/saplings/air_sapling.png")
+		tree_appearance = "air_sapling"
 	elif tree_number == 1:
-		$TextureRect.texture = load("res://Assets/Plants/trees/fire_tree.png")
-		tree_appearance = "fire_tree"
+		$TextureRect.texture = load("res://Assets/Plants/saplings/fire_sapling.png")
+		tree_appearance = "fire_sapling"
 	elif tree_number == 2:
-		$TextureRect.texture = load("res://Assets/Plants/trees/earth_tree.png")
-		tree_appearance = "earth_tree"
+		$TextureRect.texture = load("res://Assets/Plants/saplings/earth_sapling.png")
+		tree_appearance = "earth_sapling"
 	elif tree_number == 3:
-		$TextureRect.texture = load("res://Assets/Plants/trees/magma_tree.png")
-		tree_appearance = "magma_tree"
+		$TextureRect.texture = load("res://Assets/Plants/saplings/magma_sapling.png")
+		tree_appearance = "magma_sapling"
 	elif tree_number == 4:
-		$TextureRect.texture = load("res://Assets/Plants/trees/snoop_dogg_tree.png")
-		tree_appearance = "snoop_tree"
+		$TextureRect.texture = load("res://Assets/Plants/saplings/snoop_dogg_sapling.png")
+		tree_appearance = "snoop_sapling"
 	elif tree_number == 5:
-		$TextureRect.texture = load("res://Assets/Plants/trees/water_tree.png")
-		tree_appearance = "water_tree"
+		$TextureRect.texture = load("res://Assets/Plants/saplings/water_sapling.png")
+		tree_appearance = "water_sapling"
 	elif item_name == "water_tree":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/water_seed.png")
-	elif item_name == "air_tree":
+	elif item_name == "air":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/air_seed.png")
-	elif item_name == "earth_tree":
+	elif item_name == "earth":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/earth_seed.png")
-	elif item_name == "fire_tree":
+	elif item_name == "fire":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/fire_seed.png")
-	elif item_name == "magma_tree":
+	elif item_name == "magma":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/magma_seed.png")
-	else:
+	elif item_name == "snoop":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 	
 
