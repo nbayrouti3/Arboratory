@@ -43,8 +43,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			#print(str(trees[plot_x][plot_y].treeName))
 			ready_to_clear_plot = true
 			_new_plot()
-			if not trees[plot_x][plot_y].is_dead():
-				$Inventory._add_to_inventory(trees[plot_x][plot_y].treeName)
+			$Inventory._add_to_inventory(trees[plot_x][plot_y].treeName)
 			trees[plot_x][plot_y]._remove_tree()
 			trees[plot_x][plot_y] = null
 			free_tree = false

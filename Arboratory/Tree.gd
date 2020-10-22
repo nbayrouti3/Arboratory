@@ -4,9 +4,9 @@ extends Area2D
 Variables relating to water functionality.
 """
 const TIME_UNTIL_DRY = 10
-const MAX_HEALTH = 1
+const MAX_HEALTH = 100
 var last_watering_time = OS.get_unix_time()
-var health = 1
+var health = 100
 var healthDeduction = 1
 var treeName
 var wetness = "Wet"
