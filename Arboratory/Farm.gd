@@ -18,10 +18,10 @@ var planting_ready
 var clearing_time
 var watering_time
 var open_menu
-var plot_x
-var plot_y
-var tree_placement_x
-var tree_placement_y
+var plot_x = 0
+var plot_y = 0
+var tree_placement_x = 0
+var tree_placement_y = 0
 
 
 # Called when the node enters the scene tree for the first time.

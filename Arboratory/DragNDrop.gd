@@ -12,6 +12,8 @@ signal clicked
 signal planted
 signal watered
 signal unlocked
+signal add_to_inventory
+
 var previous_mouse_position = Vector2()
 var is_dragging = false
 var seeded = false
@@ -22,7 +24,7 @@ func _ready():
 	pot.connect("seeded",self,"changeSeed")
 	for See in Seeds:
 		See.connect("planted",self,"planted")
-
+	
 
 """
 When a seed enters a shape it checks if its a pot
@@ -75,6 +77,8 @@ func changeSeed(which):
 			which.get_node("SeedImage").texture = load(seedData[key]["sapplingImage"])
 			print(self)
 			emit_signal("unlocked", key)
+			emit_signal("add_to_inventory","sapling",key)
+			
 		
 """
 When clicked on,
