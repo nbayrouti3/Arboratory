@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water_sapling.png-351fb00e233107972416adc2fce2f1d8.stex"
+path="res://.import/Lighting_sapling.png-9741597eb252913a3f60f5a924674d4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/trees/water_sapling.png"
-dest_files=[ "res://.import/water_sapling.png-351fb00e233107972416adc2fce2f1d8.stex" ]
+source_file="res://Assets/Plants/saplings/Lighting_sapling.png"
+dest_files=[ "res://.import/Lighting_sapling.png-9741597eb252913a3f60f5a924674d4d.stex" ]
 
 [params]
 

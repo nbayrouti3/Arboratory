@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -7,37 +7,64 @@
 [ext_resource path="res://Assets/Plants/trees/fire_tree.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Plants/trees/air_tree.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Plants/trees/snoop_dogg_tree.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Plants/saplings/air_sapling.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Plants/saplings/fire_sapling.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Plants/saplings/magma_sapling.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Plants/saplings/snoop_dogg_sapling.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Plants/saplings/earth_sapling.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Plants/saplings/water_sapling.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Plants/trees/dead_tree.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Plants/trees/bunny_tree.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Plants/trees/lightning_tree.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Plants/saplings/Lighting_sapling.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Plants/saplings/dead_sapling.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Plants/saplings/bunny_sapling.png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "water_tree",
+"name": "dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "fire_tree",
+"name": "lightning",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "snoop_tree",
+"name": "snoop",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "air_tree",
+"name": "fire",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "magma_tree",
+"name": "magma",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "earth_tree",
+"name": "earth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "bunny",
 "speed": 5.0
 } ]
 
@@ -51,7 +78,7 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "snoop_tree"
+animation = "lightning"
 
 [node name="TreeStats" type="CanvasLayer" parent="."]
 
@@ -84,6 +111,20 @@ __meta__ = {
 }
 
 [node name="TreeSpecialProperties" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeMaturityStatus" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeDeathStatus" type="Label" parent="TreeStats"]
 margin_right = 40.0
 margin_bottom = 14.0
 __meta__ = {

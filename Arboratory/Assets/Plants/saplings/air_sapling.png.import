@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cottonCandy_sapling.png-808df5b35a826208c51a06bd71f95b71.stex"
+path="res://.import/air_sapling.png-5a8fee09860ce07b6cd8b16c7bbd17c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/trees/cottonCandy_sapling.png"
-dest_files=[ "res://.import/cottonCandy_sapling.png-808df5b35a826208c51a06bd71f95b71.stex" ]
+source_file="res://Assets/Plants/saplings/air_sapling.png"
+dest_files=[ "res://.import/air_sapling.png-5a8fee09860ce07b6cd8b16c7bbd17c0.stex" ]
 
 [params]
 

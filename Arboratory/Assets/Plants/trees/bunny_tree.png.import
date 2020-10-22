@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bunny_sapling.png-09ec4da39d7fa1e7ae1fd6c695cb916a.stex"
+path="res://.import/bunny_tree.png-38182d056871d59bdb53bc412c80853d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/trees/bunny_sapling.png"
-dest_files=[ "res://.import/bunny_sapling.png-09ec4da39d7fa1e7ae1fd6c695cb916a.stex" ]
+source_file="res://Assets/Plants/trees/bunny_tree.png"
+dest_files=[ "res://.import/bunny_tree.png-38182d056871d59bdb53bc412c80853d.stex" ]
 
 [params]
 
