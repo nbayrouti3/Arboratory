@@ -8,6 +8,7 @@ signal plant_earth
 signal plant_snoop
 signal plant_cotton_candy
 signal plant_lightning
+signal plant_bunny
 signal clear
 signal clear_single
 signal water_tree
@@ -57,6 +58,7 @@ func _ready():
 	$ExitFarm.hide()
 	$CottonCandyTree.hide()
 	$LightningTree.hide()
+	$BunnyTree.hide()
 	
 #updates the planting message
 func show_message(text):
@@ -127,6 +129,9 @@ func _on_CottonCandyTree_pressed():
 	
 func _on_LightningTree_pressed():
 	emit_signal("plant_lightning", "lightning_tree")
+	
+func _on_BunnyTree_pressed():
+	emit_signal("plant_bunny", "bunny_tree")
 
 #clear all plots
 func _on_ClearPlots_pressed():

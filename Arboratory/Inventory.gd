@@ -19,6 +19,7 @@ signal snoop_tree_pressed
 signal water_tree_pressed
 signal cotton_candy_tree_pressed
 signal lightning_tree_pressed
+signal bunny_tree_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -68,6 +69,8 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				emit_signal("cotton_candy_tree_pressed")
 			elif slot.tree_appearance == "lightning_sapling"&& slot.inventory_item:
 				emit_signal("lightning_tree_pressed")
+			elif slot.tree_appearance == "bunny_sapling"&& slot.inventory_item:
+				emit_signal("bunny_tree_pressed")
 			else:
 				print("not ready")
 			last_slot_clicked = slot
