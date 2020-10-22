@@ -28,9 +28,9 @@
 		"Description": ""
 	},
 	"4": {
-        "treeName": "Lighting Tree",
-		"seedImage": "res://Assets/Plants/seeds/Lighting_seed.png",
-		"sapplingImage": "res://Assets/Plants/saplings/Lighting_sapling.png",
+        "treeName": "Lightning Tree",
+		"seedImage": "res://Assets/Plants/seeds/lightning_seed.png",
+		"sapplingImage": "res://Assets/Plants/saplings/lightning_sapling.png",
 		"treeImage": "",
 		"Description": ""
 	},

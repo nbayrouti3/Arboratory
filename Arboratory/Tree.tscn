@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/Plants/trees/dead_tree.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Plants/trees/bunny_tree.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Plants/trees/lightning_tree.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Plants/saplings/Lighting_sapling.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Plants/saplings/lightning_sapling.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Plants/saplings/dead_sapling.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Plants/saplings/bunny_sapling.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Plants/saplings/cotton_candy_sapling.png" type="Texture" id=20]
@@ -34,34 +34,14 @@ animations = [ {
 "name": "magma",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "water",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "bunny",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "fire",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "lightning",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "snoop",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "air",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
@@ -72,6 +52,26 @@ animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "cottoncandy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "snoop",
 "speed": 5.0
 } ]
 

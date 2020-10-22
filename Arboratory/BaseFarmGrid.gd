@@ -112,6 +112,8 @@ func _select_tree(type):
 		anim = "snoop_sapling"
 	if type == "cotton_candy_tree":
 		anim = "cotton_candy_sapling"
+	if type == "lightning_tree":
+		anim = "lightning_sapling"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false

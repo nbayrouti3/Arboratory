@@ -85,6 +85,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LightningTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ClearPlots" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
@@ -131,6 +138,8 @@ __meta__ = {
 [connection signal="pressed" from="AirTree" to="." method="_on_AirTree_pressed"]
 [connection signal="pressed" from="MagmaTree" to="." method="_on_MagmaTree_pressed"]
 [connection signal="pressed" from="SnoopTree" to="." method="_on_SnoopTree_pressed"]
+[connection signal="pressed" from="CottonCandyTree" to="." method="_on_CottonCandyTree_pressed"]
+[connection signal="pressed" from="LightningTree" to="." method="_on_LightningTree_pressed"]
 [connection signal="pressed" from="ClearPlots" to="." method="_on_ClearPlots_pressed"]
 [connection signal="pressed" from="ClearSinglePlot" to="." method="_on_ClearSinglePlot_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]

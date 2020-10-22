@@ -189,6 +189,8 @@ func _choose_tree(type):
 			treeName = "snoop"
 		"cotton_candy_sapling":
 			treeName = "cottoncandy"
+		"lightning_sapling":
+			treeName = "lightning"
 	$AnimatedSprite.animation = treeName
 	$AnimatedSprite.set_frame(0)
 
