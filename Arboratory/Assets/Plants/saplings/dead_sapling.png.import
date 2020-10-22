@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/magma_sapling.png-99f3c51197d14e1f296fe4ddb1660a8c.stex"
+path="res://.import/dead_sapling.png-189929bd66fcee3961711ef75ed33ac1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/trees/magma_sapling.png"
-dest_files=[ "res://.import/magma_sapling.png-99f3c51197d14e1f296fe4ddb1660a8c.stex" ]
+source_file="res://Assets/Plants/saplings/dead_sapling.png"
+dest_files=[ "res://.import/dead_sapling.png-189929bd66fcee3961711ef75ed33ac1.stex" ]
 
 [params]
 
