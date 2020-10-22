@@ -6,6 +6,7 @@ signal plant_air
 signal plant_magma
 signal plant_earth
 signal plant_snoop
+signal plant_cotton_candy
 signal clear
 signal clear_single
 signal water_tree
@@ -117,6 +118,9 @@ func _on_SnoopTree_pressed():
 	#$WaterTree.show()
 	#$FireTree.show()
 	emit_signal("plant_snoop","snoop_tree")
+	
+func _on_CottonCandyTree_pressed():
+	emit_signal("plant_cotton_candy", "cotton_candy_tree")
 
 #clear all plots
 func _on_ClearPlots_pressed():
@@ -164,3 +168,6 @@ func _on_Water_pressed():
 
 func _on_ExitFarm_pressed():
 	emit_signal("exit_farm")
+
+
+

@@ -50,8 +50,8 @@
 	},
     "7": {
         "treeName": "Cotton Candy Tree",
-		"seedImage": "res://Assets/Plants/seeds/cottonCandy_Seed.png",
-		"sapplingImage": "res://Assets/Plants/saplings/cottonCandy_sapling.png",
+		"seedImage": "res://Assets/Plants/seeds/cotton_candy_seed.png",
+		"sapplingImage": "res://Assets/Plants/saplings/cotton_candy_sapling.png",
 		"treeImage": "",
 		"Description": ""
 	},

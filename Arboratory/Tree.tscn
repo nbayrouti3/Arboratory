@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -19,12 +19,34 @@
 [ext_resource path="res://Assets/Plants/saplings/Lighting_sapling.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Plants/saplings/dead_sapling.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Plants/saplings/bunny_sapling.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Plants/saplings/cotton_candy_sapling.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Plants/trees/cotton_candy_tree.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "magma",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "bunny",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "fire",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
@@ -37,19 +59,9 @@ animations = [ {
 "name": "snoop",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "bunny",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "air",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "fire",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
@@ -57,14 +69,9 @@ animations = [ {
 "name": "earth",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "water",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "magma",
+"name": "cottoncandy",
 "speed": 5.0
 } ]
 
@@ -78,7 +85,7 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "lightning"
+animation = "cottoncandy"
 
 [node name="TreeStats" type="CanvasLayer" parent="."]
 
