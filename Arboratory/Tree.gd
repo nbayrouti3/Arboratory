@@ -5,7 +5,7 @@ Variables relating to water functionality.
 """
 const TIME_UNTIL_DRY = 10
 var last_watering_time = OS.get_unix_time()
-var health = 100
+var health = 1
 var healthDeduction = 1
 var treeName
 var wetness = "Wet"
@@ -19,9 +19,14 @@ signal _water_tree_from_tree
 Variables relating to growth
 """
 #15 min of in-game time must pass before tree is grown
-const TIME_UNTIL_GROWN = 10
+const TIME_UNTIL_GROWN = 100
 var time_planted
 var tree_maturity = "Sapling"
+
+"""
+Variables relating to death
+"""
+var dead = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -47,13 +52,19 @@ func _ready():
 	$TreeStats/TreeMaturityStatus.set_position(Vector2(1160,130))
 	$TreeStats/TreeMaturityStatus.add_font_override("font",dynamic_font)
 	$TreeStats/TreeMaturityStatus.hide()
+	$TreeStats/TreeDeathStatus.set_position(Vector2(1160,150))
+	$TreeStats/TreeDeathStatus.add_font_override("font",dynamic_font)
+	$TreeStats/TreeDeathStatus.hide()
 	#sets the time that the tree was planted to be the current time
 	time_planted = OS.get_unix_time()
 
 
 func _process(delta):
-	check_water_status()
-	check_growth_status()
+	if (not dead):
+		check_water_status()
+		check_growth_status()
+	check_death_status()
+	_update_stats()
 	
 		
 """
@@ -69,10 +80,10 @@ func check_water_status():
 	
 	if 13 - (time_passed_since_watering) > 10:
 		wetness = "Wet"
-		_update_stats()
+		#_update_stats()
 	elif 13 - (time_passed_since_watering) <=10 and 13-(time_passed_since_watering)>= 0:
 		wetness = "Will Dry In " + str(13 - (time_passed_since_watering))
-		_update_stats()
+		#_update_stats()
 	else:
 		wetness = "Dry"
 	if (time_passed_since_watering >= TIME_UNTIL_DRY) :
@@ -86,12 +97,27 @@ func check_growth_status():
 	if (OS.get_unix_time() - time_planted >= TIME_UNTIL_GROWN):
 		tree_maturity = "Mature"
 		$AnimatedSprite.set_frame(1)
+		
+"""
+Checks if the tree health is 0. If it is, change the appearance to a dead tree.
+Also, set the tree death variable to true.
+"""
+func check_death_status():
+	if (health == 0):
+		$AnimatedSprite.animation = "dead"
+		if (tree_maturity == "Mature"):
+			$AnimatedSprite.set_frame(1)
+		else:
+			$AnimatedSprite.set_frame(0)
+		dead = true
+		$healthDeduction.stop()
+	pass
 
 """
 Starts the health deduction timer if it's not already started
 """
 func deduct_health(healthDeduction):
-	if $healthDeduction.time_left == 0:
+	if $healthDeduction.time_left == 0 and not dead:
 		$healthDeduction.start()
 
 """
@@ -102,7 +128,7 @@ func _water_tree():
 	last_watering_time = OS.get_unix_time()
 	health = 100;
 	wetness = "Wet"
-	_update_stats()
+	#_update_stats()
 	$healthDeduction.stop()
 
 """
@@ -110,7 +136,7 @@ A timer to deduct health every 5 seconds.
 """
 func _on_healthDeduction_timeout():
 	health -= 1
-	_update_stats()
+	#_update_stats()
 	
 func _show_stats():
 	$TreeStats/TreeStatPanel.show()
@@ -123,6 +149,7 @@ func _show_stats():
 	$TreeStats/TreeSpecialProperties.show()
 	$TreeStats/TreeSpecialProperties.set_text("Special Properties: Not ready")
 	$TreeStats/TreeMaturityStatus.show()
+	$TreeStats/TreeDeathStatus.show()
 	#$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	
 	
@@ -133,11 +160,13 @@ func _hide_stats():
 	$TreeStats/TreeWaterStatus.hide()
 	$TreeStats/TreeSpecialProperties.hide()
 	$TreeStats/TreeMaturityStatus.hide()
+	$TreeStats/TreeDeathStatus.hide()
 
 func _update_stats():
 	$TreeStats/TreeHealth.set_text("Health: " + str(health))
 	$TreeStats/TreeWaterStatus.set_text("Water Status: " + wetness)
 	$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
+	$TreeStats/TreeDeathStatus.set_text("Dead: " + str(dead))
 
 #choose tree you want to plant
 func _choose_tree(type):
