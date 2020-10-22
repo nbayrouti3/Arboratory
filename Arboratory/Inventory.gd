@@ -72,6 +72,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _add_to_inventory(inventory_item_name):
 	for inv_slot in inventory_slots.get_children():
 		if !inv_slot.inventory_item:
+			print("add_inventory: " + inventory_item_name)
 			inv_slot._add_inventory_item("seed", inventory_item_name)
 			break
 			
