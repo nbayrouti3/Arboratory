@@ -9,9 +9,13 @@ var trees_size = Vector2(7,7)
 var ready_to_clear_plot
 var watering_time
 
+signal return_to_planting
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Farm.hide()
+	$Inventory/ColorRect.hide()
+	$Inventory/GridContainer.hide()
 	$Farm.position.x = 0
 	$Farm.position.y = 0
 	$Farm.scale.x = 2
@@ -43,7 +47,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			#print(str(trees[plot_x][plot_y].treeName))
 			ready_to_clear_plot = true
 			_new_plot()
-			$Inventory._add_to_inventory(trees[plot_x][plot_y].treeName)
+			$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)
 			trees[plot_x][plot_y]._remove_tree()
 			trees[plot_x][plot_y] = null
 			free_tree = false
@@ -116,7 +120,7 @@ func _new_farm():
 	for x in trees_size.x:
 		for y in trees_size.y:
 			if trees[x][y]!= null:
-				$Inventory._add_to_inventory(trees[x][y].treeName)
+				$Inventory._add_to_inventory("seed",trees[x][y].treeName)
 	$Farm._clear_plots()
 	
 #clears a single plot
@@ -148,9 +152,30 @@ func _open_inventory():
 	$Inventory/ColorRect.show()
 	$Inventory/GridContainer.show()
 	
+func _exit_farm():
+	$Inventory/ColorRect.hide()
+	$Inventory/GridContainer.hide()
+	$Farm.hide()
+	$PlantingNotifier/ClearPlots.hide()
+	$PlantingNotifier/ExitFarm.hide()
+	$PlantingNotifier/PlantingNotifierMessage.hide()
+	emit_signal("return_to_planting")
 
-
-
-
+func _pause():
+	for x in range(trees_size.x):
+		for y in range(trees_size.y):
+			if trees[x][y]!=null:
+				trees[x][y].hide()
+				trees[x][y].set_process_input(pause_mode)
+				#trees[x][y].set_process_internal(pause_mode)
+	$Farm.set_process_input(pause_mode)
+				
+func _unpause():
+	for x in range(trees_size.x):
+		for y in range(trees_size.y):
+			if trees[x][y]!=null:
+				trees[x][y].show()
+				trees[x][y].set_process_input(!pause_mode)
+	$Farm.set_process_input(!pause_mode)
 
 

@@ -10,7 +10,7 @@ signal clear
 signal clear_single
 signal water_tree
 signal close_menu
-
+signal exit_farm
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +37,7 @@ func _ready():
 	$SnoopTree.hide()
 	$ClearPlots.set_position(Vector2(900,400))
 	$ClearPlots.add_font_override("font",dynamic_font)
+	$ClearPlots.hide()
 	$ClearSinglePlot.set_position(Vector2(900,460))
 	$ClearSinglePlot.add_font_override("font",dynamic_font)
 	$ClearSinglePlot.hide()
@@ -48,7 +49,10 @@ func _ready():
 	$Water.set_position(Vector2(900,280))
 	$Water.add_font_override("font",dynamic_font)
 	$Water.hide()
-	show_message("New Farm")
+	$PlantingNotifierMessage.hide()
+	$ExitFarm.set_position(Vector2(1000,700))
+	$ExitFarm.set_text("Exit Farm")
+	$ExitFarm.hide()
 	
 #updates the planting message
 func show_message(text):
@@ -156,3 +160,7 @@ func _on_Water_pressed():
 
 
 
+
+
+func _on_ExitFarm_pressed():
+	emit_signal("exit_farm")

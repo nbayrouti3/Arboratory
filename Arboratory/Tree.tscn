@@ -37,14 +37,19 @@ animations = [ {
 "name": "snoop",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "bunny",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "fire",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "magma",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
@@ -57,14 +62,9 @@ animations = [ {
 "name": "water",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "air",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "bunny",
+"name": "magma",
 "speed": 5.0
 } ]
 

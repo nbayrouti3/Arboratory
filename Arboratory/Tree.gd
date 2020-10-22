@@ -4,9 +4,9 @@ extends Area2D
 Variables relating to water functionality.
 """
 const TIME_UNTIL_DRY = 10
-const MAX_HEALTH = 100
+const MAX_HEALTH = 2
 var last_watering_time = OS.get_unix_time()
-var health = 100
+var health = 1
 var healthDeduction = 1
 var treeName
 var wetness = "Wet"
@@ -20,7 +20,7 @@ signal _water_tree_from_tree
 Variables relating to growth
 """
 #15 min of in-game time must pass before tree is grown
-const TIME_UNTIL_GROWN = 100
+const TIME_UNTIL_GROWN = 20
 var time_planted
 var tree_maturity = "Sapling"
 
