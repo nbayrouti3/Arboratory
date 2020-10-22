@@ -7,10 +7,10 @@ signal close_menu
 func _ready():
 	$Seeds.get_node("aSeeds2").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/seed-laventree.png")
 	$Seeds.get_node("aSeeds3").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/bunny_seed.png")
-	$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/Lighting_seed.png")
+	$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/lightning_seed.png")
 	$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/Sand_Seed.png")
 	$Seeds.get_node("aSeeds6").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/air_seed.png")
-	$Seeds.get_node("aSeeds7").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/cottonCandy_Seed.png")
+	$Seeds.get_node("aSeeds7").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/cotton_candy_seed.png")
 	$Seeds.get_node("aSeeds8").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/earth_seed.png")
 	$Seeds.get_node("aSeeds9").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/fire_seed.png")
 	$Seeds.get_node("aSeeds10").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/magma_seed.png")

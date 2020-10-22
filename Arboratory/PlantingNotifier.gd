@@ -6,6 +6,9 @@ signal plant_air
 signal plant_magma
 signal plant_earth
 signal plant_snoop
+signal plant_cotton_candy
+signal plant_lightning
+signal plant_bunny
 signal clear
 signal clear_single
 signal water_tree
@@ -53,6 +56,9 @@ func _ready():
 	$ExitFarm.set_position(Vector2(1000,700))
 	$ExitFarm.set_text("Exit Farm")
 	$ExitFarm.hide()
+	$CottonCandyTree.hide()
+	$LightningTree.hide()
+	$BunnyTree.hide()
 	
 #updates the planting message
 func show_message(text):
@@ -117,6 +123,15 @@ func _on_SnoopTree_pressed():
 	#$WaterTree.show()
 	#$FireTree.show()
 	emit_signal("plant_snoop","snoop_tree")
+	
+func _on_CottonCandyTree_pressed():
+	emit_signal("plant_cotton_candy", "cotton_candy_tree")
+	
+func _on_LightningTree_pressed():
+	emit_signal("plant_lightning", "lightning_tree")
+	
+func _on_BunnyTree_pressed():
+	emit_signal("plant_bunny", "bunny_tree")
 
 #clear all plots
 func _on_ClearPlots_pressed():
@@ -164,3 +179,6 @@ func _on_Water_pressed():
 
 func _on_ExitFarm_pressed():
 	emit_signal("exit_farm")
+
+
+

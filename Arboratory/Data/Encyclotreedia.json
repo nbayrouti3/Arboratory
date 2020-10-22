@@ -28,9 +28,9 @@
 		"Description": ""
 	},
 	"4": {
-        "treeName": "Lighting Tree",
-		"seedImage": "res://Assets/Plants/seeds/Lighting_seed.png",
-		"sapplingImage": "res://Assets/Plants/saplings/Lighting_sapling.png",
+        "treeName": "Lightning Tree",
+		"seedImage": "res://Assets/Plants/seeds/lightning_seed.png",
+		"sapplingImage": "res://Assets/Plants/saplings/lightning_sapling.png",
 		"treeImage": "",
 		"Description": ""
 	},
@@ -50,8 +50,8 @@
 	},
     "7": {
         "treeName": "Cotton Candy Tree",
-		"seedImage": "res://Assets/Plants/seeds/cottonCandy_Seed.png",
-		"sapplingImage": "res://Assets/Plants/saplings/cottonCandy_sapling.png",
+		"seedImage": "res://Assets/Plants/seeds/cotton_candy_seed.png",
+		"sapplingImage": "res://Assets/Plants/saplings/cotton_candy_sapling.png",
 		"treeImage": "",
 		"Description": ""
 	},
