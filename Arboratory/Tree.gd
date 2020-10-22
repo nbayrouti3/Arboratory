@@ -4,9 +4,9 @@ extends Area2D
 Variables relating to water functionality.
 """
 const TIME_UNTIL_DRY = 10
-const MAX_HEALTH = 100
+const MAX_HEALTH = 2
 var last_watering_time = OS.get_unix_time()
-var health = 100
+var health = 1
 var healthDeduction = 1
 var treeName
 var wetness = "Wet"
@@ -128,20 +128,12 @@ When the water button is pressed, resets countdown clock for water and stops
 the health deduction timer.
 """
 func _water_tree():
-<<<<<<< HEAD
-	last_watering_time = OS.get_unix_time()
-	health = 2;
-	wetness = "Wet"
-	#_update_stats()
-	$healthDeduction.stop()
-=======
 	if not dead:
 		last_watering_time = OS.get_unix_time()
 		health = MAX_HEALTH;
 		wetness = "Wet"
 		#_update_stats()
 		$healthDeduction.stop()
->>>>>>> master
 
 """
 A timer to deduct health every 5 seconds.
