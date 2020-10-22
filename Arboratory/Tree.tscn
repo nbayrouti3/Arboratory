@@ -7,11 +7,11 @@
 [ext_resource path="res://Assets/Plants/trees/fire_tree.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Plants/trees/air_tree.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Plants/trees/snoop_dogg_tree.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Plants/trees/fire_sapling.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Plants/trees/earth_sapling.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Plants/saplings/air_sapling.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Plants/saplings/fire_sapling.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Plants/saplings/magma_sapling.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Plants/saplings/snoop_dogg_sapling.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Plants/trees/air_sapling.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Plants/saplings/earth_sapling.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Plants/saplings/water_sapling.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -21,7 +21,7 @@ animations = [ {
 "name": "snoop",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "fire",
 "speed": 5.0
@@ -31,7 +31,7 @@ animations = [ {
 "name": "magma",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "earth",
 "speed": 5.0
@@ -41,7 +41,7 @@ animations = [ {
 "name": "water",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "air",
 "speed": 5.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snoop_dogg_sapling.png-33a9a634e1e29a36ee8ce0c55d0293f8.stex"
+path="res://.import/lightning_tree.png-d2e66cb7311bc3d669e242dcdeafa391.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/trees/snoop_dogg_sapling.png"
-dest_files=[ "res://.import/snoop_dogg_sapling.png-33a9a634e1e29a36ee8ce0c55d0293f8.stex" ]
+source_file="res://Assets/Plants/trees/lightning_tree.png"
+dest_files=[ "res://.import/lightning_tree.png-d2e66cb7311bc3d669e242dcdeafa391.stex" ]
 
 [params]
 
