@@ -7,12 +7,14 @@ Declaring a lot of variables
 onready var pot = get_tree().get_root().find_node("Pot", true, false)
 onready var Seeds = get_tree().get_root().find_node("Seeds", true, false).get_children()
 onready var dragNode = get_parent()
+onready var Slots = get_tree().get_root().find_node("BaseFarmGrid",true,false).get_node("Inventory/GridContainer").get_children()
 
 signal clicked
 signal planted
 signal watered
 signal unlocked
 signal add_to_inventory
+signal remove_from_inventory
 
 var previous_mouse_position = Vector2()
 var is_dragging = false
@@ -24,6 +26,10 @@ func _ready():
 	pot.connect("seeded",self,"changeSeed")
 	for See in Seeds:
 		See.connect("planted",self,"planted")
+	for Slot in Slots:
+		Slot.connect("add_seed",self,"_revert_seed")
+	
+		
 	
 
 """
@@ -74,11 +80,10 @@ func changeSeed(which):
 	var seedData = ImportData.seed_data
 	for key in seedData:
 		if seedData[key]["seedImage"] == which.get_node("SeedImage").texture:
-			which.get_node("SeedImage").texture = load(seedData[key]["sapplingImage"])
+			which.get_node("SeedImage").texture = load(seedData[key]["saplingImage"])
 			print(self)
 			emit_signal("unlocked", key)
 			emit_signal("add_to_inventory","sapling",key)
-			
 		
 """
 When clicked on,
@@ -118,3 +123,9 @@ func _input(event):
 	if is_dragging and event is InputEventMouseMotion:
 		position += event.position - previous_mouse_position
 		previous_mouse_position = event.position
+		
+#func _revert_seed(aSeed,which):
+func _revert_seed(aSeed,which):
+	print("yay")
+	aSeed.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/"+which+"_seed.png")
+	emit_signal("remove_from_inventory")
