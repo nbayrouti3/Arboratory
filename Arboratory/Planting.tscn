@@ -85,9 +85,6 @@ scale = Vector2( 0.137, 0.137 )
 ] instance=ExtResource( 7 )]
 position = Vector2( 77.7891, 518.56 )
 
-[node name="SeedImage" parent="Seeds/aSeeds3" index="1"]
-scale = Vector2( 0.163, 0.163 )
-
 [node name="aSeeds4" parent="Seeds" groups=[
 "seedGroup",
 ] instance=ExtResource( 7 )]
