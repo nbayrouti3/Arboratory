@@ -29,9 +29,14 @@ animations = [ {
 "name": "dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "magma",
+"name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "air",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
@@ -44,6 +49,21 @@ animations = [ {
 "name": "lightning",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "snoop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "magma",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "earth",
@@ -52,26 +72,6 @@ animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "cottoncandy",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "water",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "air",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "fire",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "snoop",
 "speed": 5.0
 } ]
 
@@ -132,6 +132,13 @@ __meta__ = {
 }
 
 [node name="TreeDeathStatus" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeSunlight" type="Label" parent="TreeStats"]
 margin_right = 40.0
 margin_bottom = 14.0
 __meta__ = {
