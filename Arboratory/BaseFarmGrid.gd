@@ -12,6 +12,7 @@ var watering_time
 const DEFAULT_SUNLIGHT = 1
 
 signal return_to_planting
+signal add_seeds
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -71,7 +72,12 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			#print(str(trees[plot_x][plot_y].treeName))
 			ready_to_clear_plot = true
 			_new_plot()
-			$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)
+			if trees[plot_x][plot_y].dead == false and trees[plot_x][plot_y].tree_maturity == "Mature":
+				for x in range(2):
+					$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)
+				emit_signal("add_seeds",trees[plot_x][plot_y].treeName,1)
+			else:
+				$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)
 			trees[plot_x][plot_y]._remove_tree()
 			trees[plot_x][plot_y] = null
 			free_tree = false
@@ -154,7 +160,12 @@ func _new_farm():
 	for x in trees_size.x:
 		for y in trees_size.y:
 			if trees[x][y]!= null:
-				$Inventory._add_to_inventory("seed",trees[x][y].treeName)
+				if trees[x][y].dead == false and trees[x][y].tree_maturity == "Mature":
+					for z in range(2):
+						$Inventory._add_to_inventory("seed",trees[x][y].treeName)
+					emit_signal("add_seeds",trees[x][y].treeName,1)
+				else:
+					$Inventory._add_to_inventory("seed",trees[x][y].treeName)
 	$Farm._clear_plots()
 	
 #clears a single plot

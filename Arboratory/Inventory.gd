@@ -31,6 +31,7 @@ func _ready():
 	$GridContainer.set("custom_constants/vseparation",6)
 	$GridContainer.set("custom_constants/hseparation",6) 
 	Water.connect("add_to_inventory",self, "_add_to_inventory")
+	#Water.connect("remove_from_inventory",self,"_remove_from_inventory")
 
 	for inv_slot in inventory_slots.get_children():
 		inv_slot.color = Color(.478431,.505882,.501961,1)
@@ -78,6 +79,9 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 
 func _add_to_inventory(type, inventory_item_name):
 	for inv_slot in inventory_slots.get_children():
+		if type == "sapling":
+			if inv_slot.inventory_item && inv_slot.inventory_item.item_number == inventory_item_name:
+				inv_slot._remove_inventory_item()
 		if !inv_slot.inventory_item:
 			inv_slot._add_inventory_item(type, inventory_item_name)
 			print("add_inventory: " + inventory_item_name)

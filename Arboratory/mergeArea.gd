@@ -29,6 +29,7 @@ func planted(theSeed):
 	else:
 		seeded = false
 	planted += 1
+	
 
 
 
@@ -41,7 +42,6 @@ The print line we made it this far is just for debugging.
 func grow():
 	if seeded:
 		emit_signal("seeded", whichSeed)
-
-
+		
 
 
