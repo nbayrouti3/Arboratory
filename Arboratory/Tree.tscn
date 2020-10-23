@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Assets/Plants/saplings/lightning_sapling.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Plants/saplings/dead_sapling.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Plants/saplings/bunny_sapling.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Plants/saplings/cotton_candy_sapling.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Plants/trees/cotton_candy_tree.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -66,6 +68,11 @@ animations = [ {
 "loop": true,
 "name": "earth",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "cottoncandy",
+"speed": 5.0
 } ]
 
 [node name="Tree" type="Area2D" groups=[
@@ -78,6 +85,7 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+animation = "cottoncandy"
 
 [node name="TreeStats" type="CanvasLayer" parent="."]
 
@@ -124,6 +132,13 @@ __meta__ = {
 }
 
 [node name="TreeDeathStatus" type="Label" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreeSunlight" type="Label" parent="TreeStats"]
 margin_right = 40.0
 margin_bottom = 14.0
 __meta__ = {

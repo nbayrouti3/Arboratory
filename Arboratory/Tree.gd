@@ -4,9 +4,9 @@ extends Area2D
 Variables relating to water functionality.
 """
 const TIME_UNTIL_DRY = 10
-const MAX_HEALTH = 2
+const MAX_HEALTH = 100
 var last_watering_time = OS.get_unix_time()
-var health = 1
+var health = 100
 var healthDeduction = 1
 var treeName
 var wetness = "Wet"
@@ -28,6 +28,11 @@ var tree_maturity = "Sapling"
 Variables relating to death
 """
 var dead = false
+
+"""
+Variables relating to sunlight
+"""
+var sunlight
 
 
 # Called when the node enters the scene tree for the first time.
@@ -56,6 +61,9 @@ func _ready():
 	$TreeStats/TreeDeathStatus.set_position(Vector2(1160,150))
 	$TreeStats/TreeDeathStatus.add_font_override("font",dynamic_font)
 	$TreeStats/TreeDeathStatus.hide()
+	$TreeStats/TreeSunlight.set_position(Vector2(1160,170))
+	$TreeStats/TreeSunlight.add_font_override("font",dynamic_font)
+	$TreeStats/TreeSunlight.hide()
 	#sets the time that the tree was planted to be the current time
 	time_planted = OS.get_unix_time()
 
@@ -154,6 +162,7 @@ func _show_stats():
 	$TreeStats/TreeSpecialProperties.set_text("Special Properties: Not ready")
 	$TreeStats/TreeMaturityStatus.show()
 	$TreeStats/TreeDeathStatus.show()
+	$TreeStats/TreeSunlight.show()
 	#$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	
 	
@@ -165,12 +174,14 @@ func _hide_stats():
 	$TreeStats/TreeSpecialProperties.hide()
 	$TreeStats/TreeMaturityStatus.hide()
 	$TreeStats/TreeDeathStatus.hide()
+	$TreeStats/TreeSunlight.hide()
 
 func _update_stats():
 	$TreeStats/TreeHealth.set_text("Health: " + str(health))
 	$TreeStats/TreeWaterStatus.set_text("Water Status: " + wetness)
 	$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	$TreeStats/TreeDeathStatus.set_text("Dead: " + str(dead))
+	$TreeStats/TreeSunlight.set_text("Sunlight: " + str(sunlight))
 
 #choose tree you want to plant
 func _choose_tree(type):
