@@ -20,15 +20,15 @@ var previous_mouse_position = Vector2()
 var is_dragging = false
 var seeded = false
 var planted = 0
-
+var is_new_seed = false
 
 func _ready():
 	pot.connect("seeded",self,"changeSeed")
-	for See in Seeds:
-		See.connect("planted",self,"planted")
+	#for See in Seeds:
+		#See.connect("planted",self,"planted")
 	for Slot in Slots:
 		Slot.connect("add_seed",self,"_revert_seed")
-	
+	#print("new seed: " + str(is_new_seed))
 		
 	
 
@@ -44,12 +44,14 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 		position = Vector2(518,220)
 		is_dragging = false
 		emit_signal("planted",self)
+		
 
 
 func _on_aSeeds_area_shape_exited(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
 		emit_signal("planted",self)
+		
 
 func _on_water_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
@@ -62,14 +64,14 @@ func _on_water_area_shape_entered(area_id, area, area_shape, self_shape):
 Can't remember exactly how this works I did this at 4am so I will be back
 """
 
-func planted():
-	print("Planted Function was Run")
-	if planted % 2 == 0:
-		seeded = true
-	else:
-		seeded = false
-	print(seeded)
-	planted += 1
+#func planted():
+#	print("Planted Function was Run")
+	#if planted % 2 == 0:
+	#	seeded = true
+	#else:
+	#	seeded = false
+	#print(seeded)
+	#planted += 1
 
 """
 The change seed function gets a signal when a pot is both watered and planted.
@@ -126,6 +128,11 @@ func _input(event):
 		
 #func _revert_seed(aSeed,which):
 func _revert_seed(aSeed,which):
-	print("yay")
 	aSeed.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/"+which+"_seed.png")
 	emit_signal("remove_from_inventory")
+	
+#func _connect_newSeed(newSeed):
+	#newSeed.connect("area_shape_entered",self,"_on_aSeeds_area_shape_entered")
+	#newSeed.connect("area_shape_exited",self,"_on_aSeeds_area_shape_exited")
+	
+	
