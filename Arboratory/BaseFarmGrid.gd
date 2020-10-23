@@ -9,6 +9,8 @@ var trees_size = Vector2(7,7)
 var ready_to_clear_plot
 var watering_time
 
+const DEFAULT_SUNLIGHT = 1
+
 signal return_to_planting
 
 # Called when the node enters the scene tree for the first time.
@@ -32,14 +34,36 @@ func _process(delta):
 	"""
 	Loop through tree array and have every tree execute their special power.
 	For now, just the rain tree (can water other trees).
+	
+	Also, calculate the sunlight level for each tree based on the types of trees
+	around it.
 	"""
 	for x in trees_size.x:
 		for y in trees_size.y:
 			#For each tree, call special power
 			if trees[x][y] != null:
 				trees[x][y]._special_power()
+				#For each tree, look at trees around it and calculate sunlight
+				trees[x][y].sunlight = _calculate_sunlight(x, y)
 
-
+"""
+Looks at the trees in a 3x3 grid around the selected tree and returns the amount
+of sunlight the 
+"""
+func _calculate_sunlight(x, y):
+	var sunlight = DEFAULT_SUNLIGHT
+	for i in range(x-1, x + 2):
+			for j in range(y-1, y + 2):
+				#Check that indices are within range
+				if (i >= 0 and i < trees_size.x \
+				and j >= 0 and j < trees_size.y \
+				and trees[i][j] != null \
+				and !trees[i][j].dead):
+					#Snoop tree increases sunlight
+					if(trees[i][j].treeName == "snoop"):
+						sunlight += 1
+	return sunlight
+	
 #handles removing and planting of trees
 func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	if free_tree == true:
@@ -82,6 +106,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 		else:
 			trees[plot_x][plot_y]._hide_stats()
 			print("stats hidden")
+			
 	elif $Farm.planting_ready == true:
 		print("new tree incoming")
 		var tree = Tree.instance()
@@ -93,7 +118,10 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 		tree.position.y = pos_y
 		tree._choose_tree(anim)
 		tree.connect("_water_tree_from_tree", self, "_water_tree_from_tree")
+		#sets default sunlight level to 1
+		tree.sunlight = DEFAULT_SUNLIGHT
 		$Inventory._remove_from_inventory()
+		
 	else:
 		print("not ready")
 	
