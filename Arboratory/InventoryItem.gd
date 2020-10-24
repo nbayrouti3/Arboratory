@@ -50,6 +50,10 @@ func _ready():
 		$TextureRect.texture = load("res://Assets/Plants/saplings/bunny_sapling.png")
 		tree_appearance = "bunny_sapling"
 		tree_name = "bunny"
+	elif tree_number == "5":
+		$TextureRect.texture = load("res://Assets/Plants/saplings/sand_sapling.png")
+		tree_appearance = "sand_sapling"
+		tree_name = "sand"
 	elif item_name == "water":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/water_seed.png")
 		item_number = "12"
@@ -77,6 +81,9 @@ func _ready():
 	elif item_name == "bunny":
 		$TextureRect.texture = load("res://Assets/Plants/seeds/bunny_seed.png")
 		item_number = "3"
+	elif item_name == "sand":
+		$TextureRect.texture = load("res://Assets/Plants/seeds/sand_seed.png")
+		item_number = "5"
 	
 
  

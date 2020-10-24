@@ -128,11 +128,11 @@ func _input(event):
 		
 #func _revert_seed(aSeed,which):
 func _revert_seed(aSeed,which):
+	print("YAY")
 	aSeed.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/"+which+"_seed.png")
 	emit_signal("remove_from_inventory")
 	
 #func _connect_newSeed(newSeed):
 	#newSeed.connect("area_shape_entered",self,"_on_aSeeds_area_shape_entered")
 	#newSeed.connect("area_shape_exited",self,"_on_aSeeds_area_shape_exited")
-	
 	

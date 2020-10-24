@@ -41,7 +41,8 @@ func _add_inventory_item(type, inventory_item_name):
 			emit_signal("add_seed",get_tree().get_root().find_node("Seeds",true,false).get_node("aSeeds4"),"lightning")
 		elif inventory_item_name == "bunny":
 			emit_signal("add_seed",get_tree().get_root().find_node("Seeds",true,false).get_node("aSeeds3"),"bunny")
-	
+		elif inventory_item_name == "sand":
+			emit_signal("add_seed",get_tree().get_root().find_node("Seeds",true,false).get_node("aSeeds5"),"sand")
 			
 	else:
 		print("cannot be added")

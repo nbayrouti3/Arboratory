@@ -13,7 +13,7 @@ func _ready():
 	$Seeds.get_node("aSeeds2").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/seed-laventree.png")
 	$Seeds.get_node("aSeeds3").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/bunny_seed.png")
 	$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/lightning_seed.png")
-	$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/Sand_Seed.png")
+	$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
 	$Seeds.get_node("aSeeds6").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/air_seed.png")
 	$Seeds.get_node("aSeeds7").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/cotton_candy_seed.png")
 	$Seeds.get_node("aSeeds8").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/earth_seed.png")
@@ -52,6 +52,8 @@ func _new_seed(type, number):
 				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 			"water":
 				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/water_seed.png")
+			"sand":
+				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
 		
 		seedling.set_position(Vector2(seed_pos.x,seed_pos.y))
 		seed_pos.x +=120

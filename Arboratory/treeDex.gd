@@ -84,7 +84,7 @@ func _on_next_button_pressed():
 #Generic loading tree function
 func load_tree():
 	$tree_id.text = str(key)
-	$Tree_Art.texture = load(seedData[str(key)]["sapplingImage"])
+	$Tree_Art.texture = load(seedData[str(key)]["saplingImage"])
 	$tree_name.text = seedData[str(key)]["treeName"]
 	$tree_description.text = seedData[str(key)]["Description"]
 	$tree_properties.text = "Coming Soon"
