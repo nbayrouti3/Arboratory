@@ -2,7 +2,7 @@ extends Node2D
 
 signal close_menu
 
-var seed_pos = Vector2(500,500)
+var seed_pos = Vector2(77,100)
 #var SeedClass = preload("res://aSeeds.tscn")
 #var script1 = preload("res://mergeArea.gd")
 #var instance = script1.new()
@@ -13,7 +13,7 @@ func _ready():
 	$Seeds.get_node("aSeeds2").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/seed-laventree.png")
 	$Seeds.get_node("aSeeds3").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/bunny_seed.png")
 	$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/lightning_seed.png")
-	$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/Sand_Seed.png")
+	$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
 	$Seeds.get_node("aSeeds6").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/air_seed.png")
 	$Seeds.get_node("aSeeds7").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/cotton_candy_seed.png")
 	$Seeds.get_node("aSeeds8").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/earth_seed.png")
@@ -52,10 +52,13 @@ func _new_seed(type, number):
 				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 			"water":
 				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/water_seed.png")
+			"sand":
+				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
 		
-		seedling.set_position(Vector2(seed_pos.x,seed_pos.y))
-		seed_pos.x +=120
-		seed_pos.y+=30
+		seedling.set_position(Vector2(77,500))
+		seedling.is_old_seed = false
+		seedling.max_seeds = true
+		
 		
 		#newSeed.is_new_seed = true
 		#print("new seed: " + str(newSeed.is_new_seed))
