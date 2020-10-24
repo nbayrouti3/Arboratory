@@ -12,6 +12,7 @@ var treeName
 var wetness = "Wet"
 var time_passed_since_watering = OS.get_unix_time() - last_watering_time
 
+
 var tree_x_index
 var tree_y_index
 signal _water_tree_from_tree

@@ -22,7 +22,7 @@ var seeded = false
 var planted = 0
 var is_old_seed = true
 var is_pot_vacant = true
-
+var max_seeds = false
 
 func _ready():
 	pot.connect("seeded",self,"changeSeed")
@@ -386,6 +386,8 @@ func _revert_seed(aSeed,which):
 	aSeed.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/"+which+"_seed.png")
 	emit_signal("remove_from_inventory")
 	
+func _get_seed_age():
+	return is_old_seed
 #func _connect_newSeed(newSeed):
 	#newSeed.connect("area_shape_entered",self,"_on_aSeeds_area_shape_entered")
 	#newSeed.connect("area_shape_exited",self,"_on_aSeeds_area_shape_exited")

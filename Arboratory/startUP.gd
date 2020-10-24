@@ -57,6 +57,7 @@ func _new_seed(type, number):
 		
 		seedling.set_position(Vector2(77,500))
 		seedling.is_old_seed = false
+		seedling.max_seeds = true
 		
 		
 		#newSeed.is_new_seed = true
