@@ -2,7 +2,7 @@ extends Node2D
 
 signal close_menu
 
-var seed_pos = Vector2(500,500)
+var seed_pos = Vector2(77,100)
 #var SeedClass = preload("res://aSeeds.tscn")
 #var script1 = preload("res://mergeArea.gd")
 #var instance = script1.new()
@@ -55,9 +55,9 @@ func _new_seed(type, number):
 			"sand":
 				seedling.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
 		
-		seedling.set_position(Vector2(seed_pos.x,seed_pos.y))
-		seed_pos.x +=120
-		seed_pos.y+=30
+		seedling.set_position(Vector2(77,500))
+		seedling.is_old_seed = false
+		
 		
 		#newSeed.is_new_seed = true
 		#print("new seed: " + str(newSeed.is_new_seed))

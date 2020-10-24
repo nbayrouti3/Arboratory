@@ -20,7 +20,9 @@ var previous_mouse_position = Vector2()
 var is_dragging = false
 var seeded = false
 var planted = 0
-var is_new_seed = false
+var is_old_seed = true
+var is_pot_vacant = true
+
 
 func _ready():
 	pot.connect("seeded",self,"changeSeed")
@@ -41,16 +43,269 @@ The watered function starts the growth process.
 func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
-		position = Vector2(518,220)
-		is_dragging = false
-		emit_signal("planted",self)
+		if is_pot_vacant:
+			position = Vector2(518,220)
+			is_dragging = false
+			emit_signal("planted",self)
+			get_tree().set_group("seedGroup","is_pot_vacant",false)
+		else:
+			match(self.get_node("SeedImage").texture.to_string()):
+				"[StreamTexture:1318]":
+					if is_old_seed:
+						position = Vector2(965,515)	
+					else:
+						position = Vector2(965,750)
+				"[StreamTexture:1434]":
+					if is_old_seed:
+						position = Vector2(180,518)
+					else:
+						position = Vector2(180,750)
+				"[StreamTexture:1437]":
+					if is_old_seed:
+						position = Vector2(77,518)
+					else:
+						position = Vector2(77,750)
+				"[StreamTexture:1440]":
+					if is_old_seed:
+						position = Vector2(280,518)
+					else:
+						position = Vector2(280,750)
+				"[StreamTexture:1443]":
+					if is_old_seed:
+						position = Vector2(868,516)
+					else:
+						position = Vector2(868,750)
+				"[StreamTexture:1446]":
+					if is_old_seed:
+						position = Vector2(775,518)
+					else:
+						position = Vector2(775,750)
+				"[StreamTexture:1449]":
+					if is_old_seed:
+						position = Vector2(967,376)
+					else:
+						position = Vector2(967,600)
+				"[StreamTexture:1452]":
+					if is_old_seed:
+						position = Vector2(868,373)
+					else:
+						position = Vector2(868,600)
+				"[StreamTexture:1455]":
+					if is_old_seed:
+						position = Vector2(777,371)
+					else:
+						position = Vector2(777,600)
+				"[StreamTexture:1458]":
+					if is_old_seed:
+						position = Vector2(280,371)
+					else:
+						position = Vector2(280,600)
+				"[StreamTexture:1461]":
+					if is_old_seed:
+						position = Vector2(181,373)
+					else:
+						position = Vector2(181,600)
+				"[StreamTexture:1464]":
+					if is_old_seed:
+						position = Vector2(82,369)
+					else:
+						position = Vector2(77,600)
+				"[StreamTexture:2129]":
+					if is_old_seed:
+						position = Vector2(965,515)	
+					else:
+						position = Vector2(965,750)
+				"[StreamTexture:3069]":
+					if is_old_seed:
+						position = Vector2(180,518)
+					else:
+						position = Vector2(180,750)
+				"[StreamTexture:1288]":
+					if is_old_seed:
+						position = Vector2(77,518)
+					else:
+						position = Vector2(77,750)
+				"[StreamTexture:1282]":
+					if is_old_seed:
+						position = Vector2(280,518)
+					else:
+						position = Vector2(280,750)
+				"[StreamTexture:1300]":
+					if is_old_seed:
+						position = Vector2(868,516)
+					else:
+						position = Vector2(868,750)
+				"[StreamTexture:1255]":
+					if is_old_seed:
+						position = Vector2(775,518)
+					else:
+						position = Vector2(775,750)
+				"[StreamTexture:1291]":
+					if is_old_seed:
+						position = Vector2(967,376)
+					else:
+						position = Vector2(967,600)
+				"[StreamTexture:1267]":
+					if is_old_seed:
+						position = Vector2(868,373)
+					else:
+						position = Vector2(868,600)
+				"[StreamTexture:1258]":
+					if is_old_seed:
+						position = Vector2(777,371)
+					else:
+						position = Vector2(777,600)
+				"[StreamTexture:1261]":
+					if is_old_seed:
+						position = Vector2(280,371)
+					else:
+						position = Vector2(280,600)
+				"[StreamTexture:1264]":
+					if is_old_seed:
+						position = Vector2(181,373)
+					else:
+						position = Vector2(181,600)
+				"[StreamTexture:1270]":
+					if is_old_seed:
+						position = Vector2(82,369)
+					else:
+						position = Vector2(77,600)
+					
+						
+			
+			is_dragging = false
+			get_tree().set_group("seedGroup","is_pot_vacant",!is_pot_vacant)
+	else:
 		
-
+		match(self.get_node("SeedImage").texture.to_string()):
+			"[StreamTexture:1318]":
+				if is_old_seed:
+					position = Vector2(965,515)	
+				else:
+					position = Vector2(965,750)
+			"[StreamTexture:1434]":
+				if is_old_seed:
+					position = Vector2(180,518)
+				else:
+					position = Vector2(180,750)
+			"[StreamTexture:1437]":
+				if is_old_seed:
+					position = Vector2(77,518)
+				else:
+					position = Vector2(77,750)
+			"[StreamTexture:1440]":
+				if is_old_seed:
+					position = Vector2(280,518)
+				else:
+					position = Vector2(280,750)
+			"[StreamTexture:1443]":
+				if is_old_seed:
+					position = Vector2(868,516)
+				else:
+					position = Vector2(868,750)
+			"[StreamTexture:1446]":
+				if is_old_seed:
+					position = Vector2(775,518)
+				else:
+					position = Vector2(775,750)
+			"[StreamTexture:1449]":
+				if is_old_seed:
+					position = Vector2(967,376)
+				else:
+					position = Vector2(967,600)
+			"[StreamTexture:1452]":
+				if is_old_seed:
+					position = Vector2(868,373)
+				else:
+					position = Vector2(868,600)
+			"[StreamTexture:1455]":
+				if is_old_seed:
+					position = Vector2(777,371)
+				else:
+					position = Vector2(777,600)
+			"[StreamTexture:1458]":
+				if is_old_seed:
+					position = Vector2(280,371)
+				else:
+					position = Vector2(280,600)
+			"[StreamTexture:1461]":
+				if is_old_seed:
+					position = Vector2(181,373)
+				else:
+					position = Vector2(181,600)
+			"[StreamTexture:1464]":
+				if is_old_seed:
+					position = Vector2(82,369)
+				else:
+					position = Vector2(77,600)
+			"[StreamTexture:2129]":
+				if is_old_seed:
+					position = Vector2(965,515)	
+				else:
+					position = Vector2(965,750)
+			"[StreamTexture:3069]":
+				if is_old_seed:
+					position = Vector2(180,518)
+				else:
+					position = Vector2(180,750)
+			"[StreamTexture:1288]":
+				if is_old_seed:
+					position = Vector2(77,518)
+				else:
+					position = Vector2(77,750)
+			"[StreamTexture:1282]":
+				if is_old_seed:
+					position = Vector2(280,518)
+				else:
+					position = Vector2(280,750)
+			"[StreamTexture:1300]":
+				if is_old_seed:
+					position = Vector2(868,516)
+				else:
+					position = Vector2(868,750)
+			"[StreamTexture:1255]":
+				if is_old_seed:
+					position = Vector2(775,518)
+				else:
+					position = Vector2(775,750)
+			"[StreamTexture:1291]":
+				if is_old_seed:
+					position = Vector2(967,376)
+				else:
+					position = Vector2(967,600)
+			"[StreamTexture:1267]":
+				if is_old_seed:
+					position = Vector2(868,373)
+				else:
+					position = Vector2(868,600)
+			"[StreamTexture:1258]":
+				if is_old_seed:
+					position = Vector2(777,371)
+				else:
+					position = Vector2(777,600)
+			"[StreamTexture:1261]":
+				if is_old_seed:
+					position = Vector2(280,371)
+				else:
+					position = Vector2(280,600)
+			"[StreamTexture:1264]":
+				if is_old_seed:
+					position = Vector2(181,373)
+				else:
+					position = Vector2(181,600)
+			"[StreamTexture:1270]":
+				if is_old_seed:
+					position = Vector2(82,369)
+				else:
+					position = Vector2(77,600)
+		is_dragging  = false
+	
 
 func _on_aSeeds_area_shape_exited(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
 		emit_signal("planted",self)
+		get_tree().set_group("seedGroup","is_pot_vacant",!is_pot_vacant)
 		
 
 func _on_water_area_shape_entered(area_id, area, area_shape, self_shape):
@@ -128,7 +383,6 @@ func _input(event):
 		
 #func _revert_seed(aSeed,which):
 func _revert_seed(aSeed,which):
-	print("YAY")
 	aSeed.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/"+which+"_seed.png")
 	emit_signal("remove_from_inventory")
 	
