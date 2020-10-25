@@ -304,7 +304,8 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 func _on_aSeeds_area_shape_exited(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
-		emit_signal("planted",self)
+		if is_pot_vacant == false:
+			emit_signal("planted",self)
 		get_tree().set_group("seedGroup","is_pot_vacant",!is_pot_vacant)
 		
 
