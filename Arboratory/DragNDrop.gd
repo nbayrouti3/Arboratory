@@ -16,6 +16,7 @@ signal unlocked
 signal add_to_inventory
 signal remove_from_inventory
 
+
 var previous_mouse_position = Vector2()
 var is_dragging = false
 var seeded = false
@@ -23,6 +24,10 @@ var planted = 0
 var is_old_seed = true
 var is_pot_vacant = true
 var max_seeds = false
+var seed_to_merge1
+var seed_to_merge2
+var old_merged_seed
+var time_to_merge  = false
 
 func _ready():
 	pot.connect("seeded",self,"changeSeed")
@@ -48,6 +53,8 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 			is_dragging = false
 			emit_signal("planted",self)
 			get_tree().set_group("seedGroup","is_pot_vacant",false)
+			get_tree().set_group("seedGroup","seed_to_merge1",self)
+			get_tree().set_group("seedGroup","old_merged_seed",self)
 		else:
 			match(self.get_node("SeedImage").texture.to_string()):
 				"[StreamTexture:1318]":
@@ -175,6 +182,10 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 			
 			is_dragging = false
 			get_tree().set_group("seedGroup","is_pot_vacant",!is_pot_vacant)
+			seed_to_merge2 = self
+			time_to_merge  = true
+			_merge(seed_to_merge1,seed_to_merge2,old_merged_seed)
+			
 	else:
 		
 		match(self.get_node("SeedImage").texture.to_string()):
@@ -336,13 +347,14 @@ It then will find the seed location in the dictionary and change the art.
 
 func changeSeed(which):
 	var seedData = ImportData.seed_data
-	for key in seedData:
-		if seedData[key]["seedImage"] == which.get_node("SeedImage").texture:
-			which.get_node("SeedImage").texture = load(seedData[key]["saplingImage"])
-			print(self)
-			emit_signal("unlocked", key)
-			emit_signal("add_to_inventory","sapling",key)
-		
+	if time_to_merge == false:
+		for key in seedData:
+			if seedData[key]["seedImage"] == which.get_node("SeedImage").texture:
+				which.get_node("SeedImage").texture = load(seedData[key]["saplingImage"])
+				print(self)
+				emit_signal("unlocked", key)
+				emit_signal("add_to_inventory","sapling",key)
+	
 """
 When clicked on,
 can be moved around the screen
@@ -392,4 +404,53 @@ func _get_seed_age():
 #func _connect_newSeed(newSeed):
 	#newSeed.connect("area_shape_entered",self,"_on_aSeeds_area_shape_entered")
 	#newSeed.connect("area_shape_exited",self,"_on_aSeeds_area_shape_exited")
-	
+func _merge(which, other,old):
+	if time_to_merge == true && get_tree().get_root().find_node("Inventory",true,false)._can_merge(which,other) == true:
+		get_tree().get_root().find_node("Inventory",true,false)._remove_merged_seeds(old,other)
+		match(which.get_node("SeedImage").texture.to_string()):
+			"[StreamTexture:1446]":
+				match(other.get_node("SeedImage").texture.to_string()):
+					"[StreamTexture:1452]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/sand_seed.png")
+					"[StreamTexture:1464]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/lightning_seed.png")
+					"[StreamTexture:1455]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/lightning_seed.png")
+					_:
+						print("fail")
+			"[StreamTexture:1452]":
+				match(other.get_node("SeedImage").texture.to_string()):
+					"[StreamTexture:1455]":
+						 which.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/magma_seed.png")
+					"[StreamTexture:1464]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/SampleSeed.png")
+					"[StreamTexture:1446]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/sand_seed.png")
+					_:
+						print("fail")
+			"[StreamTexture:1455]":
+				match(other.get_node("SeedImage").texture.to_string()):
+					"[StreamTexture:1446]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/lightning_seed.png")
+					"[StreamTexture:1452]":
+						which.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/magma_seed.png")
+					"[StreamTexture:1464]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/SampleSeed.png")
+					_:
+						print("fail")
+			"[StreamTexture:1464]":
+				match(other.get_node("SeedImage").texture.to_string()):
+					"[StreamTexture:1455]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/SampleSeed.png")
+					"[StreamTexture:1452]":
+						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/SampleSeed.png")
+					"[StreamTexture:1446]":
+						 which.get_node("SeedImage").texture= load("res://Assets/Plants/seeds/lightning_seed.png")
+					_:
+						print("fail")
+			_:
+				print("fail")
+		time_to_merge  = false
+		self.queue_free()
+		
+		
