@@ -92,6 +92,22 @@ func _add_to_inventory(type, inventory_item_name):
 
 func _remove_from_inventory():
 	last_slot_clicked._remove_inventory_item()
+	
+func _remove_merged_seeds(old,other):
+	print(old.get_node("SeedImage").texture)
+	var seedData = ImportData.seed_data
+	for inv_slot in inventory_slots.get_children():
+		if inv_slot.inventory_item:
+			if seedData[inv_slot.inventory_item.item_number]["seedImage"] == old.get_node("SeedImage").texture:
+				inv_slot._remove_inventory_item()
+				break
+				
+	for inv_slot in inventory_slots.get_children():
+		if inv_slot.inventory_item:
+			if seedData[inv_slot.inventory_item.item_number]["seedImage"] == other.get_node("SeedImage").texture:
+				inv_slot._remove_inventory_item()
+				break
+				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -103,3 +119,16 @@ func _remove_from_inventory():
 			#tree._choose_tree(tree_type)
 			#tree.set_position(Vector2(event.position.x,event.position.y))
 			#tree_type = null
+func _can_merge(which,other):
+	var seedData = ImportData.seed_data
+	var count = 0
+	for inv_slot in inventory_slots.get_children():
+		if inv_slot.inventory_item:
+			print(str(inv_slot.inventory_item.item_number))
+			if seedData[inv_slot.inventory_item.item_number]["seedImage"] == which.get_node("SeedImage").texture or seedData[inv_slot.inventory_item.item_number]["seedImage"]== other.get_node("SeedImage").texture:
+					count +=1
+	print(str(count))
+	if count == 4:
+		return true
+	else:
+		return false
