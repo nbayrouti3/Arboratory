@@ -37,7 +37,7 @@ position = Vector2( 517.974, 221 )
 position = Vector2( 523.586, 476.921 )
 
 [node name="water" parent="." instance=ExtResource( 1 )]
-position = Vector2( 891.282, 189.38 )
+position = Vector2( 929.359, 69.9235 )
 
 [node name="Seeds" type="Control" parent="."]
 margin_left = -0.212673
@@ -118,10 +118,10 @@ margin_left = 1.59003
 margin_right = 1.59003
 
 [node name="treeDex_button" type="Button" parent="."]
-margin_left = 941.087
-margin_top = 81.0879
-margin_right = 996.087
-margin_bottom = 136.088
+margin_left = 23.6374
+margin_top = 9.41404
+margin_right = 78.6374
+margin_bottom = 64.414
 custom_styles/hover = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 icon = ExtResource( 8 )
@@ -132,10 +132,10 @@ __meta__ = {
 [node name="BaseFarmGrid" parent="." instance=ExtResource( 6 )]
 
 [node name="FarmButton" type="Button" parent="."]
-margin_left = 939.72
-margin_top = 9.99999
-margin_right = 994.72
-margin_bottom = 66.8723
+margin_left = 23.637
+margin_top = 87.606
+margin_right = 78.637
+margin_bottom = 142.606
 custom_styles/hover = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
 icon = ExtResource( 10 )
