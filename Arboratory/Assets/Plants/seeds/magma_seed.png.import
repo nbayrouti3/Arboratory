@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PauseBackground.png-cd435e663bb0e77702eb948c397f9657.stex"
+path="res://.import/magma_seed.png-e4beedff9fa48d44d7bbc85fe19325d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/PauseBackground.png"
-dest_files=[ "res://.import/PauseBackground.png-cd435e663bb0e77702eb948c397f9657.stex" ]
+source_file="res://Assets/Plants/seeds/magma_seed.png"
+dest_files=[ "res://.import/magma_seed.png-e4beedff9fa48d44d7bbc85fe19325d8.stex" ]
 
 [params]
 

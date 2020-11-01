@@ -78,6 +78,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CottonCandyTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LightningTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BunnyTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SandTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ClearPlots" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
@@ -111,13 +139,25 @@ text = "Water"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ExitFarm" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="WaterTree" to="." method="_on_WaterTree_pressed"]
 [connection signal="pressed" from="FireTree" to="." method="_on_FireTree_pressed"]
 [connection signal="pressed" from="EarthTree" to="." method="_on_EarthTree_pressed"]
 [connection signal="pressed" from="AirTree" to="." method="_on_AirTree_pressed"]
 [connection signal="pressed" from="MagmaTree" to="." method="_on_MagmaTree_pressed"]
 [connection signal="pressed" from="SnoopTree" to="." method="_on_SnoopTree_pressed"]
+[connection signal="pressed" from="CottonCandyTree" to="." method="_on_CottonCandyTree_pressed"]
+[connection signal="pressed" from="LightningTree" to="." method="_on_LightningTree_pressed"]
+[connection signal="pressed" from="BunnyTree" to="." method="_on_BunnyTree_pressed"]
+[connection signal="pressed" from="SandTree" to="." method="_on_SandTree_pressed"]
 [connection signal="pressed" from="ClearPlots" to="." method="_on_ClearPlots_pressed"]
 [connection signal="pressed" from="ClearSinglePlot" to="." method="_on_ClearSinglePlot_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]
 [connection signal="pressed" from="Water" to="." method="_on_Water_pressed"]
+[connection signal="pressed" from="ExitFarm" to="." method="_on_ExitFarm_pressed"]
