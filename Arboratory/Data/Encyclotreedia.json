@@ -38,7 +38,7 @@
         "treeName": "Sand Tree",
 		"seedImage": "res://Assets/Plants/seeds/sand_seed.png",
 		"saplingImage": "res://Assets/Plants/saplings/sand_sapling.png",
-		"treeImage": "",
+		"treeImage": "res://Assets/Plants/trees/sand_tree.png",
 		"Description": ""
 	},
     "6": {
