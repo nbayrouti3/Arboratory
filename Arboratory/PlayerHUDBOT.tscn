@@ -33,19 +33,20 @@ custom_styles/normal = SubResource( 1 )
 custom_colors/font_color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 text = "Lab"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-margin_right = 1024.0
+[node name="ShopButtons" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 26.0
+margin_right = 57.0
 margin_bottom = 14.0
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2"]
-margin_left = 993.0
-margin_right = 1024.0
-margin_bottom = 14.0
-
-[node name="Shop" type="Button" parent="HBoxContainer2/HBoxContainer"]
+[node name="Shop" type="Button" parent="HBoxContainer/ShopButtons"]
 margin_right = 31.0
 margin_bottom = 14.0
 custom_styles/normal = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Shop"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 14.0
+alignment = 2
