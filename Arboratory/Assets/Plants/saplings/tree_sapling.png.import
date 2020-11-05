@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sample Water.png-cdc49778a41949660591165394cd4e80.stex"
+path="res://.import/tree_sapling.png-72a537bded3c9dafc7c1de4e26f15c55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Art/Sample Water.png"
-dest_files=[ "res://.import/Sample Water.png-cdc49778a41949660591165394cd4e80.stex" ]
+source_file="res://Assets/Plants/saplings/tree_sapling.png"
+dest_files=[ "res://.import/tree_sapling.png-72a537bded3c9dafc7c1de4e26f15c55.stex" ]
 
 [params]
 
