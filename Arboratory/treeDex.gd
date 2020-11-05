@@ -30,6 +30,7 @@ func disable_items():
 func unlock(id):
 	print ("Signal Recieved")
 	dropdown.set_item_disabled(int(id), false)
+	Leveling.gain_xp(5)
 
 #Changes the Dex to represent the item selected
 func on_item_selected(id):

@@ -119,6 +119,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 								for member in get_tree().get_nodes_in_group("seedGroup"):
 									if member.seed_name == "water":
 										max_seed+=1	
+
 							"bubble":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
 									if member.seed_name == "bubble":
@@ -128,6 +129,9 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 									if member.seed_name == "tree":
 										max_seed+=1
 				max_seed+=1
+
+				Leveling.gain_xp(2)
+
 				if max_seed %2 == 0:
 					print("YAY")
 					for z in range(2):
@@ -283,6 +287,7 @@ func _new_farm():
 										max_seed+=1
 						max_seed+=1
 						print(str(max_seed))
+						Leveling.gain_xp(2)
 						if max_seed %2 == 0:
 							for z in range(2):
 								$Inventory._add_to_inventory("seed",trees[x][y].treeName)
