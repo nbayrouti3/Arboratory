@@ -100,13 +100,13 @@ func _remove_merged_seeds(old,other):
 		if inv_slot.inventory_item:
 			if seedData[inv_slot.inventory_item.item_number]["seedImage"] == old.get_node("SeedImage").texture:
 				inv_slot._remove_inventory_item()
-				break
+#				break
 				
 	for inv_slot in inventory_slots.get_children():
 		if inv_slot.inventory_item:
 			if seedData[inv_slot.inventory_item.item_number]["seedImage"] == other.get_node("SeedImage").texture:
 				inv_slot._remove_inventory_item()
-				break
+#				break
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -122,10 +122,23 @@ func _remove_merged_seeds(old,other):
 func _can_merge(which,other):
 	var seedData = ImportData.seed_data
 	var count = 0
+	if (which.seed_name == "fire" and other.seed_name == "earth") or (which.seed_name == "earth" and other.seed_name == "fire"):
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member.seed_name == "magma":
+				return false
+	elif (which.seed_name == "earth" and other.seed_name == "air") or (which.seed_name == "air" and other.seed_name == "earth"):
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member.seed_name == "sand":
+				return false
+	elif (which.seed_name == "fire" and other.seed_name == "air") or (which.seed_name == "air" and other.seed_name == "fire") or (which.seed_name == "air" and other.seed_name == "water") or (which.seed_name == "water" and other.seed_name == "air"):
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member.seed_name == "lightning":
+				return false
 	for inv_slot in inventory_slots.get_children():
 		if inv_slot.inventory_item:
 			print(str(inv_slot.inventory_item.item_number))
-			if seedData[inv_slot.inventory_item.item_number]["seedImage"] == which.get_node("SeedImage").texture or seedData[inv_slot.inventory_item.item_number]["seedImage"]== other.get_node("SeedImage").texture:
+			if inv_slot.inventory_item.item_number != null:
+				if seedData[inv_slot.inventory_item.item_number]["seedImage"] == which.get_node("SeedImage").texture or seedData[inv_slot.inventory_item.item_number]["seedImage"]== other.get_node("SeedImage").texture:
 					count +=1
 	print(str(count))
 	if count == 4:

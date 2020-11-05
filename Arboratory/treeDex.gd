@@ -41,6 +41,7 @@ func on_item_selected(id):
 func _on_exit_button_pressed():
 	self.visible = false
 	get_tree().paused = false
+	get_tree().call_group("seedGroup","show")
 
 #General Back Button function
 func _on_back_button_pressed():
