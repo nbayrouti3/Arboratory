@@ -36,6 +36,7 @@ scale = Vector2( 1e-05, 1e-05 )
 [connection signal="plant_magma" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_sand" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_snoop" from="PlantingNotifier" to="." method="_select_tree"]
+[connection signal="plant_tree" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="plant_water" from="PlantingNotifier" to="." method="_select_tree"]
 [connection signal="water_tree" from="PlantingNotifier" to="." method="_water_tree"]
 [connection signal="air_tree_pressed" from="Inventory" to="PlantingNotifier" method="_on_AirTree_pressed"]
@@ -48,4 +49,5 @@ scale = Vector2( 1e-05, 1e-05 )
 [connection signal="magma_tree_pressed" from="Inventory" to="PlantingNotifier" method="_on_MagmaTree_pressed"]
 [connection signal="sand_tree_pressed" from="Inventory" to="PlantingNotifier" method="_on_SandTree_pressed"]
 [connection signal="snoop_tree_pressed" from="Inventory" to="PlantingNotifier" method="_on_SnoopTree_pressed"]
+[connection signal="tree_tree_pressed" from="Inventory" to="PlantingNotifier" method="_on_TreeTree_pressed"]
 [connection signal="water_tree_pressed" from="Inventory" to="PlantingNotifier" method="_on_WaterTree_pressed"]

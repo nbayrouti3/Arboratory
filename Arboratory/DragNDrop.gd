@@ -177,7 +177,7 @@ func _merge(which, other,old):
 					"fire":
 						get_tree().get_root().find_node("Planting",true,false)._new_seed("magma",1)
 					"water": 
-						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/SampleSeed.png")
+						get_tree().get_root().find_node("Planting",true,false)._new_seed("tree",1)
 					"air":
 						get_tree().get_root().find_node("Planting",true,false)._new_seed("sand",1)
 					_:
@@ -197,7 +197,7 @@ func _merge(which, other,old):
 					"fire":
 						get_tree().get_root().find_node("Planting",true,false)._new_seed("bubble",1)
 					"earth":
-						which.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/SampleSeed.png")
+						get_tree().get_root().find_node("Planting",true,false)._new_seed("tree",1)
 					"air":
 						 get_tree().get_root().find_node("Planting",true,false)._new_seed("lightning",1)
 					_:

@@ -95,6 +95,13 @@
         "seedImage": "res://Assets/Plants/seeds/bubble_seed.png",
         "saplingImage": "res://Assets/Plants/saplings/bubble_sapling.png",
         "treeImage": "res://Assets/Plants/trees/bubble_tree.png",
-        "Description":""
+        "Description": ""
+    },
+    "14": {
+        "treeName": "Tree Tree",
+        "seedImage": "res://Assets/Plants/seeds/tree_seed.png",
+        "saplingImage": "res://Assets/Plants/saplings/tree_sapling.png",
+        "treeImage": "res://Assets/Plants/trees/tree_tree.png",
+        "Description": ""
     }
 }
