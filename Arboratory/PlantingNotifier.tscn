@@ -16,6 +16,18 @@ font_data = ExtResource( 1 )
 size = 43
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 140, 82 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 140, 82 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 140, 82 )
+
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 140, 82 )
@@ -29,30 +41,18 @@ texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 140, 82 )
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 140, 82 )
-
-[sub_resource type="StyleBoxTexture" id=12]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 140, 82 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 140, 82 )
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 58, 60 )
-
-[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 58, 60 )
 
 [sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 58, 60 )
+
+[sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 140, 82 )
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 140, 82 )
 
@@ -151,11 +151,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BubbleTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ClearPlots" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.305882, 0.305882, 0.305882, 1 )
 text = "Clear Plots"
@@ -166,8 +173,8 @@ __meta__ = {
 [node name="ClearSinglePlot" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.305882, 0.305882, 0.305882, 1 )
 text = "Clear Single Plot"
@@ -182,8 +189,8 @@ margin_left = 5.09827
 margin_top = 3.30305
 margin_right = 80.0983
 margin_bottom = 67.3031
-custom_styles/hover = SubResource( 12 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 icon = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -196,8 +203,8 @@ margin_left = -1.0
 margin_top = 0.366928
 margin_right = 78.0
 margin_bottom = 74.3669
-custom_styles/hover = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -208,8 +215,8 @@ margin_left = 4.34314
 margin_top = 4.23611
 margin_right = 69.3431
 margin_bottom = 51.2361
-custom_styles/hover = SubResource( 10 )
-custom_styles/normal = SubResource( 11 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
 icon = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -224,6 +231,7 @@ __meta__ = {
 [connection signal="pressed" from="LightningTree" to="." method="_on_LightningTree_pressed"]
 [connection signal="pressed" from="BunnyTree" to="." method="_on_BunnyTree_pressed"]
 [connection signal="pressed" from="SandTree" to="." method="_on_SandTree_pressed"]
+[connection signal="pressed" from="BubbleTree" to="." method="_on_BubbleTree_pressed"]
 [connection signal="pressed" from="ClearPlots" to="." method="_on_ClearPlots_pressed"]
 [connection signal="pressed" from="ClearSinglePlot" to="." method="_on_ClearSinglePlot_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -23,17 +23,19 @@
 [ext_resource path="res://Assets/Plants/trees/cotton_candy_tree.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Plants/trees/sand_tree.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Plants/saplings/sand_sapling.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Plants/saplings/bubble_sapling.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Plants/trees/bubble_tree.png" type="Texture" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "sand",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
@@ -41,19 +43,19 @@ animations = [ {
 "name": "magma",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "earth",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "air",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "lightning",
+"name": "cottoncandy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "earth",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
@@ -61,9 +63,9 @@ animations = [ {
 "name": "fire",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "cottoncandy",
+"name": "lightning",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 15 ) ],
@@ -76,9 +78,14 @@ animations = [ {
 "name": "snoop",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "sand",
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "bubble",
 "speed": 5.0
 } ]
 
@@ -92,7 +99,7 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "sand"
+animation = "bubble"
 
 [node name="TreeStats" type="CanvasLayer" parent="."]
 
