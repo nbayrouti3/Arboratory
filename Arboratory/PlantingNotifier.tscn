@@ -228,6 +228,38 @@ icon = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ProgressBar" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ProgressBar"]
+margin_right = 1920.0
+margin_bottom = 14.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ProgressBar/HBoxContainer"]
+margin_bottom = 14.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ProgressBar/HBoxContainer/VBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Words" type="MarginContainer" parent="ProgressBar/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Background" type="NinePatchRect" parent="ProgressBar/HBoxContainer/VBoxContainer/HBoxContainer/Words"]
+margin_bottom = 14.0
+
+[node name="LevelText" type="TextureRect" parent="ProgressBar/HBoxContainer/VBoxContainer/HBoxContainer/Words"]
+margin_bottom = 14.0
+
+[node name="Number" type="Label" parent="ProgressBar/HBoxContainer/VBoxContainer/HBoxContainer/Words"]
+margin_bottom = 14.0
 [connection signal="pressed" from="WaterTree" to="." method="_on_WaterTree_pressed"]
 [connection signal="pressed" from="FireTree" to="." method="_on_FireTree_pressed"]
 [connection signal="pressed" from="EarthTree" to="." method="_on_EarthTree_pressed"]
