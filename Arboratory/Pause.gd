@@ -10,11 +10,10 @@ var isPaused = false;
 func _ready():
 	set_visible(false)
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		set_visible(!get_tree().paused)	
-		isPaused = !get_tree().paused;
-		get_tree().paused = !get_tree().paused
+func pauseGame():
+	set_visible(!get_tree().paused)	
+	isPaused = !get_tree().paused;
+	get_tree().paused = !get_tree().paused
 
 
 func _on_Continue_pressed():

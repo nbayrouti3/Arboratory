@@ -94,3 +94,7 @@ func _return_to_planting():
 	$BaseFarmGrid/PlantingNotifier/Return.hide()
 	$BaseFarmGrid/PlantingNotifier/Water.hide()
 	$BaseFarmGrid/Farm._close_menu()
+
+
+func _on_PauseButton_pressed():
+	PauseMenu.pauseGame()

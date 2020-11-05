@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://water.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pot.tscn" type="PackedScene" id=2]
@@ -10,16 +10,17 @@
 [ext_resource path="res://Assets/HUD/big tree.png" type="Texture" id=8]
 [ext_resource path="res://Assets/HUD/circle_slightly_smaller.png" type="Texture" id=9]
 [ext_resource path="res://Assets/HUD/farm.png" type="Texture" id=10]
+[ext_resource path="res://Assets/HUD/gear.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 58, 60 )
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 58, 60 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 58, 60 )
-
-[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 58, 60 )
 
@@ -122,8 +123,8 @@ margin_left = 23.6374
 margin_top = 9.41404
 margin_right = 78.6374
 margin_bottom = 64.414
-custom_styles/hover = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
 icon = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,9 +137,22 @@ margin_left = 23.637
 margin_top = 87.606
 margin_right = 78.637
 margin_bottom = 142.606
-custom_styles/hover = SubResource( 5 )
+custom_styles/hover = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 icon = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="Button" parent="."]
+margin_left = 23.6374
+margin_top = 166.132
+margin_right = 78.6374
+margin_bottom = 221.132
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+icon = ExtResource( 11 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,6 +161,7 @@ __meta__ = {
 [connection signal="add_seeds" from="BaseFarmGrid" to="." method="_new_seed"]
 [connection signal="return_to_planting" from="BaseFarmGrid" to="." method="_return_to_planting"]
 [connection signal="pressed" from="FarmButton" to="." method="_on_FarmButton_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
 
 [editable path="Seeds/aSeeds2"]
 
