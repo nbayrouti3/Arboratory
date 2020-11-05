@@ -17,11 +17,12 @@ _global_script_class_icons={
 
 config/name="Arboratory"
 run/main_scene="res://Planting.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Art/arboratory_logo_a.png"
 
 [autoload]
 
 ImportData="*res://importData.gd"
+Leveling="*res://leveling.gd"
 
 [display]
 
@@ -58,6 +59,6 @@ ui_click={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
+vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
