@@ -21,8 +21,8 @@ func _ready():
 	#$Seeds.get_node("aSeeds10").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/magma_seed.png")
 	$Seeds.get_node("aSeeds11").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 	$Seeds.get_node("aSeeds12").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/water_seed.png")
-	$FarmButton.set_position(Vector2(0,50))
-	$FarmButton.set_text("Farm")
+	#$FarmButton.set_position(Vector2(0,50))
+	#$FarmButton.set_text("Farm")
 	pass 
 
 func _new_seed(type, number):
