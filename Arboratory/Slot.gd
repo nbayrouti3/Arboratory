@@ -72,7 +72,17 @@ func _add_inventory_item(type, inventory_item_name):
 			for member in get_tree().get_nodes_in_group("seedGroup"):
 				if member.seed_name == "sand":
 					emit_signal("add_seed",member,"sand")
-					break		
+					break
+		elif inventory_item_name == "bubble":
+			for member in get_tree().get_nodes_in_group("seedGroup"):
+				if member.seed_name == "bubble":
+					emit_signal("add_seed",member,"bubble")
+					break
+		elif inventory_item_name == "tree":
+			for member in get_tree().get_nodes_in_group("seedGroup"):
+				if member.seed_name == "tree":
+					emit_signal("add_seed",member,"tree")
+					break
 	else:
 		print("cannot be added")
 	

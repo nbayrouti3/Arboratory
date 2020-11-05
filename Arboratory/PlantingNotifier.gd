@@ -10,6 +10,8 @@ signal plant_cotton_candy
 signal plant_lightning
 signal plant_bunny
 signal plant_sand
+signal plant_bubble
+signal plant_tree
 signal clear
 signal clear_single
 signal water_tree
@@ -61,6 +63,8 @@ func _ready():
 	$LightningTree.hide()
 	$BunnyTree.hide()
 	$SandTree.hide()
+	$BubbleTree.hide()
+	$TreeTree.hide()
 	
 #updates the planting message
 func show_message(text):
@@ -137,6 +141,12 @@ func _on_BunnyTree_pressed():
 	
 func _on_SandTree_pressed():
 	emit_signal("plant_sand","sand_tree")
+	
+func _on_BubbleTree_pressed():
+	emit_signal("plant_bubble","bubble_tree")
+	
+func _on_TreeTree_pressed():
+	emit_signal("plant_tree","tree_tree")
 
 #clear all plots
 func _on_ClearPlots_pressed():
@@ -154,6 +164,8 @@ func _open_tree_control_menu():
 	$FireTree.hide()
 	$MagmaTree.hide()
 	$SnoopTree.hide()
+	$BubbleTree.hide()
+	$TreeTree.hide()
 	$ClearPlots.hide()
 	$ClearSinglePlot.show()
 	$Return.show()

@@ -13,6 +13,8 @@ var fire_num = 0
 var magma_num = 0
 var snoop_num = 0
 var water_num = 0
+var bubble_num = 0
+var tree_num = 0
 
 """
 Not sure what the comments are here but puts the air, fire, water, earth seed 
@@ -136,6 +138,24 @@ func _new_seed(type, number):
 					seedling.set_position(Vector2(977,700))
 					seedling.seed_pos = Vector2(977,700)
 				sand_num+=1
+			"bubble":
+				seedling.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/bubble_seed.png")
+				if bubble_num %2 == 0:
+					seedling.set_position(Vector2(1077,600))
+					seedling.seed_pos = Vector2(1077,600)
+				else:
+					seedling.set_position(Vector2(1077,700))
+					seedling.seed_pos = Vector2(1077,700)
+				bubble_num+=1
+			"tree":
+				seedling.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/tree_seed.png")
+				if tree_num%2 == 0:
+					seedling.set_position(Vector2(1177,600))
+					seedling.seed_pos = Vector2(1177,600)
+				else:
+					seedling.set_position(Vector2(1177,700))
+					seedling.seed_pos = Vector2(1177,700)
+				tree_num+=1
 		seedling.hide()
 
 

@@ -21,6 +21,8 @@ signal cotton_candy_tree_pressed
 signal lightning_tree_pressed
 signal bunny_tree_pressed
 signal sand_tree_pressed
+signal bubble_tree_pressed
+signal tree_tree_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -75,6 +77,10 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				emit_signal("bunny_tree_pressed")
 			elif slot.tree_appearance == "sand_sapling"&&slot.inventory_item:
 				emit_signal("sand_tree_pressed")
+			elif slot.tree_appearance == "bubble_sapling"&&slot.inventory_item:
+				emit_signal("bubble_tree_pressed")
+			elif slot.tree_appearance == "tree_sapling"&&slot.inventory_item:
+				emit_signal("tree_tree_pressed")
 			else:
 				print("not ready")
 			last_slot_clicked = slot
@@ -133,6 +139,14 @@ func _can_merge(which,other):
 	elif (which.seed_name == "fire" and other.seed_name == "air") or (which.seed_name == "air" and other.seed_name == "fire") or (which.seed_name == "air" and other.seed_name == "water") or (which.seed_name == "water" and other.seed_name == "air"):
 		for member in get_tree().get_nodes_in_group("seedGroup"):
 			if member.seed_name == "lightning":
+				return false
+	elif (which.seed_name == "fire" and other.seed_name == "water") or (which.seed_name == "water" and other.seed_name == "fire"):
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member.seed_name == "bubble":
+				return false
+	elif (which.seed_name == "water" and other.seed_name == "earth") or (which.seed_name == "earth" and other.seed_name == "water"):
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member.seed_name == "tree":
 				return false
 	for inv_slot in inventory_slots.get_children():
 		if inv_slot.inventory_item:
