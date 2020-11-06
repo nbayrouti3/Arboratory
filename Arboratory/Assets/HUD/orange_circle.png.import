@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sand_Seed.png-5d1d73ca557a2c609971a0434c6110a3.stex"
+path="res://.import/orange_circle.png-3d50306e7ed4ce7cc0f73764dd80500c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/seeds/Sand_Seed.png"
-dest_files=[ "res://.import/Sand_Seed.png-5d1d73ca557a2c609971a0434c6110a3.stex" ]
+source_file="res://Assets/HUD/orange_circle.png"
+dest_files=[ "res://.import/orange_circle.png-3d50306e7ed4ce7cc0f73764dd80500c.stex" ]
 
 [params]
 

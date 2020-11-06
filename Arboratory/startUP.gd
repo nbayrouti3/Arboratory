@@ -12,17 +12,17 @@ var seed_pos = Vector2(77,100)
 func _ready():
 	$Seeds.get_node("aSeeds2").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/seed-laventree.png")
 	$Seeds.get_node("aSeeds3").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/bunny_seed.png")
-	$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/lightning_seed.png")
-	$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
+	#$Seeds.get_node("aSeeds4").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/lightning_seed.png")
+	#$Seeds.get_node("aSeeds5").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/sand_seed.png")
 	$Seeds.get_node("aSeeds6").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/air_seed.png")
 	$Seeds.get_node("aSeeds7").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/cotton_candy_seed.png")
 	$Seeds.get_node("aSeeds8").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/earth_seed.png")
 	$Seeds.get_node("aSeeds9").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/fire_seed.png")
-	$Seeds.get_node("aSeeds10").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/magma_seed.png")
+	#$Seeds.get_node("aSeeds10").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/magma_seed.png")
 	$Seeds.get_node("aSeeds11").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/snoop_dogg_seed.png")
 	$Seeds.get_node("aSeeds12").get_node("SeedImage").texture= load("res://Assets/Plants/seeds/water_seed.png")
-	$FarmButton.set_position(Vector2(0,50))
-	$FarmButton.set_text("Farm")
+	#$FarmButton.set_position(Vector2(0,50))
+	#$FarmButton.set_text("Farm")
 	pass 
 
 func _new_seed(type, number):
@@ -94,3 +94,7 @@ func _return_to_planting():
 	$BaseFarmGrid/PlantingNotifier/Return.hide()
 	$BaseFarmGrid/PlantingNotifier/Water.hide()
 	$BaseFarmGrid/Farm._close_menu()
+
+
+func _on_PauseButton_pressed():
+	PauseMenu.pauseGame()

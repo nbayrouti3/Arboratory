@@ -12,16 +12,21 @@ var treeName
 var wetness = "Wet"
 var time_passed_since_watering = OS.get_unix_time() - last_watering_time
 
-
 var tree_x_index
 var tree_y_index
 signal _water_tree_from_tree
 
 """
+Variables relating to sunlight
+"""
+#sunlight level, speeds up growth when greater than 1
+var sunlight
+
+"""
 Variables relating to growth
 """
 #15 min of in-game time must pass before tree is grown
-const TIME_UNTIL_GROWN = 20
+var time_until_grown
 var time_planted
 var tree_maturity = "Sapling"
 
@@ -30,10 +35,7 @@ Variables relating to death
 """
 var dead = false
 
-"""
-Variables relating to sunlight
-"""
-var sunlight
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -71,12 +73,17 @@ func _ready():
 
 func _process(delta):
 	if (not dead):
+		adjust_growth_time()
 		check_water_status()
 		check_growth_status()
 	check_death_status()
 	_update_stats()
 	
-		
+"""
+Adjusts the growth time based on what the sunlight level of the tree is.
+"""
+func adjust_growth_time():
+	time_until_grown = 20 / sunlight
 """
 Checks to see whether enough time has passed in real life for plants to 
 need water. If enough time has passed, deduct health.
@@ -84,9 +91,8 @@ need water. If enough time has passed, deduct health.
 func check_water_status():
 	if treeName == "water":
 		time_passed_since_watering = 0
-		
 	else:
-		time_passed_since_watering = OS.get_unix_time() - last_watering_time
+		time_passed_since_watering = (OS.get_unix_time() - last_watering_time) - int(PauseMenu.pauseTime)
 	
 	if 13 - (time_passed_since_watering) > 10:
 		wetness = "Wet"
@@ -104,7 +110,7 @@ Checks to see if enough time has passed for the tree to grow.
 If enough time has passed, changes the texture of the tree.
 """
 func check_growth_status():
-	if (OS.get_unix_time() - time_planted >= TIME_UNTIL_GROWN):
+	if (OS.get_unix_time() - time_planted - int(PauseMenu.pauseTime) >= time_until_grown):
 		tree_maturity = "Mature"
 		$AnimatedSprite.set_frame(1)
 		

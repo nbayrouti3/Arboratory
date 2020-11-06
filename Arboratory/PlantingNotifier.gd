@@ -55,7 +55,7 @@ func _ready():
 	$Water.hide()
 	$PlantingNotifierMessage.hide()
 	$ExitFarm.set_position(Vector2(1000,700))
-	$ExitFarm.set_text("Exit Farm")
+	#$ExitFarm.set_text("Exit Farm")
 	$ExitFarm.hide()
 	$CottonCandyTree.hide()
 	$LightningTree.hide()

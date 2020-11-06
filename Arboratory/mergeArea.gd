@@ -14,6 +14,7 @@ func _ready():
 	Water.connect("watered",self,"grow") #Tells Godot that these nodes will emit a certain signal and to run a function when it does
 	for Seed in Seeds:
 		Seed.connect("planted",self,"planted")
+	
 
 """
 When the seed is overlaps with the pot it will emit a planted signal activating the planted function over here.
