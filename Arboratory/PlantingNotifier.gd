@@ -41,30 +41,33 @@ func _ready():
 	$AirTree.hide()
 	$MagmaTree.hide()
 	$SnoopTree.hide()
-	$ClearPlots.set_position(Vector2(900,400))
-	$ClearPlots.add_font_override("font",dynamic_font)
+	$ClearPlots.set_position(Vector2(1060,460))
+	#$ClearPlots.add_font_override("font",dynamic_font)
 	$ClearPlots.hide()
-	$ClearSinglePlot.set_position(Vector2(900,460))
-	$ClearSinglePlot.add_font_override("font",dynamic_font)
+	$ClearSinglePlot.set_position(Vector2(1060,460))
+	#$ClearSinglePlot.add_font_override("font",dynamic_font)
 	$ClearSinglePlot.hide()
-	$PlantingNotifierMessage.set_position(Vector2(1100,600))
-	$PlantingNotifierMessage.add_font_override("font",dynamic_font)
-	$Return.set_position(Vector2(900,520))
-	$Return.add_font_override("font",dynamic_font)
+	$PlantingNotifierMessage.set_position(Vector2(1100,410))
+	#$PlantingNotifierMessage.add_font_override("font",dynamic_font)
+	$Return.set_position(Vector2(1380,460))
+	#$Return.add_font_override("font",dynamic_font)
 	$Return.hide()
-	$Water.set_position(Vector2(900,280))
-	$Water.add_font_override("font",dynamic_font)
+	$Water.set_position(Vector2(900,460))
+	#$Water.add_font_override("font",dynamic_font)
 	$Water.hide()
 	$PlantingNotifierMessage.hide()
-	$ExitFarm.set_position(Vector2(1000,700))
+	$ExitFarm.set_position(Vector2(1220,460))
 	#$ExitFarm.set_text("Exit Farm")
 	$ExitFarm.hide()
+	$treeDex_button2.set_position(Vector2(750,15))
+	$treeDex_button2.hide()
 	$CottonCandyTree.hide()
 	$LightningTree.hide()
 	$BunnyTree.hide()
 	$SandTree.hide()
 	$BubbleTree.hide()
 	$TreeTree.hide()
+	$ProgressBar.hide()
 	
 #updates the planting message
 func show_message(text):
@@ -189,9 +192,11 @@ func _on_Return_pressed():
 
 func _on_Water_pressed():
 	emit_signal("water_tree")
-
-
-
+	
+func _on_treeDex_button2_pressed():
+	$treeDex.show()
+	get_tree().call_group("seedGroup","hide")
+	get_tree().paused = true
 
 
 func _on_ExitFarm_pressed():

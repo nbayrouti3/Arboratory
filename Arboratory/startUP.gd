@@ -178,14 +178,18 @@ Shows the Farm and Inventory and hides the rest.
 """
 func _on_FarmButton_pressed():
 	$BaseFarmGrid._unpause()
-	$BaseFarmGrid/Inventory/ColorRect.show()
+	$BaseFarmGrid/Inventory/TextureRect.show()
 	$BaseFarmGrid/Inventory/GridContainer.show()
 	$BaseFarmGrid/Farm.show()
 	$BaseFarmGrid/PlantingNotifier/ClearPlots.show()
 	$BaseFarmGrid/PlantingNotifier/ExitFarm.show()
 	$BaseFarmGrid/PlantingNotifier/PlantingNotifierMessage.show()
+	$BaseFarmGrid/PlantingNotifier/ProgressBar.show()
+	#$BaseFarmGrid/PlantingNotifier/treeDex_button2.show()
 	$Pot.hide()
 	$water.hide()
+	$treeDex_button.hide()
+	$FarmButton.hide()
 	get_tree().call_group("seedGroup","hide")
 	
 """
@@ -197,9 +201,13 @@ Makes sure to close any open tree menu
 func _return_to_planting():
 	$Pot.show()
 	$water.show()
+	$treeDex_button.show()
+	$FarmButton.show()
 	get_tree().call_group("seedGroup","show")
 	$BaseFarmGrid._pause()
 	$BaseFarmGrid/PlantingNotifier/ClearSinglePlot.hide()
 	$BaseFarmGrid/PlantingNotifier/Return.hide()
 	$BaseFarmGrid/PlantingNotifier/Water.hide()
+	$BaseFarmGrid/PlantingNotifier/ProgressBar.hide()
+	#$BaseFarmGrid/PlantingNotifier/treeDex_button2.hide()
 	$BaseFarmGrid/Farm._close_menu()

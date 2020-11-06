@@ -26,10 +26,10 @@ signal tree_tree_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ColorRect.color = Color(0,.960784,1,1)
-	$ColorRect.set_size(Vector2(400,250))
-	$ColorRect.set_position(Vector2(1200,200))
-	$GridContainer.set_position(Vector2(1205,250))
+	#$ColorRect.color = Color(0,.960784,1,1)
+	$TextureRect.set_size(Vector2(400,250))
+	$TextureRect.set_position(Vector2(900,530))
+	$GridContainer.set_position(Vector2(1050,580))
 	$GridContainer.columns = 6
 	$GridContainer.set("custom_constants/vseparation",6)
 	$GridContainer.set("custom_constants/hseparation",6) 
