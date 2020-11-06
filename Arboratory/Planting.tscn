@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://water.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://labBench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/HUD/button_green_big.png" type="Texture" id=3]
 [ext_resource path="res://treeDex.tscn" type="PackedScene" id=4]
 [ext_resource path="res://startUP.gd" type="Script" id=5]
 [ext_resource path="res://BaseFarmGrid.tscn" type="PackedScene" id=6]
@@ -23,19 +23,45 @@ region_rect = Rect2( 0, 0, 58, 60 )
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 58, 60 )
+[ext_resource path="res://Fonts/Itim-Regular.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 58, 60 )
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 300, 100 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 300, 100 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 300, 100 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 300, 100 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 300, 100 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 300, 100 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 8 )
 
 [node name="Planting" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Pot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 517.974, 221 )
-
-[node name="Lab Bench" parent="." instance=ExtResource( 3 )]
-position = Vector2( 523.586, 476.921 )
 
 [node name="water" parent="." instance=ExtResource( 1 )]
 position = Vector2( 929.359, 69.9235 )
@@ -54,64 +80,6 @@ __meta__ = {
 ] instance=ExtResource( 7 )]
 position = Vector2( 965.961, 515.282 )
 
-[node name="aSeeds5" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 868.38, 516.696 )
-
-[node name="aSeeds6" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 775.042, 518.11 )
-
-[node name="aSeeds7" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 967.375, 376.689 )
-
-[node name="aSeeds8" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 868.38, 373.861 )
-
-[node name="aSeeds9" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 777.87, 371.032 )
-
-[node name="aSeeds10" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 280.067, 371.032 )
-
-[node name="aSeeds11" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 181.072, 373.861 )
-
-[node name="aSeeds12" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 82.0769, 369.618 )
-
-[node name="aSeeds2" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 180.45, 518.9 )
-
-[node name="SeedImage" parent="Seeds/aSeeds2" index="1"]
-scale = Vector2( 0.137, 0.137 )
-
-[node name="aSeeds3" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 77.7891, 518.56 )
-
-[node name="aSeeds4" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 280.414, 518.996 )
-
 [node name="treeDex" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
 visible = false
@@ -119,13 +87,17 @@ margin_left = 1.59003
 margin_right = 1.59003
 
 [node name="treeDex_button" type="Button" parent="."]
-margin_left = 23.6374
-margin_top = 9.41404
-margin_right = 78.6374
-margin_bottom = 64.414
+margin_left = 373.0
+margin_top = 15.0
+margin_right = 673.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 300, 100 )
 custom_styles/hover = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
-icon = ExtResource( 8 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TreeDex"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,12 +106,16 @@ __meta__ = {
 
 [node name="FarmButton" type="Button" parent="."]
 margin_left = 23.637
-margin_top = 87.606
-margin_right = 78.637
-margin_bottom = 142.606
-custom_styles/hover = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-icon = ExtResource( 10 )
+margin_top = 15.0
+margin_right = 323.637
+margin_bottom = 115.0
+rect_min_size = Vector2( 300, 100 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Farm"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,9 +138,3 @@ __meta__ = {
 [connection signal="return_to_planting" from="BaseFarmGrid" to="." method="_return_to_planting"]
 [connection signal="pressed" from="FarmButton" to="." method="_on_FarmButton_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
-
-[editable path="Seeds/aSeeds2"]
-
-[editable path="Seeds/aSeeds3"]
-
-[editable path="Seeds/aSeeds4"]
