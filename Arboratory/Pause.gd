@@ -7,12 +7,19 @@ Change the pause mode to process
 Taken from: https://www.youtube.com/watch?v=WaotOuDNio8
 """
 var isPaused = false;
+var pauseTime = 0
 func _ready():
 	set_visible(false)
+
+func _process(delta):
+	if isPaused:
+		pauseTime = pauseTime + 1*delta;
+	print(pauseTime)
 
 func pauseGame():
 	set_visible(!get_tree().paused)	
 	isPaused = !get_tree().paused;
+	print(isPaused)
 	get_tree().paused = !get_tree().paused
 
 
@@ -20,6 +27,7 @@ func _on_Continue_pressed():
 	get_tree().paused = false;
 	set_visible(false)
 	isPaused = false
+	print(isPaused)
 	
 func set_visible(is_visible):
 	for node in get_children():
