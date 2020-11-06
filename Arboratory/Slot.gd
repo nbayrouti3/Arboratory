@@ -25,63 +25,64 @@ func _add_inventory_item(type, inventory_item_name):
 		add_child(inventory_item)
 		if inventory_item_name == "air":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1255]":
+				if member.seed_name == "air":
 					emit_signal("add_seed",member,"air")
 					break
 		elif inventory_item_name == "water":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1270]":
+				if member.seed_name == "water":
 					emit_signal("add_seed",member,"water")
 					break
 		elif inventory_item_name == "earth":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1267]":
+				if member.seed_name == "earth":
 					emit_signal("add_seed",member,"earth")
 					break
 		elif inventory_item_name == "fire":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1258]":
+				if member.seed_name == "fire":
 					emit_signal("add_seed",member,"fire")
 					break
 		elif inventory_item_name == "magma":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1261]":
+				if member.seed_name == "magma":
 					emit_signal("add_seed",member,"magma")
 					break
 		elif inventory_item_name == "snoop":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1264]":
+				if member.seed_name == "snoop":
 					emit_signal("add_seed",member,"snoop")
 					break
 		elif inventory_item_name == "cottoncandy":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1291]":
+				if member.seed_name == "cottoncandy":
 					emit_signal("add_seed",member,"cottoncandy")
 					break
 		elif inventory_item_name == "lightning":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1282]":
+				if member.seed_name == "lightning":
 					emit_signal("add_seed",member,"lightning")
 					break
 		elif inventory_item_name == "bunny":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1288]":
+				if member.seed_name == "bunny":
 					emit_signal("add_seed",member,"bunny")
 					break
 		elif inventory_item_name == "sand":
 			for member in get_tree().get_nodes_in_group("seedGroup"):
-				print(member.get_node("SeedImage").texture.to_string())
-				if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1300]":
+				if member.seed_name == "sand":
 					emit_signal("add_seed",member,"sand")
-					break		
+					break
+		elif inventory_item_name == "bubble":
+			for member in get_tree().get_nodes_in_group("seedGroup"):
+				if member.seed_name == "bubble":
+					emit_signal("add_seed",member,"bubble")
+					break
+		elif inventory_item_name == "tree":
+			for member in get_tree().get_nodes_in_group("seedGroup"):
+				if member.seed_name == "tree":
+					emit_signal("add_seed",member,"tree")
+					break
 	else:
 		print("cannot be added")
 	

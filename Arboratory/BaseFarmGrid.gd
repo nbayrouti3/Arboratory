@@ -15,10 +15,14 @@ const DEFAULT_SUNLIGHT = 1
 signal return_to_planting
 signal add_seeds
 
-# Called when the node enters the scene tree for the first time.
+"""
+Hides the farm in the beginning and creates the plots with a 2D array and
+sets the farm position.
+Sets the variables for clearing and watering to false.
+"""
 func _ready():
 	$Farm.hide()
-	$Inventory/ColorRect.hide()
+	$Inventory/TextureRect.hide()
 	$Inventory/GridContainer.hide()
 	$Farm.position.x = 0
 	$Farm.position.y = 0
@@ -77,45 +81,57 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 				match(trees[plot_x][plot_y].treeName):
 							"bunny":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1437]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1288]":
+									if member.seed_name == "bunny":
 										max_seed+=1
 							"lightning":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1440]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1282]":
+									if member.seed_name == "lightning":
 										max_seed+=1
 							"sand":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1443]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1300]":
+									if member.seed_name == "sand":
 										max_seed+=1
 							"air":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1446]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1255]":
+									if member.seed_name == "air":
 										max_seed+=1
 							"cottoncandy":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1449]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1291]":
+									if member.seed_name == "cottoncandy":
 										max_seed+=1
 							"earth":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1452]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1267]":
+									if member.seed_name == "earth":
 										max_seed+=1
 							"fire":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1455]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1258]":
+									if member.seed_name == "fire":
 										max_seed+=1
 							"magma":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1458]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1261]":
+									if member.seed_name == "magma":
 										max_seed+=1
 							"snoop":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1461]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1264]":
+									if member.seed_name == "snoop":
 										max_seed+=1
 							"water":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1464]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1270]":
+									if member.seed_name == "water":
 										max_seed+=1	
-				
+
+							"bubble":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "bubble":
+										max_seed+=1
+							"tree":
+								for member in get_tree().get_nodes_in_group("seedgroup"):
+									if member.seed_name == "tree":
+										max_seed+=1
+				max_seed+=1
+
+				Leveling.gain_xp(2)
+
 				if max_seed %2 == 0:
 					print("YAY")
 					for z in range(2):
@@ -123,7 +139,8 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 					emit_signal("add_seeds",trees[plot_x][plot_y].treeName,1)
 				else:
 					print("NO")
-					$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)				
+					$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)	
+					max_seed+=1			
 				
 					
 					
@@ -149,7 +166,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	
 	elif trees[plot_x][plot_y] != null:
 		if $Farm.open_menu == true:
-			$Inventory/ColorRect.hide()
+			$Inventory/TextureRect.hide()
 			$Inventory/GridContainer.hide()
 			for x in range(trees_size.x):
 				for y in range(trees_size.y):
@@ -204,6 +221,10 @@ func _select_tree(type):
 		anim = "bunny_sapling"
 	if type == "sand_tree":
 		anim = "sand_sapling"
+	if type == "bubble_tree":
+		anim = "bubble_sapling"
+	if type == "tree_tree":
+		anim = "tree_sapling"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false
@@ -218,46 +239,55 @@ func _new_farm():
 						match(trees[x][y].treeName):
 							"bunny":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1437]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1288]":
+									if member.seed_name == "bunny":
 										max_seed+=1
 							"lightning":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1440]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1282]":
+									if member.seed_name == "lightning":
 										max_seed+=1
 							"sand":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1443]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1300]":
+									if member.seed_name == "sand":
 										max_seed+=1
 							"air":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1446]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1255]":
+									if member.seed_name == "air":
 										max_seed+=1
 							"cottoncandy":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1449]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1291]":
+									if member.seed_name == "cottoncandy":
 										max_seed+=1
 							"earth":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1452]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1267]":
+									if member.seed_name == "earth":
 										max_seed+=1
 							"fire":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1455]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1258]":
+									if member.seed_name == "fire":
 										max_seed+=1
 							"magma":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1458]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1261]":
+									if member.seed_name == "magma":
 										max_seed+=1
 							"snoop":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1461]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1264]":
+									if member.seed_name == "snoop":
 										max_seed+=1
 							"water":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
-									if member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1464]" or member.get_node("SeedImage").texture.to_string() == "[StreamTexture:1270]":
+									if member.seed_name == "water":
 										max_seed+=1	
+							"bubble":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "bubble":
+										max_seed+=1
+							"tree":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "tree":
+										max_seed+=1
 						max_seed+=1
 						print(str(max_seed))
+						Leveling.gain_xp(2)
 						if max_seed %2 == 0:
 							for z in range(2):
 								$Inventory._add_to_inventory("seed",trees[x][y].treeName)
@@ -295,11 +325,11 @@ func _water_tree_from_tree(plot_x, plot_y):
 
 
 func _open_inventory():
-	$Inventory/ColorRect.show()
+	$Inventory/TextureRect.show()
 	$Inventory/GridContainer.show()
 	
 func _exit_farm():
-	$Inventory/ColorRect.hide()
+	$Inventory/TextureRect.hide()
 	$Inventory/GridContainer.hide()
 	$Farm.hide()
 	$PlantingNotifier/ClearPlots.hide()
