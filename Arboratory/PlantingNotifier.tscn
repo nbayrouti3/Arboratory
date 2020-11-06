@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlantingNotifier.gd" type="Script" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/HUD/level_bar_filled.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 20
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -54,7 +54,7 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 150, 50 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 50
+size = 25
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=13]
@@ -70,7 +70,7 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 150, 50 )
 
 [sub_resource type="DynamicFont" id=16]
-size = 50
+size = 25
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=17]
@@ -86,7 +86,23 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 150, 50 )
 
 [sub_resource type="DynamicFont" id=20]
-size = 50
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=22]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 150, 50 )
+
+[sub_resource type="StyleBoxTexture" id=23]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 150, 50 )
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 150, 50 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 25
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=21]
@@ -206,7 +222,7 @@ __meta__ = {
 [node name="ClearPlots" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 300, 100 )
+rect_min_size = Vector2( 150, 50 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
@@ -220,7 +236,7 @@ __meta__ = {
 [node name="ClearSinglePlot" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 300, 100 )
+rect_min_size = Vector2( 150, 50 )
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
@@ -238,7 +254,7 @@ margin_left = 5.09827
 margin_top = 50.0
 margin_right = 80.0983
 margin_bottom = 67.3031
-rect_min_size = Vector2( 300, 100 )
+rect_min_size = Vector2( 150, 50 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
@@ -254,9 +270,9 @@ anchor_top = 0.00105512
 anchor_bottom = 0.00105512
 margin_left = -1.0
 margin_top = 0.366928
-margin_right = 78.0
-margin_bottom = 74.3669
-rect_min_size = Vector2( 300, 100 )
+margin_right = 149.0
+margin_bottom = 50.3669
+rect_min_size = Vector2( 150, 50 )
 custom_styles/hover = SubResource( 13 )
 custom_styles/pressed = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
@@ -272,7 +288,7 @@ margin_left = 4.34314
 margin_top = 4.23611
 margin_right = 69.3431
 margin_bottom = 51.2361
-rect_min_size = Vector2( 300, 100 )
+rect_min_size = Vector2( 150, 50 )
 custom_styles/hover = SubResource( 17 )
 custom_styles/pressed = SubResource( 18 )
 custom_styles/normal = SubResource( 19 )
@@ -283,12 +299,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="treeDex_button2" type="Button" parent="."]
+margin_right = 89.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 150, 50 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+custom_fonts/font = SubResource( 25 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TreeDex"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ProgressBar" type="MarginContainer" parent="."]
 anchor_right = 1.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 20.0
+margin_right = 20.0001
+margin_bottom = 62.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -22,7 +22,7 @@ Sets the variables for clearing and watering to false.
 """
 func _ready():
 	$Farm.hide()
-	$Inventory/ColorRect.hide()
+	$Inventory/TextureRect.hide()
 	$Inventory/GridContainer.hide()
 	$Farm.position.x = 0
 	$Farm.position.y = 0
@@ -166,7 +166,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	
 	elif trees[plot_x][plot_y] != null:
 		if $Farm.open_menu == true:
-			$Inventory/ColorRect.hide()
+			$Inventory/TextureRect.hide()
 			$Inventory/GridContainer.hide()
 			for x in range(trees_size.x):
 				for y in range(trees_size.y):
@@ -325,11 +325,11 @@ func _water_tree_from_tree(plot_x, plot_y):
 
 
 func _open_inventory():
-	$Inventory/ColorRect.show()
+	$Inventory/TextureRect.show()
 	$Inventory/GridContainer.show()
 	
 func _exit_farm():
-	$Inventory/ColorRect.hide()
+	$Inventory/TextureRect.hide()
 	$Inventory/GridContainer.hide()
 	$Farm.hide()
 	$PlantingNotifier/ClearPlots.hide()
