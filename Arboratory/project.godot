@@ -61,5 +61,4 @@ ui_click={
 [rendering]
 
 vram_compression/import_etc=true
-vram_compression/import_etc2=true
 environment/default_environment="res://default_env.tres"

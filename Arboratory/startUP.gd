@@ -190,6 +190,7 @@ func _on_FarmButton_pressed():
 	$water.hide()
 	$treeDex_button.hide()
 	$FarmButton.hide()
+	$PauseButton.hide()
 	get_tree().call_group("seedGroup","hide")
 	
 """
@@ -203,6 +204,7 @@ func _return_to_planting():
 	$water.show()
 	$treeDex_button.show()
 	$FarmButton.show()
+	$PauseButton.show()
 	get_tree().call_group("seedGroup","show")
 	$BaseFarmGrid._pause()
 	$BaseFarmGrid/PlantingNotifier/ClearSinglePlot.hide()

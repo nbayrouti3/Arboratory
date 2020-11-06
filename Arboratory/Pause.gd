@@ -14,7 +14,6 @@ func _ready():
 func _process(delta):
 	if isPaused:
 		pauseTime = pauseTime + 1*delta;
-	print(pauseTime)
 
 func pauseGame():
 	set_visible(!get_tree().paused)	
