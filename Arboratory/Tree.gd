@@ -20,7 +20,7 @@ signal _water_tree_from_tree
 Variables relating to sunlight
 """
 #sunlight level, speeds up growth when greater than 1
-var sunlight
+var sunlight = 1
 
 """
 Variables relating to growth
@@ -34,8 +34,6 @@ var tree_maturity = "Sapling"
 Variables relating to death
 """
 var dead = false
-
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,6 +67,16 @@ func _ready():
 	$TreeStats/TreeSunlight.hide()
 	#sets the time that the tree was planted to be the current time
 	time_planted = OS.get_unix_time()
+	#setting health UI
+	$TreeStats/HealthBar.set_position(Vector2(1200,300))
+	$TreeStats/HealthBar/HealthBar.max_value = MAX_HEALTH
+	$TreeStats/HealthBar/HealthBar.value = health
+	$TreeStats/HealthBar.hide()
+	#setting water UI
+	$TreeStats/WaterIndicator.set_position(Vector2(1100,300))
+	$TreeStats/WaterIndicator/WaterIndicator.texture = \
+		load("res://Assets/HUD/wet_icon.png")
+	$TreeStats/WaterIndicator.hide()
 
 
 func _process(delta):
@@ -170,6 +178,8 @@ func _show_stats():
 	$TreeStats/TreeMaturityStatus.show()
 	$TreeStats/TreeDeathStatus.show()
 	$TreeStats/TreeSunlight.show()
+	$TreeStats/HealthBar.show()
+	$TreeStats/WaterIndicator.show()
 	#$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	
 	
@@ -182,6 +192,8 @@ func _hide_stats():
 	$TreeStats/TreeMaturityStatus.hide()
 	$TreeStats/TreeDeathStatus.hide()
 	$TreeStats/TreeSunlight.hide()
+	$TreeStats/HealthBar.hide()
+	$TreeStats/WaterIndicator.hide()
 
 func _update_stats():
 	$TreeStats/TreeHealth.set_text("Health: " + str(health))
@@ -189,6 +201,15 @@ func _update_stats():
 	$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	$TreeStats/TreeDeathStatus.set_text("Dead: " + str(dead))
 	$TreeStats/TreeSunlight.set_text("Sunlight: " + str(sunlight))
+	$TreeStats/HealthBar/HealthBar.value = health
+	
+	#updates water icon depending on wetness of tree
+	if (wetness == "Wet"):
+		$TreeStats/WaterIndicator/WaterIndicator.texture = \
+			load("res://Assets/HUD/wet_icon.png")
+	elif (wetness == "Dry"):
+		$TreeStats/WaterIndicator/WaterIndicator.texture = \
+			load("res://Assets/HUD/dry_icon.png")
 
 #choose tree you want to plant
 func _choose_tree(type):
