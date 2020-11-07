@@ -13,7 +13,7 @@ var required_experience = get_next_level_xp(level)
 #levels up if the experience total meets the amount of experience needed
 func gain_xp(value):
 	print('xp gained!')
-	var mult = value * 14
+	var mult = value * level
 	experience += mult
 	if (experience >= required_experience):
 		gain_level()
