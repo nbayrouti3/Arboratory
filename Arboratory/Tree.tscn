@@ -125,7 +125,7 @@ __meta__ = {
 anchor_right = 0.05
 anchor_bottom = 0.092
 margin_right = 1.0
-margin_bottom = -1.36001
+margin_bottom = -1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,7 +144,6 @@ __meta__ = {
 }
 
 [node name="WaterIndicator" parent="TreeStats" instance=ExtResource( 29 )]
-visible = false
 margin_left = -1.5
 margin_top = -3.5
 margin_right = -1.5
