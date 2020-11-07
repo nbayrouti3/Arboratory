@@ -1,10 +1,10 @@
 extends Node
 
 
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 export (int) var level = 1
-
-onready var progress_bar = $PlantingNotifier/ProgressBar/One/Two/Three/Progress
-onready var progress_level = $PlantingNotifier/ProgressBar/One/Two/Three/Words/Background/LevelText
 
 var experience = 0
 var required_experience = get_next_level_xp(level)
@@ -13,31 +13,21 @@ var required_experience = get_next_level_xp(level)
 #levels up if the experience total meets the amount of experience needed
 func gain_xp(value):
 	print('xp gained!')
-	#var mult = value * 14
-	experience += value
+	var mult = value * 14
+	experience += mult
 	if (experience >= required_experience):
-		experience -= required_experience;
 		gain_level()
+		experience = 0;
 
 #increases level by 1
 func gain_level():
-	print('level up!')
 	level += 1
 	required_experience = get_next_level_xp(level)
 
 #returns the xp needed to get to the next level
 func get_next_level_xp(level_num):
 	return 14 * level_num
-	
 
-#getters
-func get_required_experience():
-	return required_experience
-	
-func get_experience():
-	return experience
-	
-func get_level():
-	return level
-	
-
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass

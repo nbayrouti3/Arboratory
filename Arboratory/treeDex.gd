@@ -7,7 +7,6 @@ onready var Water = get_tree().get_root().find_node("water", true, false) #Impor
 var key = 0 #Creates the key variable and sets it to 1
 var tempKey #Creates a temporary key used in the next and back buttons
 
-
 func _ready():
 	#load_tree() # Runs tree function for start
 	dropdown.connect("item_selected", self, "on_item_selected") #Makes the tree change on dropdown editing
@@ -32,7 +31,6 @@ func unlock(id):
 	print ("Signal Recieved")
 	dropdown.set_item_disabled(int(id), false)
 	Leveling.gain_xp(5)
-	
 
 #Changes the Dex to represent the item selected
 func on_item_selected(id):
