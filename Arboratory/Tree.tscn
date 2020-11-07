@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -27,17 +27,24 @@
 [ext_resource path="res://Assets/Plants/trees/bubble_tree.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Plants/saplings/tree_sapling.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Plants/trees/tree_tree.png" type="Texture" id=27]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=28]
+[ext_resource path="res://WaterIndicator.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "tree",
+"name": "dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "water",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "tree",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
@@ -85,11 +92,6 @@ animations = [ {
 "name": "snoop",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "bubble",
@@ -116,6 +118,10 @@ margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="WaterIndicator" parent="TreeStats" instance=ExtResource( 29 )]
+
+[node name="HealthBar" parent="TreeStats" instance=ExtResource( 28 )]
 
 [node name="TreeHealth" type="Label" parent="TreeStats"]
 margin_right = 40.0
