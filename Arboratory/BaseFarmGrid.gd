@@ -166,8 +166,8 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 	
 	elif trees[plot_x][plot_y] != null:
 		if $Farm.open_menu == true:
-			$Inventory/TextureRect.hide()
-			$Inventory/GridContainer.hide()
+			#$Inventory/TextureRect.hide()
+			#$Inventory/GridContainer.hide()
 			for x in range(trees_size.x):
 				for y in range(trees_size.y):
 					if trees[x][y] != null:
