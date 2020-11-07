@@ -5,15 +5,18 @@ export (int) var level = 1
 var experience = 0
 var required_experience = get_next_level_xp(level)
 
+onready var progress_bar = $PlantingNotifier/ProgressBar/One/Two/Three/Progress
+onready var progress_level = $PlantingNotifier/ProgressBar/One/Two/Three/Words/Background/LevelText
+
 #increases the total amount of xp you have
 #levels up if the experience total meets the amount of experience needed
 func gain_xp(value):
 	print('xp gained!')
-	var mult = level * 14
-	experience += mult
+	#var mult = level * 14
+	experience += value
 	if (experience >= required_experience):
+		experience -= required_experience;
 		gain_level()
-		experience = 0;
 
 #increases level by 1
 func gain_level():

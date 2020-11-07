@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlantingNotifier.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Itim-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Progress.gd" type="Script" id=4]
+[ext_resource path="res://Number.gd" type="Script" id=5]
 [ext_resource path="res://Assets/HUD/button_orange.png" type="Texture" id=7]
 [ext_resource path="res://Assets/HUD/levelBackground.png" type="Texture" id=8]
 [ext_resource path="res://Assets/HUD/title.png" type="Texture" id=9]
@@ -367,6 +368,7 @@ margin_bottom = 2.0
 custom_fonts/font = SubResource( 25 )
 align = 2
 valign = 1
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
