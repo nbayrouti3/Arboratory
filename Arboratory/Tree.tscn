@@ -34,6 +34,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "sand",
@@ -84,11 +89,6 @@ animations = [ {
 "name": "bubble",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "water",
@@ -122,8 +122,10 @@ __meta__ = {
 }
 
 [node name="HealthBar" type="Control" parent="TreeStats"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.05
+anchor_bottom = 0.092
+margin_right = 1.0
+margin_bottom = -1.36001
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,6 +144,7 @@ __meta__ = {
 }
 
 [node name="WaterIndicator" parent="TreeStats" instance=ExtResource( 29 )]
+visible = false
 margin_left = -1.5
 margin_top = -3.5
 margin_right = -1.5
