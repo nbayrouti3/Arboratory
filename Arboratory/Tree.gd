@@ -91,9 +91,8 @@ need water. If enough time has passed, deduct health.
 func check_water_status():
 	if treeName == "water":
 		time_passed_since_watering = 0
-		
 	else:
-		time_passed_since_watering = OS.get_unix_time() - last_watering_time
+		time_passed_since_watering = (OS.get_unix_time() - last_watering_time) - int(PauseMenu.pauseTime)
 	
 	if 13 - (time_passed_since_watering) > 10:
 		wetness = "Wet"
@@ -111,7 +110,7 @@ Checks to see if enough time has passed for the tree to grow.
 If enough time has passed, changes the texture of the tree.
 """
 func check_growth_status():
-	if (OS.get_unix_time() - time_planted >= time_until_grown):
+	if (OS.get_unix_time() - time_planted - int(PauseMenu.pauseTime) >= time_until_grown):
 		tree_maturity = "Mature"
 		$AnimatedSprite.set_frame(1)
 		
