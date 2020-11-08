@@ -185,6 +185,8 @@ func _on_FarmButton_pressed():
 	$BaseFarmGrid/PlantingNotifier/ExitFarm.show()
 	$BaseFarmGrid/PlantingNotifier/PlantingNotifierMessage.show()
 	$BaseFarmGrid/PlantingNotifier/ProgressBar.show()
+	$labBackground.hide()
+	$arboretumBackground.show()
 	#$BaseFarmGrid/PlantingNotifier/treeDex_button2.show()
 	$Pot.hide()
 	$water.hide()
@@ -211,6 +213,8 @@ func _return_to_planting():
 	$BaseFarmGrid/PlantingNotifier/Return.hide()
 	$BaseFarmGrid/PlantingNotifier/Water.hide()
 	$BaseFarmGrid/PlantingNotifier/ProgressBar.hide()
+	$labBackground.show()
+	$arboretumBackground.hide()
 	#$BaseFarmGrid/PlantingNotifier/treeDex_button2.hide()
 	$BaseFarmGrid/Farm._close_menu()
 

@@ -9,7 +9,7 @@ signal tree_removed
 signal tree_control
 
 var tile_size = get_cell_size()
-var farm_size = Vector2(7,7)
+var farm_size = Vector2(8,7)
 var farm = []
 var spot
 var remove_tree
