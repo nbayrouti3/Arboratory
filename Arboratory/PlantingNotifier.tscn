@@ -1,8 +1,10 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://PlantingNotifier.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Itim-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Progress.gd" type="Script" id=4]
+[ext_resource path="res://Number.gd" type="Script" id=5]
 [ext_resource path="res://Assets/HUD/button_orange.png" type="Texture" id=7]
 [ext_resource path="res://Assets/HUD/levelBackground.png" type="Texture" id=8]
 [ext_resource path="res://Assets/HUD/title.png" type="Texture" id=9]
@@ -89,6 +91,10 @@ region_rect = Rect2( 0, 0, 150, 50 )
 size = 25
 font_data = ExtResource( 3 )
 
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 150, 50 )
+
 [sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 150, 50 )
@@ -97,15 +103,11 @@ region_rect = Rect2( 0, 0, 150, 50 )
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 150, 50 )
 
-[sub_resource type="StyleBoxTexture" id=24]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 150, 50 )
-
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=24]
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=25]
 size = 34
 extra_spacing_top = -3
 font_data = ExtResource( 3 )
@@ -303,10 +305,10 @@ __meta__ = {
 margin_right = 89.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 150, 50 )
-custom_styles/hover = SubResource( 22 )
-custom_styles/pressed = SubResource( 23 )
-custom_styles/normal = SubResource( 24 )
-custom_fonts/font = SubResource( 25 )
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "TreeDex"
 __meta__ = {
@@ -363,10 +365,10 @@ anchor_bottom = 1.0
 margin_left = 0.332855
 margin_right = -44.6672
 margin_bottom = 2.0
-custom_fonts/font = SubResource( 21 )
-text = "1"
+custom_fonts/font = SubResource( 25 )
 align = 2
 valign = 1
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -378,6 +380,7 @@ margin_bottom = 42.0
 value = 50.0
 texture_under = ExtResource( 11 )
 texture_progress = ExtResource( 12 )
+script = ExtResource( 4 )
 [connection signal="pressed" from="WaterTree" to="." method="_on_WaterTree_pressed"]
 [connection signal="pressed" from="FireTree" to="." method="_on_FireTree_pressed"]
 [connection signal="pressed" from="EarthTree" to="." method="_on_EarthTree_pressed"]
