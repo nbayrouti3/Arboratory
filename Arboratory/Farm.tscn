@@ -10,5 +10,8 @@ tile_set = SubResource( 1 )
 format = 1
 script = ExtResource( 1 )
 
-[node name="FarmVisualizer" type="Node2D" parent="."]
+[node name="FarmVisualizer" type="Node2D" parent="." groups=[
+"soilPlots",
+]]
+light_mask = 3
 script = ExtResource( 2 )

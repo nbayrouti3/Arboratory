@@ -5,10 +5,11 @@ export (PackedScene) var Tree
 var anim
 var free_tree
 var trees = []
-var trees_size = Vector2(7,7)
+var trees_size = Vector2(8,7)
 var ready_to_clear_plot
 var watering_time
 var max_seed = 0
+
 
 const DEFAULT_SUNLIGHT = 1
 
@@ -24,10 +25,11 @@ func _ready():
 	$Farm.hide()
 	$Inventory/TextureRect.hide()
 	$Inventory/GridContainer.hide()
-	$Farm.position.x = 0
-	$Farm.position.y = 0
+	$Farm.position.x = 45
+	$Farm.position.y = 92
 	$Farm.scale.x = 2
 	$Farm.scale.y = 2
+
 	
 	for x in range(trees_size.x):
 		trees.append([])
