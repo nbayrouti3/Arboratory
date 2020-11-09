@@ -24,12 +24,14 @@ var tree_placement_x = 0
 var tree_placement_y = 0
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for x in range(farm_size.x):
 		farm.append([])
 		for y in range(farm_size.y):
 			farm[x].append(false)
+			
 	planting_control = false
 	planting_ready = false
 	remove_tree = false

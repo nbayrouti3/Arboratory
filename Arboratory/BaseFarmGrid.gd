@@ -10,6 +10,7 @@ var ready_to_clear_plot
 var watering_time
 var max_seed = 0
 
+
 const DEFAULT_SUNLIGHT = 1
 
 signal return_to_planting
@@ -28,6 +29,7 @@ func _ready():
 	$Farm.position.y = 92
 	$Farm.scale.x = 2
 	$Farm.scale.y = 2
+
 	
 	for x in range(trees_size.x):
 		trees.append([])
