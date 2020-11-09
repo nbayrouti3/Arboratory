@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://water.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pot.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://treeDex.tscn" type="PackedScene" id=4]
 [ext_resource path="res://startUP.gd" type="Script" id=5]
 [ext_resource path="res://BaseFarmGrid.tscn" type="PackedScene" id=6]
-[ext_resource path="res://aSeeds.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Itim-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Art/lab_background.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/arboretum_background.png" type="Texture" id=10]
 [ext_resource path="res://Assets/HUD/gear.png" type="Texture" id=11]
 [ext_resource path="res://Assets/HUD/button_green.png" type="Texture" id=12]
 
@@ -65,11 +66,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="aSeeds" parent="Seeds" groups=[
-"seedGroup",
-] instance=ExtResource( 7 )]
-position = Vector2( 965.961, 515.282 )
-
 [node name="treeDex" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
 visible = false
@@ -123,6 +119,17 @@ expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="labBackground" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 960, 540 )
+texture = ExtResource( 9 )
+
+[node name="arboretumBackground" type="Sprite" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2( 960, 540 )
+texture = ExtResource( 10 )
 [connection signal="area_shape_entered" from="Pot" to="Pot" method="_on_Pot_area_shape_entered"]
 [connection signal="pressed" from="treeDex_button" to="." method="_on_treeDex_button_pressed"]
 [connection signal="add_seeds" from="BaseFarmGrid" to="." method="_new_seed"]

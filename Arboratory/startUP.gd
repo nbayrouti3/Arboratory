@@ -185,6 +185,8 @@ func _on_FarmButton_pressed():
 	$BaseFarmGrid/PlantingNotifier/ExitFarm.show()
 	$BaseFarmGrid/PlantingNotifier/PlantingNotifierMessage.show()
 	$BaseFarmGrid/PlantingNotifier/ProgressBar.show()
+	$labBackground.hide()
+	$arboretumBackground.show()
 	#$BaseFarmGrid/PlantingNotifier/treeDex_button2.show()
 	$Pot.hide()
 	$water.hide()
@@ -192,6 +194,7 @@ func _on_FarmButton_pressed():
 	$FarmButton.hide()
 	$PauseButton.hide()
 	get_tree().call_group("seedGroup","hide")
+	#get_tree().call_group("soilPlots","show")
 	
 """
 Returns to the merge area from the BaseFarmGrid when the return button is pressed,
@@ -206,11 +209,14 @@ func _return_to_planting():
 	$FarmButton.show()
 	$PauseButton.show()
 	get_tree().call_group("seedGroup","show")
+	#get_tree().call_group("soilPlots","hide")
 	$BaseFarmGrid._pause()
 	$BaseFarmGrid/PlantingNotifier/ClearSinglePlot.hide()
 	$BaseFarmGrid/PlantingNotifier/Return.hide()
 	$BaseFarmGrid/PlantingNotifier/Water.hide()
 	$BaseFarmGrid/PlantingNotifier/ProgressBar.hide()
+	$labBackground.show()
+	$arboretumBackground.hide()
 	#$BaseFarmGrid/PlantingNotifier/treeDex_button2.hide()
 	$BaseFarmGrid/Farm._close_menu()
 

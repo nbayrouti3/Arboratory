@@ -9,7 +9,7 @@ signal tree_removed
 signal tree_control
 
 var tile_size = get_cell_size()
-var farm_size = Vector2(7,7)
+var farm_size = Vector2(8,7)
 var farm = []
 var spot
 var remove_tree
@@ -24,12 +24,14 @@ var tree_placement_x = 0
 var tree_placement_y = 0
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for x in range(farm_size.x):
 		farm.append([])
 		for y in range(farm_size.y):
 			farm[x].append(false)
+			
 	planting_control = false
 	planting_ready = false
 	remove_tree = false
@@ -67,14 +69,18 @@ func _input(event):
 	if Input.is_action_pressed("ui_click"):
 		
 		#checks if you clicked in the grid
-		if event.position.x <896:
+		if event.position.x <1024:
 				
 			#checks your ready to alter the farm
 			if planting_control == true:
-				plot_x = int((event.position.x)/(64*2))
-				plot_y = int((event.position.y)/(64*2))
-				tree_placement_x = ((plot_x+1)*64)+plot_x*64
-				tree_placement_y = (plot_y-32)+plot_y*128
+				plot_x = int((event.position.x-45)/(64*2))
+				plot_y = int((event.position.y-92)/(64*2))
+				tree_placement_x = (((plot_x+1)*64)+45)+plot_x*64
+				tree_placement_y = ((plot_y*128)+92) + (plot_y-32)
+				print(str(plot_x))
+				print(str(plot_y))
+				print(str(tree_placement_x))
+				print(str(tree_placement_y))
 				
 				#checks if you want to clear
 				if clearing_time == true:
