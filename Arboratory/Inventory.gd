@@ -28,8 +28,8 @@ signal tree_tree_pressed
 func _ready():
 	#$ColorRect.color = Color(0,.960784,1,1)
 	$TextureRect.set_size(Vector2(400,250))
-	$TextureRect.set_position(Vector2(900,530))
-	$GridContainer.set_position(Vector2(1050,580))
+	$TextureRect.set_position(Vector2(1100,710))
+	$GridContainer.set_position(Vector2(1250,760))
 	$GridContainer.columns = 6
 	$GridContainer.set("custom_constants/vseparation",6)
 	$GridContainer.set("custom_constants/hseparation",6) 
