@@ -42,28 +42,30 @@ func _ready():
 	var dynamic_font = DynamicFont.new()
 	dynamic_font.font_data = load("res://Fonts/Lato-Regular.ttf")
 	dynamic_font.size = 20
+	var v_gap = 25
+	var text_start = 175
 	$TreeStats/TreeStatPanel.set_position(Vector2(1300,170))
 	$TreeStats/TreeStatPanel.set_size(Vector2(300,300))
 	$TreeStats/TreeStatPanel.hide()
-	$TreeStats/TreeHealth.set_position(Vector2(1310,190))
-	$TreeStats/TreeHealth.add_font_override("font",dynamic_font)
-	$TreeStats/TreeHealth.hide()
-	$TreeStats/TreeName.set_position(Vector2(1400,170))
+	$TreeStats/TreeName.set_position(Vector2(1400, text_start))
 	$TreeStats/TreeName.add_font_override("font",dynamic_font)
 	$TreeStats/TreeName.hide()
-	$TreeStats/TreeWaterStatus.set_position(Vector2(1310,210))
+	$TreeStats/TreeHealth.set_position(Vector2(1310, text_start + v_gap))
+	$TreeStats/TreeHealth.add_font_override("font",dynamic_font)
+	$TreeStats/TreeHealth.hide()
+	$TreeStats/TreeWaterStatus.set_position(Vector2(1310, text_start + 2 * v_gap))
 	$TreeStats/TreeWaterStatus.add_font_override("font",dynamic_font)
 	$TreeStats/TreeWaterStatus.hide()
-	$TreeStats/TreeSpecialProperties.set_position(Vector2(1310,230))
+	$TreeStats/TreeSpecialProperties.set_position(Vector2(1310, text_start + 3 * v_gap))
 	$TreeStats/TreeSpecialProperties.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSpecialProperties.hide()
-	$TreeStats/TreeMaturityStatus.set_position(Vector2(1310,250))
+	$TreeStats/TreeMaturityStatus.set_position(Vector2(1310, text_start + 4 * v_gap))
 	$TreeStats/TreeMaturityStatus.add_font_override("font",dynamic_font)
 	$TreeStats/TreeMaturityStatus.hide()
-	$TreeStats/TreeDeathStatus.set_position(Vector2(1310,270))
+	$TreeStats/TreeDeathStatus.set_position(Vector2(1310, text_start + 5 * v_gap))
 	$TreeStats/TreeDeathStatus.add_font_override("font",dynamic_font)
 	$TreeStats/TreeDeathStatus.hide()
-	$TreeStats/TreeSunlight.set_position(Vector2(1310,300))
+	$TreeStats/TreeSunlight.set_position(Vector2(1310, text_start + 6 * v_gap))
 	$TreeStats/TreeSunlight.add_font_override("font",dynamic_font)
 	$TreeStats/TreeSunlight.hide()
 	#sets the time that the tree was planted to be the current time
@@ -93,9 +95,9 @@ func _process(delta):
 	
 func set_special_property():
 	if treeName == "snoop":
-		special_property = "Increases sunlight of surrounding trees"
+		special_property = "Sunlight"
 	elif treeName == "water":
-		special_property = "Waters itself and surrounding trees"
+		special_property = "Water"
 	else:
 		special_property = "None"
 """
