@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -31,17 +31,14 @@
 [ext_resource path="res://WaterIndicator.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Assets/HUD/health_color_2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/HUD/health_under_2.png" type="Texture" id=31]
+[ext_resource path="res://Assets/HUD/sunlight.png" type="Texture" id=32]
+[ext_resource path="res://Fonts/Lato-Regular.ttf" type="DynamicFontData" id=33]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 18 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "dead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "sand",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 3 ) ],
@@ -98,7 +95,16 @@ animations = [ {
 "loop": true,
 "name": "tree",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "sand",
+"speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 33 )
 
 [node name="Tree" type="Area2D" groups=[
 "trees",
@@ -106,7 +112,6 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="healthDeduction" type="Timer" parent="."]
-wait_time = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
@@ -173,6 +178,7 @@ __meta__ = {
 [node name="TreeSpecialProperties" type="Label" parent="TreeStats"]
 margin_right = 40.0
 margin_bottom = 14.0
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -194,6 +200,30 @@ __meta__ = {
 [node name="TreeSunlight" type="Label" parent="TreeStats"]
 margin_right = 40.0
 margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SunlightIndicator" type="Control" parent="TreeStats"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SunlightBackground" type="TextureRect" parent="TreeStats/SunlightIndicator"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 32 )
+
+[node name="SunlightLevel" type="Label" parent="TreeStats/SunlightIndicator"]
+anchor_right = 2.5
+anchor_bottom = 2.5
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

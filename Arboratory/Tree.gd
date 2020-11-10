@@ -20,7 +20,7 @@ signal _water_tree_from_tree
 Variables relating to sunlight
 """
 #sunlight level, speeds up growth when greater than 1
-var sunlight = 1
+var sunlight
 
 """
 Variables relating to growth
@@ -29,6 +29,7 @@ Variables relating to growth
 var time_until_grown
 var time_planted
 var tree_maturity = "Sapling"
+var special_property
 
 """
 Variables relating to death
@@ -74,19 +75,29 @@ func _ready():
 	$TreeStats/HealthBar.hide()
 	#setting water UI
 	$TreeStats/WaterIndicator.set_position(Vector2(1300,370))
-	$TreeStats/WaterIndicator/WaterIndicator.texture = \
-		load("res://Assets/HUD/wet_icon.png")
 	$TreeStats/WaterIndicator.hide()
+	$TreeStats/SunlightIndicator.set_position(Vector2(1500,370))
+	$TreeStats/SunlightIndicator.hide()
+	
+	
 
 
 func _process(delta):
 	if (not dead):
+		set_special_property()
 		adjust_growth_time()
 		check_water_status()
 		check_growth_status()
 	check_death_status()
 	_update_stats()
 	
+func set_special_property():
+	if treeName == "snoop":
+		special_property = "Increases sunlight of surrounding trees"
+	elif treeName == "water":
+		special_property = "Waters itself and surrounding trees"
+	else:
+		special_property = "None"
 """
 Adjusts the growth time based on what the sunlight level of the tree is.
 """
@@ -174,13 +185,13 @@ func _show_stats():
 	$TreeStats/TreeWaterStatus.show()
 	#$TreeStats/TreeWaterStatus.set_text("Water Status: Wet")
 	$TreeStats/TreeSpecialProperties.show()
-	$TreeStats/TreeSpecialProperties.set_text("Special Properties: Not ready")
 	$TreeStats/TreeMaturityStatus.show()
 	$TreeStats/TreeDeathStatus.show()
 	$TreeStats/TreeSunlight.show()
 	$TreeStats/HealthBar.show()
 	$TreeStats/WaterIndicator.show()
 	#$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
+	$TreeStats/SunlightIndicator.show()
 	
 	
 func _hide_stats():
@@ -194,15 +205,17 @@ func _hide_stats():
 	$TreeStats/TreeSunlight.hide()
 	$TreeStats/HealthBar.hide()
 	$TreeStats/WaterIndicator.hide()
+	$TreeStats/SunlightIndicator.hide()
 
 func _update_stats():
+	$TreeStats/TreeSpecialProperties.set_text("Special Property: " + special_property)	
 	$TreeStats/TreeHealth.set_text("Health: " + str(health))
 	$TreeStats/TreeWaterStatus.set_text("Water Status: " + wetness)
 	$TreeStats/TreeMaturityStatus.set_text("Maturity: " + tree_maturity)
 	$TreeStats/TreeDeathStatus.set_text("Dead: " + str(dead))
 	$TreeStats/TreeSunlight.set_text("Sunlight: " + str(sunlight))
 	$TreeStats/HealthBar/HealthBar.value = health
-	
+	$TreeStats/SunlightIndicator/SunlightLevel.set_text(str(sunlight))
 	#updates water icon depending on wetness of tree
 	if (wetness == "Wet"):
 		$TreeStats/WaterIndicator/WaterIndicator.texture = \
