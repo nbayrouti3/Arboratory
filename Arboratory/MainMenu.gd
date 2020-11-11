@@ -22,3 +22,7 @@ func _on_TextureButton_pressed():
 
 func _on_VolumeButton_pressed():
 	get_tree().change_scene("res://VolumeControl.tscn") # Replace with function body.
+
+
+func _on_Credits_pressed():
+	get_tree().change_scene("res://Credits.tscn") # Replace with function body.
