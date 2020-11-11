@@ -139,6 +139,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 					for z in range(2):
 						$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)
 					emit_signal("add_seeds",trees[plot_x][plot_y].treeName,1)
+					
 				else:
 					print("NO")
 					$Inventory._add_to_inventory("seed",trees[plot_x][plot_y].treeName)	
@@ -294,6 +295,7 @@ func _new_farm():
 							for z in range(2):
 								$Inventory._add_to_inventory("seed",trees[x][y].treeName)
 							emit_signal("add_seeds",trees[x][y].treeName,1)
+							
 						else:
 							$Inventory._add_to_inventory("seed",trees[x][y].treeName)
 							max_seed+=1
