@@ -49,7 +49,7 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
 		if is_pot_vacant:
-			position = Vector2(518,220)
+			position = Vector2(980,520)
 			is_dragging = false
 			emit_signal("planted",self)
 			#is_pot_vacant = false
@@ -89,7 +89,7 @@ The watered function starts the growth process by sending a signal to Merge Area
 func _on_water_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
-		position = Vector2(960,62)
+		position = Vector2(1400,200)
 		emit_signal("watered")
 		is_dragging = false
 
