@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://green_sliderLeft.png" type="Texture" id=1]
+[ext_resource path="res://Credits.gd" type="Script" id=2]
+[ext_resource path="res://Assets/HUD/Arboratory Credits.jpg" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 339.5
+margin_top = 4.2814
+margin_right = 512.5
+margin_bottom = 30.2815
+text = "Credit to Lovely People <3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+margin_left = 331.809
+margin_top = 266.517
+margin_right = 371.809
+margin_bottom = 306.517
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 277.221
+margin_top = 225.844
+margin_right = 356.221
+margin_bottom = 239.844
+text = "brqufeakhjef"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 104.371
+margin_right = 920.371
+margin_bottom = 594.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backies" type="Button" parent="."]
+margin_left = 119.522
+margin_top = 15.0255
+margin_right = 170.522
+margin_bottom = 52.0255
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 131.653
+margin_top = 74.9246
+margin_right = 171.653
+margin_bottom = 114.925
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="backies" to="." method="_on_backies_pressed"]
