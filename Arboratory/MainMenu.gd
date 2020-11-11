@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Farm.tscn") # Replace with function body.
+	get_tree().change_scene("res://Planting.tscn") # Replace with function body.
 
 
 func _on_VolumeButton_pressed():
