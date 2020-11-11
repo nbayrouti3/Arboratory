@@ -27,9 +27,12 @@ var seed_to_merge2
 var old_merged_seed
 var time_to_merge  = false
 var seed_pos
+var seed_pos1
+var seed_pos2
 var seed_name
 var sapling_name
 var merge_event = false
+
 
 func _ready():
 	pot.connect("seeded",self,"changeSeed")
@@ -49,7 +52,7 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 	var isPot = area.get_name()
 	if isPot == "Pot":
 		if is_pot_vacant:
-			position = Vector2(980,520)
+			position = Vector2(960,595.5)
 			is_dragging = false
 			emit_signal("planted",self)
 			#is_pot_vacant = false
@@ -65,8 +68,18 @@ func _on_aSeeds_area_shape_entered(area_id, area, area_shape, self_shape):
 			_merge(seed_to_merge1,seed_to_merge2,old_merged_seed) ##
 			
 	else:
-		self.set_position(seed_pos)
+		var counter = 0
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member != self && member.seed_pos == self.seed_pos1:
+				counter+=1
+		if !counter ==0:
+			self.seed_pos = seed_pos2
+			self.set_position(seed_pos2)
+		else:
+			self.seed_pos = seed_pos1
+			self.set_position(seed_pos1)
 		is_dragging = false
+	
 
 """
 When a seed is removed it tells the Merge Area Script that its gone and sets vacancy to false if 
@@ -215,6 +228,15 @@ func _merge(which, other,old):
 		emit_signal("planted",self)
 		
 	else:
-		self.set_position(seed_pos)
+		var counter = 0
+		for member in get_tree().get_nodes_in_group("seedGroup"):
+			if member != self && member.seed_pos == self.seed_pos1:
+				counter+=1
+		if !counter ==0:
+			self.seed_pos = seed_pos2
+			self.set_position(seed_pos2)
+		else:
+			self.seed_pos = seed_pos1
+			self.set_position(seed_pos1)
 		is_dragging = false
 		
