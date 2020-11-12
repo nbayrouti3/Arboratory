@@ -93,6 +93,11 @@ func _add_inventory_item(type, inventory_item_name):
 				if member.seed_name == "rain":
 					emit_signal("add_seed",member,"rain")
 					break
+		elif inventory_item_name == "marble":
+			for member in get_tree().get_nodes_in_group("seedGroup"):
+				if member.seed_name == "marble":
+					emit_signal("add_seed",member,"marble")
+					break
 	else:
 		print("cannot be added")
 	

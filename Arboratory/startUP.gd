@@ -138,6 +138,12 @@ func _new_seed(type, number):
 				seedling.seed_pos = seedling.seed_pos1
 				seedling.set_position(Vector2(1420,520))
 				seedling.seed_pos2 = Vector2(1420,640)
+			"marble":
+				seedling.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/marble_seed.png")
+				seedling.seed_pos1 = Vector2(1540,520)
+				seedling.seed_pos = seedling.seed_pos1
+				seedling.set_position(Vector2(1540,520))
+				seedling.seed_pos2 = Vector2(1540,640)
 				
 		seedling.hide()
 
@@ -237,4 +243,8 @@ func _new_merge_item(type):
 			mergeItem.get_node("Sprite").texture = load("res://Assets/Art/lavender.png")
 			mergeItem.seed_pos = Vector2(1660,280)
 			mergeItem.set_position(Vector2(1660,280))
+		"rock":
+			mergeItem.get_node("Sprite").texture = load("res://Assets/Art/rock.png")
+			mergeItem.seed_pos = Vector2(1300,400)
+			mergeItem.set_position(Vector2(1300,400))
 	mergeItem.hide()

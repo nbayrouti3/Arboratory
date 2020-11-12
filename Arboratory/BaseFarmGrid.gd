@@ -138,6 +138,10 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 								for member in get_tree().get_nodes_in_group("seedGroup"):
 									if member.seed_name == "rain":
 										max_seed+=1
+							"marble":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "marble":
+										max_seed+=1
 				max_seed+=1
 
 				Leveling.gain_xp(2)
@@ -240,6 +244,8 @@ func _select_tree(type):
 		anim = "laven_sapling"
 	if type == "rain_tree":
 		anim = "rain_sapling"
+	if type == "marble_tree":
+		anim = "marble_sapling"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false
@@ -307,6 +313,10 @@ func _new_farm():
 							"rain":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
 									if member.seed_name == "rain":
+										max_seed+=1
+							"marble":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "marble":
 										max_seed+=1
 						max_seed+=1
 						print(str(max_seed))

@@ -7,10 +7,10 @@
 		"Description": ""
 	},
 	"1": {
-        "treeName": "The Sample Tree",
-		"seedImage": "res://Assets/Plants/seeds/SampleSeed.png",
-		"saplingImage": "res://Assets/Art/SamplePlant.png",
-		"treeImage": "",
+        "treeName": "The Marble Tree",
+		"seedImage": "res://Assets/Plants/seeds/marble_seed.png",
+		"saplingImage": "res://Assets/Plants/saplings/marble_sapling.png",
+		"treeImage": "res://Assets/Plants/trees/marble_tree",
 		"Description": "This is an example Tree Description"
 	},
 	"2": {

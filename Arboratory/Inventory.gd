@@ -25,6 +25,7 @@ signal bubble_tree_pressed
 signal tree_tree_pressed
 signal laven_tree_pressed
 signal rain_tree_pressed
+signal marble_tree_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -87,6 +88,8 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				emit_signal("laven_tree_pressed")
 			elif slot.tree_appearance == "rain_sapling"&&slot.inventory_item:
 				emit_signal("rain_tree_pressed")
+			elif slot.tree_appearance == "marble_sapling"&&slot.inventory_item:
+				emit_signal("marble_tree_pressed")
 			else:
 				print("not ready")
 			last_slot_clicked = slot

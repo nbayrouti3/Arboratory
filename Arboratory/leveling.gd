@@ -28,6 +28,7 @@ func gain_level():
 		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("unidentified_grass")
 		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("candy")
 		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("lavender")
+		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("rock")
 
 #returns the xp needed to get to the next level
 func get_next_level_xp(level_num):

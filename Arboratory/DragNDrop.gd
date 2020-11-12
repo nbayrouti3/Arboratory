@@ -206,6 +206,11 @@ func item_merge(which, item):
 				"lavender":
 					get_tree().get_root().find_node("Planting",true,false)._new_seed("laven",1)
 					print("item merge success")
+		"bubble":
+			match(item.seed_name):
+				"rock":
+					get_tree().get_root().find_node("Planting",true,false)._new_seed("marble",1)
+					print("item merge success")
 	time_to_merge  = false
 	merge_event = true
 			
