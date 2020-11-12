@@ -23,6 +23,11 @@ func gain_level():
 	print('level up!')
 	level += 1
 	required_experience = get_next_level_xp(level)
+	if level == 3:
+		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("carrot")
+		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("unidentified_grass")
+		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("candy")
+		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("lavender")
 
 #returns the xp needed to get to the next level
 func get_next_level_xp(level_num):

@@ -126,6 +126,19 @@ func _new_seed(type, number):
 				seedling.seed_pos = seedling.seed_pos1
 				seedling.set_position(Vector2(600,760))
 				seedling.seed_pos2 = Vector2(600,880)
+			"laven":
+				seedling.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/laven_seed.png")
+				seedling.seed_pos1 = Vector2(1300,520)
+				seedling.seed_pos = seedling.seed_pos1
+				seedling.set_position(Vector2(1300,520))
+				seedling.seed_pos2 = Vector2(1300,640)
+			"rain":
+				seedling.get_node("SeedImage").texture = load("res://Assets/Plants/seeds/rain_seed.png")
+				seedling.seed_pos1 = Vector2(1420,520)
+				seedling.seed_pos = seedling.seed_pos1
+				seedling.set_position(Vector2(1420,520))
+				seedling.seed_pos2 = Vector2(1420,640)
+				
 		seedling.hide()
 
 
@@ -139,6 +152,7 @@ Shows the dex and pauses the rest of the game when the dex button is pressed.
 func _on_treeDex_button_pressed():
 	$treeDex.show()
 	get_tree().call_group("seedGroup","hide")
+	get_tree().call_group("mergeGroup","hide")
 	get_tree().paused = true
 
 """
@@ -167,6 +181,7 @@ func _on_FarmButton_pressed():
 	$Seeds/mergeBackground2.hide()
 	
 	get_tree().call_group("seedGroup","hide")
+	get_tree().call_group("mergeGroup","hide")
 	#get_tree().call_group("soilPlots","show")
 	
 """
@@ -182,6 +197,7 @@ func _return_to_planting():
 	$FarmButton.show()
 	$PauseButton.show()
 	get_tree().call_group("seedGroup","show")
+	get_tree().call_group("mergeGroup","show")
 	#get_tree().call_group("soilPlots","hide")
 	$BaseFarmGrid._pause()
 	$BaseFarmGrid/PlantingNotifier/ClearSinglePlot.hide()
@@ -198,3 +214,27 @@ func _return_to_planting():
 
 func _on_PauseButton_pressed():
 	PauseMenu.pauseGame()
+
+func _new_merge_item(type):
+	var mergeItem = load("res://MergeItem.tscn").instance()
+	add_child(mergeItem)
+	mergeItem.seed_name = type
+	mergeItem.add_to_group("mergeGroup")
+	match (type):
+		"carrot":
+			mergeItem.get_node("Sprite").texture= load("res://Assets/Art/carrot.png")
+			mergeItem.seed_pos = Vector2(1300,280)
+			mergeItem.set_position(Vector2(1300,280))
+		"unidentified_grass":
+			mergeItem.get_node("Sprite").texture = load("res://Assets/Art/unidentified_grass.png")
+			mergeItem.seed_pos = Vector2(1420,280)
+			mergeItem.set_position(Vector2(1420,280))
+		"candy":
+			mergeItem.get_node("Sprite").texture = load("res://Assets/Art/candy.png")
+			mergeItem.seed_pos = Vector2(1540,280)
+			mergeItem.set_position(Vector2(1540,280))
+		"lavender":
+			mergeItem.get_node("Sprite").texture = load("res://Assets/Art/lavender.png")
+			mergeItem.seed_pos = Vector2(1660,280)
+			mergeItem.set_position(Vector2(1660,280))
+	mergeItem.hide()

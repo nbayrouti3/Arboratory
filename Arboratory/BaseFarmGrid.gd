@@ -127,8 +127,16 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 									if member.seed_name == "bubble":
 										max_seed+=1
 							"tree":
-								for member in get_tree().get_nodes_in_group("seedgroup"):
+								for member in get_tree().get_nodes_in_group("seedGroup"):
 									if member.seed_name == "tree":
+										max_seed+=1
+							"laven":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "laven":
+										max_seed+=1
+							"rain":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "rain":
 										max_seed+=1
 				max_seed+=1
 
@@ -228,6 +236,10 @@ func _select_tree(type):
 		anim = "bubble_sapling"
 	if type == "tree_tree":
 		anim = "tree_sapling"
+	if type == "laven_tree":
+		anim = "laven_sapling"
+	if type == "rain_tree":
+		anim = "rain_sapling"
 	$Farm._ready_to_plant()
 	$Farm.clearing_time = false
 	free_tree = false
@@ -287,6 +299,14 @@ func _new_farm():
 							"tree":
 								for member in get_tree().get_nodes_in_group("seedGroup"):
 									if member.seed_name == "tree":
+										max_seed+=1
+							"laven":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "laven":
+										max_seed+=1
+							"rain":
+								for member in get_tree().get_nodes_in_group("seedGroup"):
+									if member.seed_name == "rain":
 										max_seed+=1
 						max_seed+=1
 						print(str(max_seed))

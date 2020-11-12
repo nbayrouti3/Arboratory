@@ -15,9 +15,9 @@
 	},
 	"2": {
         "treeName": "Lavender Tree",
-		"seedImage": "res://Assets/Plants/seeds/seed-laventree.png",
-		"saplingImage": "res://Assets/Plants/trees/laventree_owo.png",
-		"treeImage": ""   ,
+		"seedImage": "res://Assets/Plants/seeds/laven_seed.png",
+		"saplingImage": "res://Assets/Plants/saplings/laven_sapling.png",
+		"treeImage": "res://Assets/Plants/trees/laven_tree.png"   ,
 		"Description": ""
 	},
 	"3": {
@@ -102,6 +102,13 @@
         "seedImage": "res://Assets/Plants/seeds/tree_seed.png",
         "saplingImage": "res://Assets/Plants/saplings/tree_sapling.png",
         "treeImage": "res://Assets/Plants/trees/tree_tree.png",
+        "Description": ""
+    },
+    "15": {
+        "treeName": "Rain Tree",
+        "seedImage": "res://Assets/Plants/seeds/rain_seed.png",
+        "saplingImage": "res://Assets/Plants/saplings/rain_sapling.png",
+        "treeImage": "res://Assets/Plants/trees/rain_tree.png",
         "Description": ""
     }
 }

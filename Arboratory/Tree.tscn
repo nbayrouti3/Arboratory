@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Tree.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Plants/trees/water_tree.png" type="Texture" id=2]
@@ -33,6 +33,10 @@
 [ext_resource path="res://Assets/HUD/health_under_2.png" type="Texture" id=31]
 [ext_resource path="res://Assets/HUD/sunlight.png" type="Texture" id=32]
 [ext_resource path="res://Fonts/Lato-Regular.ttf" type="DynamicFontData" id=33]
+[ext_resource path="res://Assets/Plants/saplings/laven_sapling.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Plants/trees/laven_tree.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Plants/trees/rain_tree.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Plants/saplings/rain_sapling.png" type="Texture" id=37]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -46,16 +50,6 @@ animations = [ {
 "name": "bunny",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "snoop",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "bubble",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "water",
@@ -66,24 +60,9 @@ animations = [ {
 "name": "magma",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "tree",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "air",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "cottoncandy",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "earth",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
@@ -91,14 +70,49 @@ animations = [ {
 "name": "fire",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "cottoncandy",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "lightning",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "bubble",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "sand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "snoop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "earth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "tree",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "rain",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "laven",
 "speed": 5.0
 } ]
 
@@ -116,7 +130,7 @@ wait_time = 3.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "tree"
+animation = "rain"
 
 [node name="TreeStats" type="CanvasLayer" parent="."]
 
