@@ -221,6 +221,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LavenTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RainTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarbleTree" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ClearPlots" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
@@ -393,6 +414,9 @@ script = ExtResource( 4 )
 [connection signal="pressed" from="SandTree" to="." method="_on_SandTree_pressed"]
 [connection signal="pressed" from="BubbleTree" to="." method="_on_BubbleTree_pressed"]
 [connection signal="pressed" from="TreeTree" to="." method="_on_TreeTree_pressed"]
+[connection signal="pressed" from="LavenTree" to="." method="_on_LavenTree_pressed"]
+[connection signal="pressed" from="RainTree" to="." method="_on_RainTree_pressed"]
+[connection signal="pressed" from="MarbleTree" to="." method="_on_MarbleTree_pressed"]
 [connection signal="pressed" from="ClearPlots" to="." method="_on_ClearPlots_pressed"]
 [connection signal="pressed" from="ClearSinglePlot" to="." method="_on_ClearSinglePlot_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]
