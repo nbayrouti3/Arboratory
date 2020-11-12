@@ -10,6 +10,9 @@ var dialogue = [
 var dialogue_index = 0
 signal showSprite
 signal hideSprite
+
+signal showSprite2
+signal hideSprite2
 var interactable = false
 
 func select_dialogue():
