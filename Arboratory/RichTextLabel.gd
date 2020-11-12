@@ -10,6 +10,8 @@ var dialogue = [
 var dialogue_index = 0
 signal showSprite
 signal hideSprite
+signal showSprite2
+signal hideSprite2
 var interactable = false
 
 func select_dialogue():
@@ -31,6 +33,7 @@ func select_dialogue():
 		_:
 			hide()
 			emit_signal("hideSprite")
+			emit_signal("hideSprite2")
 			set_process_input(false)
 
 signal releaseTheButtons
@@ -55,6 +58,7 @@ func _input(event):
 				emit_signal("releaseTheButtons")
 			else:
 				emit_signal("hideSprite")
+				emit_signal("hideSprite2")
 				hide()
 				get_tree().get_root().find_node("Planting",true,false)._return_to_planting()
 				set_process_input(false)
