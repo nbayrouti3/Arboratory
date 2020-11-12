@@ -8,11 +8,21 @@ into the game.
 #Currently just chaning one of the seeds to the lavender seed
 #Planned to be the start up / save feature of the game
 func _ready():
+#	$arboretumBackground.show()
+#	$labBackground.hide()
+#	$Pot.hide()
+#	$water.hide()
+#	$treeDex_button.hide()
+#	$FarmButton.hide()
+#	$PauseButton.hide()
+#	$Seeds/mergeBackground1.hide()
+#	$Seeds/mergeBackground2.hide()
+	
 	_new_seed("air",1)
 	_new_seed("water",1)
 	_new_seed("earth",1)
 	_new_seed("fire",1)
-	get_tree().call_group("seedGroup","show")
+	get_tree().call_group("seedGroup","hide")
 	pass 
 
 """

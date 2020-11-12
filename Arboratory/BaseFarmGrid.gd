@@ -301,6 +301,7 @@ func _new_farm():
 							max_seed+=1
 				else:
 					$Inventory._add_to_inventory("seed",trees[x][y].treeName)
+					
 	$Farm._clear_plots()
 	
 #clears a single plot

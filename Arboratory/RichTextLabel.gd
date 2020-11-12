@@ -20,15 +20,18 @@ func select_dialogue():
 			"testing that it does the other thing"]
 			emit_signal("showSprite")
 		3:
+			set_process_input(true)
 			dialogue = ["insert item dialogue here"]
 			emit_signal("showSprite")
 		5:
+			set_process_input(true)
 			dialogue = ["insert dating tutorial dialogue here"]
 			emit_signal("showSprite")
 			interactable = true
 		_:
 			hide()
 			emit_signal("hideSprite")
+			set_process_input(false)
 
 signal releaseTheButtons
 
@@ -53,6 +56,9 @@ func _input(event):
 			else:
 				emit_signal("hideSprite")
 				hide()
+				get_tree().get_root().find_node("Planting",true,false)._return_to_planting()
+				set_process_input(false)
+				#set_process_input(false)
 		else: 
 			set_visible_characters(get_total_character_count())
 	
