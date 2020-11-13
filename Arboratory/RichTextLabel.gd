@@ -161,7 +161,7 @@ func _input(event):
 				emit_signal("hideSprite3")
 				emit_signal("hideBox")
 				hide()
-				get_tree().get_root().find_node("Planting",true,false)._return_to_planting()
+				get_tree().get_root().find_node("BaseFarmGrid",true,false)._exit_farm()
 				set_process_input(false)
 				#set_process_input(false)
 		else: 
