@@ -140,15 +140,49 @@ func _remove_item_merge_seeds(old):
 			#tree._choose_tree(tree_type)
 			#tree.set_position(Vector2(event.position.x,event.position.y))
 			#tree_type = null
-func _can_item_merge(type):
+func _can_item_merge(type, item):
 	var count = 0
-	for member in get_tree().get_nodes_in_group("seedGroup"):
-		if member.seed_name == type:
-			count+=1
+	match (item):
+		"rock":
+			if !type == "bubble":
+				return false
+			else:
+				for member in get_tree().get_nodes_in_group("seedGroup"):
+					if member.seed_name == type:
+						count+=1
+		"lavender":
+			if !type == "water":
+				return false
+			else:
+				for member in get_tree().get_nodes_in_group("seedGroup"):
+					if member.seed_name == type:
+						count+=1
+		"unidentified_grass":
+			if !type == "magma":
+				return false
+			else:
+				for member in get_tree().get_nodes_in_group("seedGroup"):
+					if member.seed_name == type:
+						count+=1
+		"candy":
+			if !type == "air":
+				return false
+			else:
+				for member in get_tree().get_nodes_in_group("seedGroup"):
+					if member.seed_name == type:
+						count+=1
+		"carrot":
+			if !type == "air":
+				return false
+			else:
+				for member in get_tree().get_nodes_in_group("seedGroup"):
+					if member.seed_name == type:
+						count+=1
 	if count == 2:
 		return true
 	else:
 		return false
+
 			
 
 func _can_merge(which,other):
