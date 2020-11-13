@@ -105,6 +105,7 @@ Adjusts the growth time based on what the sunlight level of the tree is.
 """
 func adjust_growth_time():
 	time_until_grown = 20 / sunlight
+	
 """
 Checks to see whether enough time has passed in real life for plants to 
 need water. If enough time has passed, deduct health.
@@ -256,6 +257,12 @@ func _choose_tree(type):
 			treeName = "bubble"
 		"tree_sapling":
 			treeName = "tree"
+		"laven_sapling":
+			treeName = "laven"
+		"rain_sapling":
+			treeName = "rain"
+		"marble_sapling":
+			treeName = "marble"
 	$AnimatedSprite.animation = treeName
 	$AnimatedSprite.set_frame(0)
 

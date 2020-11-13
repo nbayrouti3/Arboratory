@@ -22,6 +22,7 @@ func _on_angry_endSequence():
 
 
 
+
 func _on_RichTextLabel_hideSprite2():
 	hide() # Replace with function body.
 
