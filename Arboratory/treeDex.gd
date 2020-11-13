@@ -13,8 +13,12 @@ func _ready():
 	#load_tree() # Runs tree function for start
 	dropdown.connect("item_selected", self, "on_item_selected") #Makes the tree change on dropdown editing
 	add_items() #Adds the options to the dropdown menu on ready.
-	disable_items() #Calls the disable function
+	#disable_items() #Calls the disable function
 	#dropdown.set_item_disabled(0,false)
+	$tree_id.text = str(0)
+	$Tree_Art.texture = load(seedData[str(0)]["saplingImage"])
+	$tree_name.text = seedData[str(0)]["treeName"]
+	$tree_description.text = seedData[str(0)]["Description"]
 	dropdown.set_item_text(0, "Choose your Tree") #Changes the Template Text to something else
 	Water.connect("unlocked",self,"unlock") #Connects the unlocked signal from water to the unlock function
 
