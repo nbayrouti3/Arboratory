@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Art/arboretum_background.png" type="Texture" id=1]
-[ext_resource path="res://Arboratory Credits 2.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/ArboratoryCredits_withbird.png" type="Texture" id=2]
 [ext_resource path="res://green_sliderLeft.png" type="Texture" id=3]
 [ext_resource path="res://Credits.gd" type="Script" id=4]
 
