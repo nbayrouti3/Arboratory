@@ -195,6 +195,7 @@ func _plant_tree(pos_x,pos_y,plot_x,plot_y):
 			
 	elif $Farm.planting_ready == true:
 		print("new tree incoming")
+		get_tree().get_root().find_node("Planting Sound Effect", true, false).play()
 		var tree = Tree.instance()
 		add_child(tree)
 		trees[plot_x][plot_y] = tree
