@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sand_Seed.png-5d1d73ca557a2c609971a0434c6110a3.stex"
+path="res://.import/forbidden_tree.png-715b46b5f27f135ad0f32b25dd21c371.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plants/seeds/Sand_Seed.png"
-dest_files=[ "res://.import/Sand_Seed.png-5d1d73ca557a2c609971a0434c6110a3.stex" ]
+source_file="res://Assets/Plants/trees/forbidden_tree.png"
+dest_files=[ "res://.import/forbidden_tree.png-715b46b5f27f135ad0f32b25dd21c371.stex" ]
 
 [params]
 

@@ -2,7 +2,7 @@
 	"0": {
 		"treeName": "The Tree of Knowledge",
 		"seedImage": "",
-		"saplingImage": "",
+		"saplingImage": "res://Assets/Plants/trees/Tree_of_Wisdom_color.png",
 		"treeImage": "",
 		"Description": "A wise tree respected by all.  They seem to know just about everything about foliage - how convenient for me!  She even remembers phone numbers and birthdays when I forget them… Heck, she even helps me find my way back home!  I’ve never even mentioned my address to her!  Oh, wait. The tree’s potential is much more off putting than first reported."
 	},
@@ -10,14 +10,14 @@
 		"treeName": "The Marble Tree",
 		"seedImage": "res://Assets/Plants/seeds/SampleSeed.png",
 		"saplingImage": "res://Assets/Art/SamplePlant.png",
-		"treeImage": "",
+		"treeImage": "res://Assets/Plants/trees/marble_tree.png",
 		"Description": "Huzzah!  My first breakthrough.  Such a lovely tree to start out with, as well.  Leaves like glass which refract light, a twisting trunk that one can race marbles down… Every aspect of their design works into a coherent system. The same pride seems to be reflected in their behavior, as well… If too many leaves fall off their behavior becomes rather erratic.  Warning: do not mention how they have ‘lost their marbles’ or you will get things thrown at you.  Investigating trees is a dangerous craft, it seems."
 	},
 	"2": {
 		"treeName": "Lavender Tree",
-		"seedImage": "res://Assets/Plants/seeds/seed-laventree.png",
-		"saplingImage": "res://Assets/Plants/trees/laventree_owo.png",
-		"treeImage": "",
+		"seedImage": "res://Assets/Plants/seeds/laven_seed.png",
+		"saplingImage": "res://Assets/Plants/saplings/laven_sapling.png",
+		"treeImage": "res://Assets/Plants/trees/laven_tree.png",
 		"Description": "Ah, it feels wonderful when your own scientific feats make clear benefits to the community. The Laventree calms their peers with their lovely scent, keeping them nice and healthy for my research.  Yes, the Laventree shares their scent to all. I wonder, is there a side of the Laventree that isn’t open to the public?  I suppose it would have to be a very special someone who could do that..."
 	},
 	"3": {
@@ -108,7 +108,7 @@
 		"treeName": "Forbidden Tree",
 		"seedImage": "",
 		"sapplingImage": "",
-		"treeImage": "",
+		"treeImage": "res://Assets/Plants/trees/forbidden_tree.png",
 		"Description": "I know it's probably in my best interest to stay away from this tree, but it's just too tempting! The tree and snake wrapped around it are actually a singular organism. I’m not sure exactly how they’re connected, but I do know everytime I go near it, the snake whispers to me to eat the fruit that grows at the top. Of course, I’ve ignored him so far, but it’d be a lie to say I’m not a little curious about what the fruit tastes like. "
 	},
 	"16": {
@@ -121,7 +121,7 @@
 	"17": {
 		"treeName": "Love Tree",
 		"seedImage": "",
-		"saplingImage": "",
+		"saplingImage": "res://Assets/Plants/trees/small_love_tree_redesign.png",
 		"treeImage": "",
 		"Description": "This tree makes people feel… a certain kind of way. Her curvy trunk and heart shaped foliage are fabled to be capable of making anyone fall in love. Valentine's day is her favorite holiday, and she prefers to be planted near rose bushes. Although she can be a bit intimidating, people say she gives amazing relationship advice. If you’re looking to start a relationship with a special someone, seek her out. "
 	}
