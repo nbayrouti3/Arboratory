@@ -8,6 +8,7 @@ into the game.
 #Currently just chaning one of the seeds to the lavender seed
 #Planned to be the start up / save feature of the game
 func _ready():
+	get_tree().get_root().find_node("Main Game Track",true,false).play()
 #	$arboretumBackground.show()
 #	$labBackground.hide()
 #	$Pot.hide()
