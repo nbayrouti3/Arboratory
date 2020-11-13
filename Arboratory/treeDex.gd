@@ -21,6 +21,7 @@ func _ready():
 	$tree_description.text = seedData[str(0)]["Description"]
 	dropdown.set_item_text(0, "Choose your Tree") #Changes the Template Text to something else
 	Water.connect("unlocked",self,"unlock") #Connects the unlocked signal from water to the unlock function
+	count = 0
 
 # Function to add items into the dropdown menu
 func add_items():
@@ -35,13 +36,14 @@ func disable_items():
 #Unlocks the tree once it is planted
 func unlock(id):
 	print ("Signal Recieved")
-	dropdown.set_item_disabled(int(id), false)
-	count+=1
-	if count == 16:
-		print("win")
-		emit_signal("win")
-		
-	Leveling.gain_xp(5)
+	if dropdown.is_item_disabled(int(id)):
+		dropdown.set_item_disabled(int(id), false)
+		count+=1
+		if count == 16:
+			print("win")
+			emit_signal("win")
+			
+		Leveling.gain_xp(5)
 
 #Changes the Dex to represent the item selected
 func on_item_selected(id):

@@ -2,7 +2,7 @@
 	"0": {
 		"treeName": "The Tree of Knowledge",
 		"seedImage": "",
-		"saplingImage": "res://Assets/Plants/trees/Tree_of_Wisdom_color.png",
+		"saplingImage": "res://Assets/Art/tree_of_wisdom.png",
 		"treeImage": "",
 		"Description": "A wise tree respected by all.  They seem to know just about everything about foliage - how convenient for me!  She even remembers phone numbers and birthdays when I forget them… Heck, she even helps me find my way back home!  I’ve never even mentioned my address to her!  Oh, wait. The tree’s potential is much more off putting than first reported."
 	},
@@ -105,20 +105,13 @@
 		"Description": "It seems we’ve come full circle with this one! There is nothing wrong with getting back to the basics though; personally, I enjoy the classics. This tree is definitely a girl-next-door type. She’s predictable, but dependable. Plus, the apples she makes are delicious! I should make a pie sometime. "
 	},
 	"15": {
-        "treeName": "Rain Tree",
+		"treeName": "Rain Tree",
         "seedImage": "res://Assets/Plants/seeds/rain_seed.png",
         "saplingImage": "res://Assets/Plants/saplings/rain_sapling.png",
         "treeImage": "res://Assets/Plants/trees/rain_tree.png",
 		"Description": "This tree was created with easy maintenance in mind. Their endless rain waters not only themself but those around them, which is super convenient! Unfortunately, this tree is a little gloomy. I wonder if it's possible to cheer them up a little! "
-		},
+	},
 	"16": {
-        "treeName": "Forbidden Tree",
-		"seedImage": "",
-		"sapplingImage": "",
-		"treeImage": "res://Assets/Plants/trees/forbidden_tree.png",
-		"Description": "I know it's probably in my best interest to stay away from this tree, but it's just too tempting! The tree and snake wrapped around it are actually a singular organism. I’m not sure exactly how they’re connected, but I do know everytime I go near it, the snake whispers to me to eat the fruit that grows at the top. Of course, I’ve ignored him so far, but it’d be a lie to say I’m not a little curious about what the fruit tastes like. "
-        },
-	"17": {
 		"treeName": "Love Tree",
 		"seedImage": "",
 		"saplingImage": "res://Assets/Plants/trees/small_love_tree_redesign.png",
