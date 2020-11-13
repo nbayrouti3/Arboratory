@@ -50,10 +50,14 @@ wait_time = 0.05
 autostart = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 41.0
-margin_top = 58.0
-margin_right = 91.0
-margin_bottom = 78.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 55.0
+margin_top = 60.0
+margin_right = 213.0
+margin_bottom = 80.0
 text = "Hi"
 script = ExtResource( 2 )
 __meta__ = {
@@ -61,10 +65,14 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 167.0
-margin_top = 58.0
-margin_right = 217.0
-margin_bottom = 78.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 108.0
+margin_top = 88.0
+margin_right = 158.0
+margin_bottom = 108.0
 text = ">:("
 script = ExtResource( 3 )
 __meta__ = {
@@ -72,10 +80,10 @@ __meta__ = {
 }
 
 [node name="Happy" type="RichTextLabel" parent="."]
-margin_left = 24.0
-margin_top = 27.0
-margin_right = 331.0
-margin_bottom = 84.0
+margin_left = 373.5
+margin_top = 158.0
+margin_right = 680.5
+margin_bottom = 215.0
 bbcode_enabled = true
 script = ExtResource( 5 )
 __meta__ = {
@@ -83,10 +91,10 @@ __meta__ = {
 }
 
 [node name="angry" type="RichTextLabel" parent="."]
-margin_left = 24.0
-margin_top = 27.0
-margin_right = 331.0
-margin_bottom = 84.0
+margin_left = 345.0
+margin_top = 19.5
+margin_right = 652.0
+margin_bottom = 76.5
 bbcode_enabled = true
 script = ExtResource( 4 )
 __meta__ = {
@@ -118,33 +126,20 @@ __meta__ = {
 }
 
 [node name="Sprite2" type="Sprite" parent="."]
-visible = false
-position = Vector2( 280, -66 )
+position = Vector2( 164.052, -76.1082 )
 texture = ExtResource( 10 )
 script = ExtResource( 12 )
+[connection signal="hideButtons" from="RichTextLabel" to="Button2" method="_on_RichTextLabel_hideButtons"]
+[connection signal="hideButtons" from="RichTextLabel" to="Button" method="_on_RichTextLabel_hideButtons"]
 [connection signal="hideSprite" from="RichTextLabel" to="Sprite" method="_on_RichTextLabel_hideSprite"]
 [connection signal="hideSprite2" from="RichTextLabel" to="Sprite2" method="_on_RichTextLabel_hideSprite2"]
-[connection signal="releaseTheButtons" from="RichTextLabel" to="Button" method="_on_RichTextLabel_releaseTheButtons"]
 [connection signal="releaseTheButtons" from="RichTextLabel" to="Button2" method="_on_RichTextLabel_releaseTheButtons"]
+[connection signal="releaseTheButtons" from="RichTextLabel" to="Button" method="_on_RichTextLabel_releaseTheButtons"]
 [connection signal="showSprite" from="RichTextLabel" to="Sprite" method="_on_RichTextLabel_showSprite"]
 [connection signal="showSprite2" from="RichTextLabel" to="Sprite2" method="_on_RichTextLabel_showSprite2"]
 [connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]
-[connection signal="pressed" from="Button" to="Timer2" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="RichTextLabel" method="_on_Button_pressed"]
-[connection signal="pressed" from="Button" to="Happy" method="_on_Button_pressed"]
 [connection signal="button_up" from="Button2" to="Button2" method="_on_Button2_button_up"]
 [connection signal="pressed" from="Button2" to="Timer3" method="_on_Button2_pressed"]
-[connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
-[connection signal="pressed" from="Button2" to="angry" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
-[connection signal="byeButtons" from="Happy" to="Button" method="_on_Happy_byeButtons"]
-[connection signal="byeButtons" from="Happy" to="Button2" method="_on_Happy_byeButtons"]
-[connection signal="endSequence" from="Happy" to="Sprite2" method="_on_Happy_endSequence"]
-[connection signal="endSequence" from="Happy" to="Sprite" method="_on_Happy_endSequence"]
-[connection signal="goodChoice" from="Happy" to="RichTextLabel2" method="_on_Happy_goodChoice"]
-[connection signal="byeButtons" from="angry" to="Button" method="_on_angry_byeButtons"]
-[connection signal="byeButtons" from="angry" to="Button2" method="_on_angry_byeButtons"]
-[connection signal="endSequence" from="angry" to="Sprite2" method="_on_angry_endSequence"]
-[connection signal="endSequence" from="angry" to="Sprite" method="_on_angry_endSequence"]
-[connection signal="timeout" from="Timer2" to="Happy" method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Timer3" to="angry" method="_on_Timer3_timeout"]
+[connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
