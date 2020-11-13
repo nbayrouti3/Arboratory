@@ -2,9 +2,9 @@
 	"0": {
 		"treeName": "The Tree of Knowledge",
 		"seedImage": "",
-		"saplingImage": "res://Assets/Plants/trees/Tree_of_Wisdom_color.png",
-		"treeImage": "",
-		"Description": "A wise tree respected by all.  They seem to know just about everything about foliage - how convenient for me!  She even remembers phone numbers and birthdays when I forget them… Heck, she even helps me find my way back home!  I’ve never even mentioned my address to her!  Oh, wait. The tree’s potential is much more off putting than first reported."
+		"saplingImage": "res://Assets/Art/tree_of_wisdom.png",
+		"treeImage": "res://Assets/Plants/trees/Tree_of_Wisdom_color.png",
+		"Description": "A wise tree respected by all.  They seem to know just about everything about foliage - how convenient for me!  She even remembers phone numbers and birthdays when I forget them… Heck, she even helps me find my way back home!  I’ve never even mentioned my address to her!  Oh, wait. The tree’s potential is much more off putting than first reported. For some reason she gave me a picture of her younger years when she dropped me off."
 	},
 	"1": {
 		"treeName": "The Marble Tree",
