@@ -39,18 +39,28 @@ func select_dialogue():
 	match Leveling.level:
 		1:
 			print('successfully did the thing')
-			dialogue = ["insert tutorial dialogue here",
-			"testing that it does the other thing"]
+			dialogue = ["Hello there!",
+			"I am here to help you on your journey to discover every tree in the arboretum.",
+			"You are in the Merge Area. Click or tap the TreeDex button to check how many trees you have discovered.Trees will be grayed out until they are discovered.",
+			"Drag a seed to the middle merge area and water it to create a sapling!",
+			"Click or tap the Farm button to go to the farm and grow your saplings.",
+			"In the farm, click or tap an inventory slot and then click or tap a plot to plant. Click or tap a tree to see its stats and Return to hide them!",
+			"Warning! Trees will dry out and lose health if not watered. Press the water button and then a tree to water it.",
+			"You may find that some trees have special properties, so watch out for those!",
+			"Click or tap Clear Single Plot and then a plot to harvest one tree, or harvest all plots with Clear Plots.",
+			"Harvesting a sapling or dead tree will give 1 seed, while harvesting a mature tree will give 2 seeds. Click or tap Merge to go back to the Merge Area.",
+			"If you have 2 seeds of the same type and 2 seeds of another type, you can attempt merging to discover a new tree by dragging 2 seeds together in the middle!"]
 			info = {0: {"char": "knowledge", "dialogue index": 0, "choices": 0, 
 			"numOptions": [], "dialogue": [[]]
 			}}
 			emit_signal("showSprite")
-			emit_signal("hideSprite2")
+			emit_signal("hideSprite2") 
 			emit_signal("hideSprite3")
 		3:
 			set_process_input(true)
 			show()
-			dialogue = ["insert item dialogue here"]
+			dialogue = ["In order to help you on your journey, I'll give you some items to use that may help you discover more trees!",
+			"Drag the item to the middle with a seed to attempt a new discovery."]
 			
 			info = {0: {"char": "knowledge", "dialogue index": 0, "choices": 0, 
 			"numOptions": [], "dialogue": [[]]
