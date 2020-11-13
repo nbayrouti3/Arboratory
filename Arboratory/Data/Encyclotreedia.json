@@ -8,8 +8,8 @@
 	},
 	"1": {
 		"treeName": "The Marble Tree",
-		"seedImage": "res://Assets/Plants/seeds/SampleSeed.png",
-		"saplingImage": "res://Assets/Art/SamplePlant.png",
+		"seedImage": "res://Assets/Plants/seeds/marble_seed.png",
+		"saplingImage": "res://Assets/Plants/saplings/marble_sapling.png",
 		"treeImage": "res://Assets/Plants/trees/marble_tree.png",
 		"Description": "Huzzah!  My first breakthrough.  Such a lovely tree to start out with, as well.  Leaves like glass which refract light, a twisting trunk that one can race marbles down… Every aspect of their design works into a coherent system. The same pride seems to be reflected in their behavior, as well… If too many leaves fall off their behavior becomes rather erratic.  Warning: do not mention how they have ‘lost their marbles’ or you will get things thrown at you.  Investigating trees is a dangerous craft, it seems."
 	},
