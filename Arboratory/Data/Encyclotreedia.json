@@ -8,16 +8,16 @@
 	},
 	"1": {
 		"treeName": "The Marble Tree",
-		"seedImage": "res://Assets/Plants/seeds/SampleSeed.png",
-		"saplingImage": "res://Assets/Art/SamplePlant.png",
-		"treeImage": "",
+		"seedImage": "res://Assets/Plants/seeds/marble_seed.png",
+		"saplingImage": "res://Assets/Plants/saplings/marble_sapling.png",
+		"treeImage": "res://Assets/Plants/trees/marble_tree.png",
 		"Description": "Huzzah!  My first breakthrough.  Such a lovely tree to start out with, as well.  Leaves like glass which refract light, a twisting trunk that one can race marbles down… Every aspect of their design works into a coherent system. The same pride seems to be reflected in their behavior, as well… If too many leaves fall off their behavior becomes rather erratic.  Warning: do not mention how they have ‘lost their marbles’ or you will get things thrown at you.  Investigating trees is a dangerous craft, it seems."
 	},
 	"2": {
 		"treeName": "Lavender Tree",
-		"seedImage": "res://Assets/Plants/seeds/seed-laventree.png",
-		"saplingImage": "res://Assets/Plants/trees/laventree_owo.png",
-		"treeImage": "",
+		"seedImage": "res://Assets/Plants/seeds/laven_seed.png",
+		"saplingImage": "res://Assets/Plants/saplings/laven_sapling.png",
+		"treeImage": "res://Assets/Plants/trees/laven_tree.png",
 		"Description": "Ah, it feels wonderful when your own scientific feats make clear benefits to the community. The Laventree calms their peers with their lovely scent, keeping them nice and healthy for my research.  Yes, the Laventree shares their scent to all. I wonder, is there a side of the Laventree that isn’t open to the public?  I suppose it would have to be a very special someone who could do that..."
 	},
 	"3": {
