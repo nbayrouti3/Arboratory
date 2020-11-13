@@ -8,6 +8,7 @@ var dialogue = [
 ]
 
 var dialogue_index = 0
+onready var dex = get_tree().get_root().find_node("treeDex", true, false)
 signal showSprite
 signal hideSprite
 
@@ -19,7 +20,7 @@ signal showSprite3
 signal hideSprite3
 
 var interactable = false
-
+var win = false
 var choices = 0
 #var base = []
 var numOptions = []
@@ -37,11 +38,12 @@ var info = {}
 
 func select_dialogue():
 	get_tree().get_root().find_node("Dialogue Sound Effect",true,false).play()
+	
 	match Leveling.level:
 		1:
 			print('successfully did the thing')
 			dialogue = ["I’m a scientist who has devoted their life to studying solutions to the impending energy crisis, but one day, while I was slacking off, I discovered I could splice the DNA of a tree with the molecular structure of my sample tree.",
-			 "Since that is infinitely more interesting, my new goal is to create as many new trees as possible and possibly learn something along the way! My search started with consulting the Tree of Knowledge on the project.",
+			"Since that is infinitely more interesting, my new goal is to create as many new trees as possible and possibly learn something along the way! My search started with consulting the Tree of Knowledge on the project.",
 			"Tree of Knowledge: \"Greetings seeker of trees. Would you like some guidance before you embark on this great endeavor? My being holds eons of information that could be useful to your research. Let us begin with the basics\"",
 			"\"This is referred to as the merge area. It is here where you can access your TreeDex. As you create new trees, they will be unlocked here, allowing you to learn about their various properties and personalities.\"",
 			"\"To create a sapling, drag a seed to the middle of the merge area and provide it with water.\"",
@@ -127,6 +129,8 @@ signal showBox()
 var final = false
 
 func _ready():
+	
+	dex.connect("win",self,"_on_Win")
 	select_dialogue()
 	emit_signal("showBox")
 	set_bbcode(dialogue[dialogue_index])
@@ -179,6 +183,8 @@ func _input(event):
 				get_tree().get_root().find_node("BaseFarmGrid",true,false)._exit_farm()
 				set_process_input(false)
 				#set_process_input(false)
+				if win:
+					get_tree().change_scene("res://Credits.tscn")
 		else: 
 			set_visible_characters(get_total_character_count())
 	
@@ -268,3 +274,20 @@ func _on_Button2_pressed():
 			set_bbcode(dialogue[dialogue_index])
 			set_visible_characters(0)
 			set_process_input(true)
+			
+func _on_Win():
+	dialogue = ["YAY"]
+	dialogue_index = 0
+	set_bbcode(dialogue[dialogue_index])
+	set_visible_characters(0)
+	set_process_input(true)
+	for member in get_tree().get_nodes_in_group("seedGroup"):
+			member.set_position(member.seed_pos)
+	emit_signal("showSprite")
+	emit_signal("showBox")
+	emit_signal("hideSprite2")
+	emit_signal("hideSprite3")
+	show()
+	win = true
+	
+

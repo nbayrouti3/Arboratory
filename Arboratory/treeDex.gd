@@ -6,6 +6,8 @@ onready var seedData = ImportData.seed_data #Imports the Seed Data Database
 onready var Water = get_tree().get_root().find_node("water", true, false) #Imports the water node from planting to here
 var key = 0 #Creates the key variable and sets it to 1
 var tempKey #Creates a temporary key used in the next and back buttons
+var count = 0
+signal win
 
 func _ready():
 	#load_tree() # Runs tree function for start
@@ -30,6 +32,11 @@ func disable_items():
 func unlock(id):
 	print ("Signal Recieved")
 	dropdown.set_item_disabled(int(id), false)
+	count+=1
+	if count == 16:
+		print("win")
+		emit_signal("win")
+		
 	Leveling.gain_xp(5)
 
 #Changes the Dex to represent the item selected
