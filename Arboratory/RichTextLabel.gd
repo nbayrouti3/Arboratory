@@ -35,6 +35,7 @@ func select_dialogue():
 			set_process_input(true)
 			dialogue = ["insert item dialogue here"]
 			emit_signal("showSprite")
+			show()
 		5:
 			set_process_input(true)
 			dialogue = ["Oh, hello!", "I didn't see you there.",
@@ -43,6 +44,7 @@ func select_dialogue():
 			"You're welcome to call me whatever you like, really"]
 			numOptions = [2, 0, 2, 1]
 			emit_signal("showSprite")
+			show()
 			choices = 4
 			
 		_:

@@ -1,6 +1,6 @@
 extends Node
 
-export (int) var level = 5
+export (int) var level = 1
 
 var experience = 0
 var required_experience = get_next_level_xp(level)
@@ -29,6 +29,11 @@ func gain_level():
 		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("candy")
 		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("lavender")
 		get_tree().get_root().find_node("Planting",true,false)._new_merge_item("rock")
+		get_tree().get_root().find_node("RichTextLabel",true,false).dialogue_index = 0
+		get_tree().get_root().find_node("RichTextLabel",true,false)._ready()
+	if level == 5:
+		get_tree().get_root().find_node("RichTextLabel",true,false).dialogue_index = 0
+		get_tree().get_root().find_node("RichTextLabel",true,false)._ready()
 
 #returns the xp needed to get to the next level
 func get_next_level_xp(level_num):

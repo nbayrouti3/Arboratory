@@ -22,7 +22,6 @@ func _ready():
 	_new_seed("water",1)
 	_new_seed("earth",1)
 	_new_seed("fire",1)
-	_new_merge_item("rock")
 	get_tree().call_group("seedGroup","hide")
 	pass 
 
