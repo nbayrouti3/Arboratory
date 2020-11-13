@@ -39,17 +39,21 @@ func select_dialogue():
 	match Leveling.level:
 		1:
 			print('successfully did the thing')
-			dialogue = ["Hello there!",
-			"I am here to help you on your journey to discover every tree in the arboretum.",
-			"You are in the Merge Area. Click or tap the TreeDex button to check how many trees you have discovered.Trees will be grayed out until they are discovered.",
-			"Drag a seed to the middle merge area and water it to create a sapling!",
-			"Click or tap the Farm button to go to the farm and grow your saplings.",
-			"In the farm, click or tap an inventory slot and then click or tap a plot to plant. Click or tap a tree to see its stats and Return to hide them!",
-			"Warning! Trees will dry out and lose health if not watered. Press the water button and then a tree to water it.",
-			"You may find that some trees have special properties, so watch out for those!",
-			"Click or tap Clear Single Plot and then a plot to harvest one tree, or harvest all plots with Clear Plots.",
-			"Harvesting a sapling or dead tree will give 1 seed, while harvesting a mature tree will give 2 seeds. Click or tap Merge to go back to the Merge Area.",
-			"If you have 2 seeds of the same type and 2 seeds of another type, you can attempt merging to discover a new tree by dragging 2 seeds together in the middle!"]
+			dialogue = ["I’m a scientist who has devoted their life to studying solutions to the impending energy crisis, but one day, while I was slacking off, I discovered I could splice the DNA of a tree with the molecular structure of my sample tree.",
+			 "Since that is infinitely more interesting, my new goal is to create as many new trees as possible and possibly learn something along the way! My search started with consulting the Tree of Knowledge on the project.",
+			"Tree of Knowledge: \"Greetings seeker of trees. Would you like some guidance before you embark on this great endeavor? My being holds eons of information that could be useful to your research. Let us begin with the basics\"",
+			"\"This is referred to as the merge area. It is here where you can access your TreeDex. As you create new trees, they will be unlocked here, allowing you to learn about their various properties and personalities.\"",
+			"\"To create a sapling, drag a seed to the middle of the merge area and provide it with water.\"",
+			"\"Saplings are planted in the farm area of the arboretum. Click or tap on an inventory slot and then click or tap on the plot in which you wish to plant your sapling. By clicking on a tree, you can view its status. Return to hide this information.\"",
+			"\"Like all living beings, your trees have biological needs. If you fail to provide for your creations, they will wither and die. To prevent this fate, make sure you water your trees regularly.",
+			"\"You can do this by pressing the watering button and then pressing the tree you desire to water.\"",
+			"\"Each type of tree has its own special talents and abilities, so take these into account when creating your farm. You can learn more about this in your TreeDex.\"",
+			"\"You can harvest a single tree by selecting clear single plot followed by the desired tree. If you wish to harvest all your trees at once, select clear all plots.\"",
+			"\"A dead tree will only produce one seed upon harvest; however, a healthy, mature tree will yield two seeds. Turn your attention back to the merge area. To splice two different trees, you will need two seeds of each type.\"",
+			"\"To splice the DNA of two seeds, simply drag them together in the merge area. Keep in mind, not all combinations produce a tree. An incompatible combination will still consume both seeds, so be cautious.\"",
+			"\"That’s all I have for you for now. I could impart so much more, but it can be overwhelming to intake too much information at once.\"",
+			"\"I wish you the best of luck in your quest for knowledge, and I will be here to support you should you require any more assistance.\"",
+			"\"Continue creating trees!\""]
 			info = {0: {"char": "knowledge", "dialogue index": 0, "choices": 0, 
 			"numOptions": [], "dialogue": [[]]
 			}}
@@ -59,8 +63,9 @@ func select_dialogue():
 		3:
 			set_process_input(true)
 			show()
-			dialogue = ["In order to help you on your journey, I'll give you some items to use that may help you discover more trees!",
-			"Drag the item to the middle with a seed to attempt a new discovery."]
+			dialogue = ["\"It seems you’ve discovered a new technique for creating trees. You can now combine the molecular structure of an item with the DNA of a tree. Allow me to introduce you to the process.\"",
+			"\"To attempt to merge an item with a tree, simply drag together a seed and the item you wish to combine it with. Not all items and seeds are compatible, so you will have to attempt different combinations before you find one that works.\"",
+			"\"Continue your quest for knowledge! Your progress thus far has been outstanding. I predict a great future for you.\""]
 			
 			info = {0: {"char": "knowledge", "dialogue index": 0, "choices": 0, 
 			"numOptions": [], "dialogue": [[]]
