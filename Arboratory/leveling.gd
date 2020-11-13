@@ -44,8 +44,8 @@ func gain_level():
 
 #returns the xp needed to get to the next level
 func get_next_level_xp(level_num):
-	#return 30 * level_num
-	return 7 * level_num
+	return 30 * level_num
+	#return 7 * level_num
 	
 	
 #getters
