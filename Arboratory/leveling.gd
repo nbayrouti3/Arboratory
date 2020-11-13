@@ -1,6 +1,6 @@
 extends Node
 
-export (int) var level = 5
+export (int) var level = 1
 
 var experience = 0
 var required_experience = get_next_level_xp(level)
@@ -32,7 +32,7 @@ func gain_level():
 
 #returns the xp needed to get to the next level
 func get_next_level_xp(level_num):
-	return 14 * level_num
+	return 30 * level_num
 	
 	
 #getters
