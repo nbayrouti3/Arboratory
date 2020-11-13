@@ -1,6 +1,6 @@
 extends Node
 
-export (int) var level = 1
+export (int) var level = 5
 
 var experience = 0
 var required_experience = get_next_level_xp(level)
