@@ -39,7 +39,7 @@ func unlock(id):
 	if dropdown.is_item_disabled(int(id)):
 		dropdown.set_item_disabled(int(id), false)
 		count+=1
-		if count == 16:
+		if count == 15:
 			print("win")
 			emit_signal("win")
 			

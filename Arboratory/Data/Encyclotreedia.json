@@ -110,13 +110,6 @@
         "saplingImage": "res://Assets/Plants/saplings/rain_sapling.png",
         "treeImage": "res://Assets/Plants/trees/rain_tree.png",
 		"Description": "This tree was created with easy maintenance in mind. Their endless rain waters not only themself but those around them, which is super convenient! Unfortunately, this tree is a little gloomy. I wonder if it's possible to cheer them up a little! "
-	},
-	"16": {
-		"treeName": "Love Tree",
-		"seedImage": "",
-		"saplingImage": "res://Assets/Plants/trees/small_love_tree_redesign.png",
-		"treeImage": "",
-		"Description": "This tree makes people feel… a certain kind of way. Her curvy trunk and heart shaped foliage are fabled to be capable of making anyone fall in love. Valentine's day is her favorite holiday, and she prefers to be planted near rose bushes. Although she can be a bit intimidating, people say she gives amazing relationship advice. If you’re looking to start a relationship with a special someone, seek her out. "
 	}
 
 }
