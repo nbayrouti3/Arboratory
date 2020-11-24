@@ -13,6 +13,7 @@ signal showSprite
 signal hideSprite
 
 
+
 signal showSprite2
 signal hideSprite2
 
@@ -112,6 +113,7 @@ func select_dialogue():
 			emit_signal("showSprite")
 			emit_signal("hideSprite2")
 			emit_signal("hideSprite3")
+			emit_signal("hideSprite4")
 			
 			#choices = 4
 
@@ -120,12 +122,16 @@ func select_dialogue():
 			hide()
 			emit_signal("hideSprite")
 			emit_signal("hideSprite2")
+			emit_signal("hideSprite3")
+			emit_signal("hideSprite4")
 			set_process_input(false)
 
 signal releaseTheButtons(duration, numButtons, good)
 signal hideButtons()
 signal hideBox()
 signal showBox()
+signal showSprite4()
+signal hideSprite4()
 var final = false
 
 func _ready():
@@ -167,6 +173,12 @@ func _input(event):
 					
 				
 			elif optionIndex < numOptions.size() and choices > 0:
+				if good:
+					emit_signal("showSprite3")
+					emit_signal("hideSprite4")
+				else:
+					emit_signal("hideSprite3")
+					emit_signal("showSprite4")
 				emit_signal("releaseTheButtons", 1, numOptions[optionIndex], good)
 				print("choices: " + str(choices))
 				choices -= 1
@@ -178,6 +190,7 @@ func _input(event):
 				emit_signal("hideSprite")
 				emit_signal("hideSprite2")
 				emit_signal("hideSprite3")
+				emit_signal("hideSprite4")
 				emit_signal("hideBox")
 				hide()
 				get_tree().get_root().find_node("BaseFarmGrid",true,false)._exit_farm()
